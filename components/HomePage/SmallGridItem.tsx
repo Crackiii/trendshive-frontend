@@ -15,7 +15,7 @@ interface Props {
 
 function SmallGridItem({item}: Props) {
 
-  const title = item.title.length > 70 ? item.title.slice(0, 70) + '... see more' : item.title
+  const title = item.title.length > 70 ? item.title.slice(0, 70) : item.title
 
   return (
     <div className="mb-2 sm:mb-0 min-h-32 bg-white flex flex-row justify-start items-center min-h-full min-w-full shadow-sm relative transition-shadow hover:shadow-xl cursor-pointer">
@@ -28,10 +28,14 @@ function SmallGridItem({item}: Props) {
         </div>
         <div className='text-sm mt-2'>
           {title} 
+          <span className='text-xs text-blue-500'> (read more ⟶)</span>
         </div>
-        <div className='text-xs text-right mt-5 text-slate-400'>
-          {item.source}
+        <div className='flex flex-row justify-end'>
+          <div className='text-xs text-slate-400'>
+            {item.source}
+          </div>
         </div>
+        
       </div>
     </div>
   )
