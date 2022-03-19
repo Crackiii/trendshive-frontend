@@ -6,8 +6,13 @@ import styles from './styles.module.css'
 function TopBar() {
   return (
     <>
-    <div className={`flex flex-row justify-between ${styles['top-bar']} h-16 pl-8 pr-8`}>
-      <div className={`text-lg flex flex-col justify-center`}>TH</div>
+    <div className={`flex flex-row justify-start ${styles['top-bar']} h-16 pl-8 pr-8`}>
+      <div className={`text-lg hidden flex-col justify-center flex-1 sm:flex`}>TRENDS HIVE</div>
+      <div className={`text-lg sm:hidden flex flex-col justify-center flex-1`}>TH</div>
+      <div className='flex flex-col justify-center w-80 flex-1 p-2'>
+        <input type={'search'} placeholder={'Search anything...'} className='min-h-full p-4 bg-transparent border border-blue-900 outline-none' />
+      </div>
+      <div className='flex-1'></div>
     </div>
 
     {/* <div>
