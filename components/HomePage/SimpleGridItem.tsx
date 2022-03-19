@@ -15,7 +15,7 @@ interface Props {
 
 function SimpleGridItem({item}: Props) {
   return (
-    <div className="px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800 flex flex-col justify-between">
+    <div className="mb-2 sm:mb-0 px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800 flex flex-col justify-between">
       <div className="flex items-center justify-between">
         <span className="text-sm font-light text-gray-600 dark:text-gray-400">Jan 15, 2022</span> 
         <a className="px-3 py-1 font-bold text-gray-100 transition-colors duration-200 text-xs transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">{item.category}</a>
