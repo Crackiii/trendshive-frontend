@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 
 function TopBar() {
   return (
-    <div className={`flex flex-row justify-start h-16 ${styles['top-bar']} relative`}>
+    <div className={`flex flex-row justify-start h-16 bg-white relative`}>
       <div className={`text-lg flex flex-col justify-center items-center min-h-full px-6 sm:px-14`}>
         <div className='w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden'>
           <img src='/logo.jpeg' alt='logo' className='object-cover w-full min-w-full h-full min-h-full'/>
