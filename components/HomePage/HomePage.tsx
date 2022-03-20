@@ -4,15 +4,16 @@ import TopGrid from './MixedTopGrid'
 import SmallGrid from './SmallGrid'
 import SimpleGrid from './SimpleGrid'
 import RandomItemsGrid from './RandomItemsGrid'
+import TrendingHeading from './TrendingHeading'
 
 function HomePage() {
   return (
     <div>
       <TopBar />
       <TopGrid />
-      <div className='p-2' />
+      <TrendingHeading title='Trending now' />
       <SmallGrid />
-      <div className='p-2' />
+      <TrendingHeading title={`Today's trends`} />
       <SimpleGrid />
       <div className='p-2' />
       {/* <RandomItemsGrid /> */}
