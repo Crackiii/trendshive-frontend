@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import TopBar from './TopBar'
 import TopGrid from './MixedTopGrid'
 import SmallGrid from './SmallGrid'
 import SimpleGrid from './SimpleGrid'
 import RandomItemsGrid from './RandomItemsGrid'
 import TrendingHeading from './TrendingHeading'
+import axios from 'axios'
 
 function HomePage() {
+
   return (
     <div>
       <TopBar />
@@ -15,7 +17,7 @@ function HomePage() {
       <SmallGrid />
       <TrendingHeading title={`Today's trends`} />
       <SimpleGrid />
-      <div className='p-2' />
+      {/* <TrendingHeading title={`Latest Updates`} /> */}
       {/* <RandomItemsGrid /> */}
     </div>
   )

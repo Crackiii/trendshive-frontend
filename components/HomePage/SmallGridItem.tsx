@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
+import Tags from '../shared/Tags';
 
 type Item = {
   title: string;
@@ -24,7 +25,9 @@ function SmallGridItem({item}: Props) {
       </div>
       <div className='w-full min-h-full p-2 flex flex-col justify-between'>
         <div className="flex justify-end">
-         <span className='w-fit text-xs items-center leading-sm px-2 py-1 bg-blue-200 text-blue-700 font-light'>{item.category}</span>
+         <span className='w-fit text-xs items-center leading-sm font-light'>
+          <Tags tags={[item.category]} /> 
+          </span>
         </div>
         <div className='text-lg mb-1'>
           {item.title} 
