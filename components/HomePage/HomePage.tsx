@@ -14,12 +14,12 @@ function HomePage() {
     <div>
       <TopBar />
       <TopGrid />
-      <TrendingHeading title={`Latest Updates`} />
-      <RandomItemsGrid />
       <TrendingHeading title='Trending now' />
       <SmallGrid />
       <TrendingHeading title={`Today's trends`} />
       <SimpleGrid />
+      <TrendingHeading title={`Latest Updates`} />
+      <RandomItemsGrid />
       <HomeFooter />
     </div>
   )
