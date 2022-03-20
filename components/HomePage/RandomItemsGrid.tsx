@@ -111,12 +111,17 @@ function RandomItemsGrid() {
       }
     </div>
     
-    <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 md:hidden'>
+    <div className='grid gap-2 grid-rows-1 grid-cols-1 sm:grid-cols-2 md:hidden'>
       {
         gridItems.map((item, index) => (
           <SmallGridItem key={index} item={item} />
         ))
       }
+      <div className='flex justify-center mt-5'>
+        <button className="inline-block max-w-fit border border-slate-700 hover:bg-slate-700 hover:text-white hover:shadow-lg transition-all font-normal py-1 px-6">
+          See more +
+        </button>
+      </div>
     </div>
     </>
   )
