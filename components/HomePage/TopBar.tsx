@@ -11,8 +11,8 @@ function TopBar() {
           <img src='/logo.jpeg' alt='logo' className='object-cover w-full min-w-full h-full min-h-full'/>
         </div>
       </div>
-      <div className='flex flex-col justify-center items-left p-2 w-full px-0 sm:px-30 md:px-2 lg:px-20 xl:px-60'>
-        <input type={'text'} placeholder={'Search anything...'} className='focus:shadow-md min-h-full w-full p-4 font-light bg-white border border-blue-900 border-opacity-20 outline-none rounded-none' />
+      <div className='flex flex-col justify-center items-left p-2 w-full px-0 sm:px-30 md:px-2 lg:px-20 xl:px-80 2xl:px-0 2xl:w-2/4 2xl:m-auto'>
+        <input type={'text'} placeholder={'Search anything...'} className='focus:shadow-md min-h-full w-full p-4 font-light bg-white border border-blue-900 border-opacity-20 outline-none rounded-full' />
       </div>
       <div className='flex flex-col justify-center items-end px-6 sm:px-14'></div>
     </div>
