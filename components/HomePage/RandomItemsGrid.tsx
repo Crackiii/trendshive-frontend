@@ -4,8 +4,6 @@ import Tags from '../shared/Tags'
 
 function RandomItemsGrid() {
 
-
-
   return (
     <div className="grid overflow-hidden grid-cols-4 grid-rows-4 gap-px grid-flow-row mb-80" style={{height: '40rem'}}>
       <div className="bg-white flex flex-col justify-between row-span-3 px-8 py-8 group cursor-pointer">
