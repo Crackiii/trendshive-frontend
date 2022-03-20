@@ -51,12 +51,24 @@ function RandomItemsGrid() {
           <div className='text-sm text-slate-300 text-right'>5 days ago</div>
           <div className='text-sm text-blue-400 text-right'>{gridItems[3].source}</div>
         </div>
+        {
+          gridItems[3].title.length < 20 && 
+          <div>
+            <Tags tags={['vladimir', 'russian', 'russia-ukrain', 'war']} />
+          </div>
+        }
       </div>,
       <div className="bg-white hidden lg:flex flex-col justify-between row-start-3 row-span-2 col-start-3 col-span-1 px-8 py-8 group cursor-pointer" key={5}>
         <div className='w-full h-40 relative'>
           <img src={gridItems[4].image} alt='image' className='object-cover w-full min-w-full h-full min-h-full' />
         </div>
         <div className='text-xl font-bold group-hover:text-blue-400 group-hover:underline'>{gridItems[4].title}</div>
+        {
+          gridItems[4].title.length < 20 && 
+          <div>
+            <Tags tags={['vladimir', 'russian', 'russia-ukrain', 'war']} />
+          </div>
+        }
         <div className='flex justify-between'>
           <div className='text-sm text-slate-300 text-right'>5 days ago</div>
           <div className='text-sm text-blue-400 text-right'>{gridItems[4].source}</div>
@@ -93,7 +105,7 @@ function RandomItemsGrid() {
 
   return (
     <>
-    <div className="hidden md:grid overflow-hidden grid-cols-1 grid-rows-1 gap-px grid-flow-row md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-80" style={{height: '40rem'}}>
+    <div className="hidden md:grid overflow-hidden grid-cols-1 grid-rows-1 gap-px grid-flow-row md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" style={{height: '40rem'}}>
       {
         elements.map(el => (el))
       }

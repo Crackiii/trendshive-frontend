@@ -6,6 +6,7 @@ import SimpleGrid from './SimpleGrid'
 import RandomItemsGrid from './RandomItemsGrid'
 import TrendingHeading from './TrendingHeading'
 import axios from 'axios'
+import HomeFooter from './HomeFooter'
 
 function HomePage() {
 
@@ -13,12 +14,13 @@ function HomePage() {
     <div>
       <TopBar />
       <TopGrid />
+      <TrendingHeading title={`Latest Updates`} />
+      <RandomItemsGrid />
       <TrendingHeading title='Trending now' />
       <SmallGrid />
       <TrendingHeading title={`Today's trends`} />
       <SimpleGrid />
-      <TrendingHeading title={`Latest Updates`} />
-      <RandomItemsGrid />
+      <HomeFooter />
     </div>
   )
 }
