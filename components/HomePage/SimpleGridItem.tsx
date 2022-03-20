@@ -21,8 +21,8 @@ function SimpleGridItem({item}: Props) {
         <a className="px-3 py-1 font-bold text-gray-100 transition-colors duration-200 text-xs transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">{item.category}</a>
       </div> 
       <div className="mt-2">
-        <a href="https://stackdiary.com/" className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">{item.title}</a> 
-        <p className="mt-2 dark:text-gray-300 text-slate-400 text-sm ">{item.desc}</p>
+        <a href="#" className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">{item.title}</a> 
+        <p className="mt-2 dark:text-gray-300 text-slate-400 font-light text-sm ">{item.desc}</p>
       </div> 
       <div className="flex items-center justify-between mt-4">
         <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline">Read more ⟶</a> 
