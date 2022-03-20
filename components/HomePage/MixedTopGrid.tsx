@@ -28,7 +28,7 @@ function TopGrid(props?: Props) {
 
   return (
     <>
-     <div className="hidden mt-6 grid-rows-1 grid-cols-1 gap-0 grid-flow-row sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+     <div className="hidden grid-rows-1 grid-cols-1 gap-0 grid-flow-row sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
       {
         gridItems.slice(0, 8).map((item, index) => (
             <div key={index} className={`${gridItemStyles[index]} h-60 min-h-full`}>
@@ -39,7 +39,7 @@ function TopGrid(props?: Props) {
       </div>
       <CarouselProvider
         naturalSlideWidth={100}
-        className="sm:hidden h-96 mt-6"
+        className="sm:hidden h-96"
         naturalSlideHeight={100}
         totalSlides={gridItemStyles.length}
       >
