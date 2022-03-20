@@ -17,8 +17,8 @@ function HomePage() {
       <SmallGrid />
       <TrendingHeading title={`Today's trends`} />
       <SimpleGrid />
-      {/* <TrendingHeading title={`Latest Updates`} /> */}
-      {/* <RandomItemsGrid /> */}
+      <TrendingHeading title={`Latest Updates`} />
+      <RandomItemsGrid />
     </div>
   )
 }
