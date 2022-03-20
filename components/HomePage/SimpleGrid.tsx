@@ -5,7 +5,7 @@ import SimpleGridItem from './SimpleGridItem'
 
 function SimpleGrid() {
   return (
-    <div className='grid-rows-1 grid-cols-1 gap-3 grid-flow-row sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pb-96'>
+    <div className='grid-rows-1 grid-cols-1 gap-3 grid-flow-row sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
       {
         gridItems.slice(0,8).map((item, index) => (
           <SimpleGridItem key={index} item={item} />
