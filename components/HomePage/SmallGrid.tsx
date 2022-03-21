@@ -5,7 +5,7 @@ import SmallGridItem from './SmallGridItem'
 function SmallGrid() {
   return (
     <div>
-      <div className='gap-4 sm:grid-rows-1 grid-cols-1 sm:gap-5 grid-flow-row sm:grid sm:grid-cols-2 md:grid-cols-3'>
+      <div className='gap-4 sm:grid-rows-1 grid-cols-1 sm:gap-4 grid-flow-row sm:grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
         {
           gridItems.slice(2, 16).map((item, index) => (
             <SmallGridItem key={index} item={item} />

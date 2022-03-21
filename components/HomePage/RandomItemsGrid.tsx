@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link'
 import React from 'react'
 import Tags from '../shared/Tags'
 import { gridItems } from './data'
@@ -12,6 +13,7 @@ function RandomItemsGrid() {
     <div className="md:masonry-2-col lg:masonry-3-col xl:masonry-4-col box-border mx-auto before:box-inherit after:box-inherit">
       { gridItems.map((item, index) => (
         <div className="break-inside bg-white flex flex-col justify-star px-8 py-8 group cursor-pointer" style={{marginBottom: '1rem'}} key={index}>
+          <Link href={'/story/latest-updates'}><a>
           <div className='flex justify-between'>
             <div className=' w-28 h-28 overflow-hidden rounded-lg shadow-2xl'>
               <img src={item.image} alt='img' className=' object-cover min-h-full min-w-full' />
@@ -29,6 +31,7 @@ function RandomItemsGrid() {
           <div className='mt-5'>
             <Tags tags={['vladimir', 'russian', 'russia-ukrain', 'war']} />
           </div>
+          </a></Link>
         </div>
       ))}
     </div>

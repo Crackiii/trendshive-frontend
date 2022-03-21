@@ -7,6 +7,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import { useQuery } from 'react-query'
 import axios from 'axios'
 import { useDebounce } from 'react-use'
+import Link from 'next/link'
 
 const useSearch = (query: string) => {
 
@@ -42,7 +43,9 @@ function TopBar() {
     <div className={`flex flex-row justify-start h-16 bg-white relative shadow-sm`}>
       <div className={`text-lg w-10 flex flex-col justify-center items-center min-h-full px-6 sm:px-14`}>
         <div className='w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden'>
-          <img src='/logo.jpeg' alt='logo' className='object-cover w-full min-w-full h-full min-h-full'/>
+          <Link href={'/'}>
+            <a><img src='/logo.jpeg' alt='logo' className='object-cover w-full min-w-full h-full min-h-full'/></a>
+          </Link>
         </div>
       </div>
       <div className='w-full py-3 sm:py-2 px-0 sm:px-30 md:px-0 lg:px-32 xl:px-18 2xl:w-2/4 2xl:m-auto relative'>
