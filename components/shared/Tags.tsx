@@ -25,7 +25,7 @@ function Tags({tags, show}: Props) {
     <>
       {
         tags.slice(0, show ?? tags.length).map((tag, index) => (
-          <span key={index} className={`text-xs font-semibol inline-block py-1 px-2 rounde last:mr-0 mr-1 ${colors[Math.floor(Math.random() * colors.length)]}`}>
+          <span key={index} className={`text-xs font-semibol inline-block py-1 px-2 rounde last:mr-0 mr-1 mb-1 ${colors[Math.floor(Math.random() * colors.length)]}`}>
             {tag}
           </span>
         ))

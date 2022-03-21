@@ -59,7 +59,7 @@ function TopBar() {
                 {
                   results.map((item: any, index:number) => (
                     <a href={item.link} key={index} target='_blank' rel="noreferrer">
-                      <div className='grid grid-rows-1 gap-0 grid-cols-12 border-b border-slate-100 py-4 relative group' >
+                      <div className='grid grid-rows-1 gap-0 grid-cols-12 border-b border-slate-100 py-4 relative group cursor-pointer' >
                         <div className={`row-start-1 col-start-1 col-span-2 md:col-span-1 h-14 w-14 flex flex-col rounded-2xl overflow-hidden relative ${!isLoading && 'shadow-lg shadow-slate-400'}`}>
                           {isLoading ? <Skeleton height={'3.7rem'} width={'3.5rem'} style={{display: 'inline-block'}} /> : <img className='object-cover min-w-full min-h-full' src={item.image ?? 'https://static.thenounproject.com/png/1134418-200.png'} alt='' />}
                         </div>

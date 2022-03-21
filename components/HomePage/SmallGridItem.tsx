@@ -33,8 +33,8 @@ function SmallGridItem({item}: Props) {
           {item.title} 
         </div>
         <div className='text-xs font-light text-gray-500 tracking-wide'>
-          {desc} 
-          <span className='text-xs text-blue-500'> (read more...)</span>
+          {Boolean(desc.length) && <span className='text-xs text-blue-500'>{desc} (read more...)</span>} 
+          
         </div>
         <div className='flex flex-row justify-end'>
           <div className='text-xs text-slate-400'>

@@ -4,7 +4,7 @@ import TopGrid from './MixedTopGrid'
 import SmallGrid from './SmallGrid'
 import SimpleGrid from './SimpleGrid'
 import RandomItemsGrid from './RandomItemsGrid'
-import TrendingHeading from './TrendingHeading'
+import TrendingHeading from '../shared/TrendingHeading'
 import axios from 'axios'
 import HomeFooter from '../shared/HomeFooter'
 
