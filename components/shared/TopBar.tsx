@@ -18,14 +18,13 @@ const useSearch = (query: string) => {
 }
 
 function TopBar() {
-
   const [value, setValue] = useState('')
   const [debouncedValue, setDebouncedValue] = useState('')
   const [showDropDown, setShowDropDown] = useState(false)
   const {isLoading, data} = useSearch(debouncedValue)
   const inputRef = createRef()
 
-  useDebounce(() =>  setDebouncedValue(value), 500, [value]);
+  useDebounce(() =>  setDebouncedValue(value), 1000, [value]);
 
   useEffect(() => {
     document.addEventListener('click', (ev) => {
@@ -47,15 +46,28 @@ function TopBar() {
         </div>
       </div>
       <div className='w-full py-3 sm:py-2 px-0 sm:px-30 md:px-0 lg:px-32 xl:px-18 2xl:w-2/4 2xl:m-auto relative'>
-        <input type='text' ref={inputRef as React.LegacyRef<HTMLInputElement>} onChange={(ev) => {
-          setValue(ev.target.value)
-          if(value.length > 0) setShowDropDown(true)
-        }} placeholder={'Try searching anything...'} className='focus:shadow-xl h-10 sm:h-12 border focus:border-blue-400 bg-slate-100 w-full p-4 font-light outline-none rounded-md text-base'/>
+        <input 
+          type='text' 
+          ref={inputRef as React.LegacyRef<HTMLInputElement>} 
+          onChange={(ev) => {
+            setValue(ev.target.value)
+            if(value.length > 0) setShowDropDown(true)
+          }} 
+          placeholder={'Try searching anything...'} 
+          className='focus:shadow-xl h-10 sm:h-12 border focus:border-blue-400 bg-slate-100 w-full p-4 font-light outline-none rounded-md text-base'
+        />
         {
           showDropDown && 
-          <div className='block  relative z-30 bg-white rounded-b-2xl overflow-hidden pr-1 shadow-2xl'>
+          <div className='block relative z-30 bg-white rounded-b-2xl overflow-hidden pr-1 shadow-2xl'>
             <div className='block rounded-2xl'>
-              <div className='px-5 relative h-96  overflow-y-auto'>
+              <div className='text-xs uppercase block pt-4 px-5 font-medium text-slate-400 tracking-wider'>
+                {
+                  Boolean(value.length) ?
+                  <>showing results for - <b className='text-slate-700'>{value}</b></>: 
+                  <>Type something...</>
+                }
+              </div>
+              <div className='px-5 relative h-96 overflow-y-auto'>
                 {
                   results.map((item: any, index:number) => (
                     <a href={item.link} key={index} target='_blank' rel="noreferrer">
