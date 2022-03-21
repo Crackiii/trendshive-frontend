@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useState } from 'react'
-import { gridItems } from './data'
+import { gridItems } from '../HomePage/data'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useQuery } from 'react-query'
