@@ -54,7 +54,7 @@ function TopBar() {
                             {isLoading ? <Skeleton height={'1.3rem'} /> : item.title} 
                             </div>
                             <div className='text-sm font-light text-slate-400 mt-1 tracking-wide min-w-full whitespace-nowrap overflow-hidden text-ellipsis'>
-                              {isLoading ? <Skeleton height={'.8rem'} className='mt-2' /> :item.link}
+                              {isLoading ? <Skeleton height={'.8rem'} className='mt-2' /> :item.link ?? item.desc}
                             </div>
                         </div>
                     </div>
