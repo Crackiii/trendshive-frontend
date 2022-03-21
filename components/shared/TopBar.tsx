@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-no-comment-textnodes */
-import React, { useState } from 'react'
+import React, { createRef, useEffect, useState } from 'react'
 import { gridItems } from '../HomePage/data'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -12,7 +12,7 @@ const useSearch = (query: string) => {
 
   const {isLoading, data} = useQuery(['SEARCH_RESULTS', query], () => {
     return axios.get(`http://localhost:3003/all?q=${query}`).then(data => data.data)
-  },{refetchOnWindowFocus: false, enabled: Boolean(query.length)})
+  },{refetchOnWindowFocus: false, enabled: Boolean(query.length), retry: false, refetchInterval: 20000})
 
   return {isLoading, data}
 }
@@ -21,8 +21,21 @@ function TopBar() {
 
   const [value, setValue] = useState('')
   const [debouncedValue, setDebouncedValue] = useState('')
+  const [showDropDown, setShowDropDown] = useState(false)
   const {isLoading, data} = useSearch(debouncedValue)
+  const inputRef = createRef()
+
   useDebounce(() =>  setDebouncedValue(value), 500, [value]);
+
+  useEffect(() => {
+    document.addEventListener('click', (ev) => {
+      if(ev.target !== inputRef.current) {
+        setShowDropDown(false)
+      } else {
+        setShowDropDown(true)
+      }
+    })
+  }, [inputRef])
 
   const results = isLoading ? [{} as any, {} as any, {} as any, {} as any] : data ?? gridItems
 
@@ -34,11 +47,12 @@ function TopBar() {
         </div>
       </div>
       <div className='w-full py-3 sm:py-2 px-0 sm:px-30 md:px-0 lg:px-32 xl:px-18 2xl:w-2/4 2xl:m-auto relative'>
-        <input type='text' onChange={(ev) => {
+        <input type='text' ref={inputRef as React.LegacyRef<HTMLInputElement>} onChange={(ev) => {
           setValue(ev.target.value)
+          if(value.length > 0) setShowDropDown(true)
         }} placeholder={'Try searching anything...'} className='focus:shadow-xl h-10 sm:h-12 border focus:border-blue-400 bg-slate-100 w-full p-4 font-light outline-none rounded-md text-base'/>
         {
-          value.length > 0 && 
+          showDropDown && 
           <div className='block  relative z-30 bg-white rounded-b-2xl overflow-hidden pr-1 shadow-2xl'>
             <div className='block rounded-2xl'>
               <div className='px-5 relative h-96  overflow-y-auto'>
