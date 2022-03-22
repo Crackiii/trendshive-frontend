@@ -1,0 +1,127 @@
+# Notice: Collection of data on Transcads through automated means is
+# prohibited unless you have express written permission from Transcads
+# and may only be conducted for the limited purpose contained in said
+# permission.
+
+User-agent: *
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: baiduspider
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: Naverbot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: Screaming Frog SEO Spider
+Allow: /
+
+User-agent: seznambot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: teoma
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: baiduspider
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: Naverbot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: Screaming Frog SEO Spider
+Allow: /
+
+User-agent: seznambot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: teoma
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: *
+Allow: /
