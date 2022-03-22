@@ -104,7 +104,7 @@ function TopBar() {
           </div>
         }
       </div>
-      <div className='flex flex-col justify-center items-end px-0 sm:px-14'></div>
+      <div className='flex flex-col justify-center items-end px-1 sm:px-14'></div>
     </div>
   )
 }
