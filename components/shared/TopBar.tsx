@@ -8,17 +8,19 @@ import { useQuery } from 'react-query'
 import axios from 'axios'
 import { useDebounce } from 'react-use'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const useSearch = (query: string) => {
 
   const {isLoading, data} = useQuery(['SEARCH_RESULTS', query], () => {
     return axios.get(`http://localhost:3003/all?q=${query}`).then(data => data.data)
-  },{refetchOnWindowFocus: false, enabled: Boolean(query.length), retry: false, refetchInterval: 20000})
+  },{refetchOnWindowFocus: false, enabled: Boolean(query?.length), retry: false, refetchInterval: 20000})
 
   return {isLoading, data}
 }
 
 function TopBar() {
+  const params = useRouter()
   const [value, setValue] = useState('')
   const [debouncedValue, setDebouncedValue] = useState('')
   const [showDropDown, setShowDropDown] = useState(false)
@@ -26,6 +28,10 @@ function TopBar() {
   const inputRef = createRef()
 
   useDebounce(() =>  setDebouncedValue(value), 1000, [value]);
+
+  useEffect(() => {
+    setValue(params?.query['query'] as string)
+  }, [params?.query])
 
   useEffect(() => {
     document.addEventListener('click', (ev) => {
@@ -39,6 +45,7 @@ function TopBar() {
 
   const results = isLoading ? [{} as any, {} as any, {} as any, {} as any] : data ?? gridItems
 
+
   return (
     <div className={`flex flex-row justify-start h-16 bg-white relative shadow-sm`}>
       <div className={`text-lg w-10 flex flex-col justify-center items-center min-h-full px-6 sm:px-14`}>
@@ -49,23 +56,33 @@ function TopBar() {
         </div>
       </div>
       <div className='w-full py-3 sm:py-2 px-0 sm:px-30 md:px-0 lg:px-32 xl:px-18 2xl:w-2/4 2xl:m-auto relative'>
-        <input 
-          type='text' 
-          ref={inputRef as React.LegacyRef<HTMLInputElement>} 
-          onChange={(ev) => {
-            setValue(ev.target.value)
-            if(value.length > 0) setShowDropDown(true)
-          }} 
-          placeholder={'Try searching anything...'} 
-          className='focus:shadow-xl h-10 sm:h-12 border focus:border-blue-400 bg-slate-100 w-full p-4 font-light outline-none rounded-md text-base'
-        />
+        <form onSubmit={(e) => {
+          e.preventDefault()
+          params.push({
+            pathname: '/search',
+            query: {query: value},
+          })
+          setShowDropDown(false)
+        }}>
+          <input 
+            type='text' 
+            ref={inputRef as React.LegacyRef<HTMLInputElement>} 
+            onChange={(ev) => {
+              setValue(ev.target.value)
+              if(value?.length > 0) setShowDropDown(true)
+            }} 
+            value={value}
+            placeholder={'Try searching anything...'} 
+            className='focus:shadow-xl h-10 sm:h-12 border focus:border-blue-400 bg-slate-100 w-full p-4 font-light outline-none rounded-md text-base'
+          />
+        </form>
         {
           showDropDown && 
           <div className='block relative z-30 bg-white rounded-b-2xl overflow-hidden pr-1 shadow-2xl'>
             <div className='block rounded-2xl'>
               <div className='text-xs uppercase block pt-4 px-5 font-medium text-slate-400 tracking-wider'>
                 {
-                  Boolean(value.length) ?
+                  Boolean(value?.length) ?
                   <>showing results for - <b className='text-slate-700'>{value}</b></>: 
                   <>Type something...</>
                 }
@@ -91,7 +108,7 @@ function TopBar() {
                   ))
                 }
                 {
-                 !isLoading && Boolean(debouncedValue.length) && !Boolean(data?.length) && 
+                 !isLoading && Boolean(debouncedValue?.length) && !Boolean(data?.length) && 
                  <div className=' w-full h-96 flex flex-col justify-center items-center'>
                    <div className=' w-40 h-auto'>
                     <img src='/no-results.svg' alt='no-results' className='object-cover min-w-full'/>
