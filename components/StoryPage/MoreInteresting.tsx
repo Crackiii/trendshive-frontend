@@ -16,6 +16,16 @@ function MoreInteresting({allStories}: Props) {
   return (
     <>
     <div className="md:masonry-2-col lg:masonry-3-col xl:masonry-4-col box-border mx-auto before:box-inherit after:box-inherit">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678"
+            crossOrigin="anonymous"></script>
+        <ins className="adsbygoogle"
+            style={{display:"block"}}
+            data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-7718309551494678"
+            data-ad-slot="1134115510"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       { allStories.slice(0, offset).map((item, index) => (<MoreInterestingItem item={item} key={index} />)) }
     </div>
     <div className='flex justify-center mt-5'>

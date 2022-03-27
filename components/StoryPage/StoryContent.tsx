@@ -122,10 +122,32 @@ function StoryContent(props: Props & React.DetailedHTMLProps<React.HTMLAttribute
 
         <div className={`text-lg font-light tracking-wide overflow-hidden ${Boolean(image) ? 'mt-8' : 'mt-5'} mt-10`} dangerouslySetInnerHTML={{__html: content?.html as string}}></div>
         
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678"
+            crossOrigin="anonymous"></script>
+        <ins className="adsbygoogle"
+            style={{display:"block"}}
+            data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-7718309551494678"
+            data-ad-slot="1134115510"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
         {
           related_queries.length > 0 && 
             <RelatedQueries tags={related_queries} className={'mt-10'} />
         }
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678"
+            crossOrigin="anonymous"></script>
+        <ins className="adsbygoogle"
+            style={{display:"block"}}
+            data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-7718309551494678"
+            data-ad-slot="1134115510"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
        
         <RelatedSearches articles={related_articles} className={'mt-10'} />
       </div>
