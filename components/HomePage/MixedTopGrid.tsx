@@ -41,7 +41,7 @@ function TopGrid(props?: Props) {
       >
         <Slider>
             {
-              gridItems.slice(0, 8).map((item, index) => (
+              props?.gridStories?.map((item, index) => (
                 <Slide index={index} key={index}>
                    <GridItem item={item} />
                 </Slide>
