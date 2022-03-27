@@ -4,6 +4,7 @@ import HomePage, { validURL } from '../components/HomePage/HomePage'
 import { v4 as uuidv4 } from 'uuid';
 import { useEffect } from 'react';
 import Script from 'next/script';
+import CookiePopup from '../components/CookiePopup';
 
 
 
@@ -21,8 +22,8 @@ const Home = (props: any) => {
   }
 
   useEffect(() => {
-    createCookie('uniqid', props.cookies.uniqid, 60)
-    createCookie('seen', props.cookies.seen, 60)
+    createCookie('uniqid', props.cookies.uniqid, 900)
+    createCookie('seen', props.cookies.seen, 900)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -49,6 +50,7 @@ const Home = (props: any) => {
       <meta name="twitter:creator" content="@Trendscads" />
       <link rel="icon" type="image/x-icon" href="/logo.ico" />
     </Head>
+    <CookiePopup />
     <HomePage stories={props.res} />
   </>
   )
