@@ -31,6 +31,17 @@ function HomePage(props: Props) {
 
   return (
     <div>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678"
+     crossOrigin="anonymous"></script>
+      <ins className="adsbygoogle"
+          style={{display : "block"}}
+          data-ad-client="ca-pub-7718309551494678"
+          data-ad-slot="5066509712"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
       <TopBar />
       <TopGrid gridStories={storiesWithImages} />
       <TrendingHeading title='Trending now' />
