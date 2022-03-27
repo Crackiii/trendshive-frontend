@@ -42,3 +42,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+table {
+  border: 1px;
+}

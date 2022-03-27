@@ -1,13 +1,16 @@
 import React from 'react'
-import { gridItems } from './data'
 import SmallGridItem from './SmallGridItem'
 
-function SmallGrid() {
+interface Props {
+  smallGridStories: any[]
+}
+
+function SmallGrid(props: Props) {
   return (
     <div>
       <div className='gap-4 sm:grid-rows-1 grid-cols-1 sm:gap-4 grid-flow-row sm:grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
         {
-          gridItems.slice(2, 16).map((item, index) => (
+          props.smallGridStories.map((item, index) => (
             <SmallGridItem key={index} item={item} />
           ))
         }

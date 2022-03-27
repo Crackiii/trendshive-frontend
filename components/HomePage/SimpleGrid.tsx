@@ -3,12 +3,17 @@ import React from 'react'
 import { gridItems } from './data'
 import SimpleGridItem from './SimpleGridItem'
 
-function SimpleGrid() {
+interface Props {
+  simpleGridStories: any[]
+}
+
+function SimpleGrid(props: Props) {
+
   return (
     <div>
       <div className='grid-rows-1 grid-cols-1 gap-3 grid-flow-row sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {
-          gridItems.slice(0,8).map((item, index) => (
+          props.simpleGridStories.map((item, index) => (
             <SimpleGridItem key={index} item={item} />
           ))
         }

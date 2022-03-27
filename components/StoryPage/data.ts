@@ -88,14 +88,3 @@ export const story = {
 }
 
 
-export const related_queries = [
-  "flugzeugabsturz china",
-  "flugzeugabsturz china eastern airlines",
-  "boeing 737",
-  "china flugzeug",
-  "flugzeugabsturz china boeing",
-  "China Eastern Airlines",
-  "Boeing",
-  "China Eastern",
-  "china flugzeugabsturz",
-]

@@ -4,13 +4,9 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import GridItem from './GridItem';
 import { gridItems } from './data';
 
-type Item = {
-  order: number
-  element: JSX.Element
-}
 
 interface Props {
-  items?: Item[]
+  gridStories?: any[]
 }
 
 function TopGrid(props?: Props) {
@@ -30,7 +26,7 @@ function TopGrid(props?: Props) {
     <>
      <div className="hidden grid-rows-1 grid-cols-1 gap-0 grid-flow-row sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
       {
-        gridItems.slice(0, 8).map((item, index) => (
+        props?.gridStories?.map((item, index) => (
             <div key={index} className={`${gridItemStyles[index]} h-60 min-h-full`}>
               <GridItem item={item} />
             </div>

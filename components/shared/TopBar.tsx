@@ -9,12 +9,14 @@ import axios from 'axios'
 import { useDebounce } from 'react-use'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { getFaviconByUrl } from '../HomePage/SmallGridItem'
+import { getHost } from '../HomePage/GridItem'
 
 const useSearch = (query: string) => {
 
   const {isLoading, data} = useQuery(['SEARCH_RESULTS', query], () => {
-    return axios.get(`http://localhost:3003/all?q=${query}`).then(data => data.data)
-  },{refetchOnWindowFocus: false, enabled: Boolean(query?.length), retry: false, refetchInterval: 20000})
+    return fetch(`https://trendscads-backend.herokuapp.com/search?searchQuery=${query}&limit=20&offset=0`, {method: 'GET'}).then(res => res.json())
+  },{refetchOnWindowFocus: false, enabled: Boolean(query?.length), retry: false})
 
   return {isLoading, data}
 }
@@ -27,10 +29,10 @@ function TopBar() {
   const {isLoading, data} = useSearch(debouncedValue)
   const inputRef = createRef()
 
-  useDebounce(() =>  setDebouncedValue(value), 1000, [value]);
+  useDebounce(() =>  setDebouncedValue(value), 500, [value]);
 
   useEffect(() => {
-    setValue(params?.query['query'] as string)
+    setValue(params?.query['searchQuery'] as string)
   }, [params?.query])
 
   useEffect(() => {
@@ -60,7 +62,11 @@ function TopBar() {
           e.preventDefault()
           params.push({
             pathname: '/search',
-            query: {query: value},
+            query: {
+              searchQuery: value,
+              limit: 20,
+              offset: 0
+            },
           })
           setShowDropDown(false)
         }}>
@@ -89,26 +95,30 @@ function TopBar() {
               </div>
               <div className='px-5 relative h-96 overflow-y-auto'>
                 {
-                  results.map((item: any, index:number) => (
-                    <a href={item.link} key={index} target='_blank' rel="noreferrer">
-                      <div className='grid grid-rows-1 gap-0 grid-cols-12 border-b border-slate-100 py-4 relative group cursor-pointer' >
-                        <div className={`row-start-1 col-start-1 col-span-2 md:col-span-1 h-14 w-14 flex flex-col rounded-2xl overflow-hidden relative ${!isLoading && 'shadow-lg shadow-slate-400'}`}>
-                          {isLoading ? <Skeleton height={'3.7rem'} width={'3.5rem'} style={{display: 'inline-block'}} /> : <img className='object-cover min-w-full min-h-full' src={item.image ?? 'https://static.thenounproject.com/png/1134418-200.png'} alt='' />}
-                        </div>
-                        <div className='row-start-1 col-start-3 md:col-start-2 col-span-10 md:col-span-11 flex flex-col flex-2 justify-center pl-5'>
-                            <div className='text-md font-base text-slate-700 min-w-full group-hover:text-blue-500'>
-                            {isLoading ? <Skeleton height={'1.3rem'} /> : item.title} 
-                            </div>
-                            <div className='text-sm font-light text-slate-400 mt-1 tracking-wide min-w-full whitespace-nowrap overflow-hidden text-ellipsis'>
-                              {isLoading ? <Skeleton height={'.8rem'} className='mt-2' /> :item.link ?? item.desc}
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                  results?.results?.map((item: any, index:number) => (
+                    <Link href={`/story/${item.id}`} key={index}>
+                      <a target='_blank' rel="noreferrer">
+                        <div className='grid grid-rows-1 gap-0 grid-cols-12 border-b border-slate-100 py-4 relative group cursor-pointer' >
+                          <div className={`row-start-1 col-start-1 col-span-2 md:col-span-1 h-14 w-14 flex flex-col rounded-2xl overflow-hidden relative ${!isLoading && 'shadow-lg shadow-slate-400'}`}>
+                            {isLoading ? 
+                             <Skeleton height={'3.7rem'} width={'3.5rem'} style={{display: 'inline-block'}} /> : 
+                             <img className='object-cover min-w-full min-h-full' src={item.images[0]} onError={(ev) => ev.currentTarget.src = getFaviconByUrl(item.url) || '/fallback.png'} alt='' />}
+                          </div>
+                          <div className='row-start-1 col-start-3 md:col-start-2 col-span-10 md:col-span-11 flex flex-col flex-2 justify-center pl-5'>
+                              <div className='text-md font-base text-slate-700 min-w-full group-hover:text-blue-500'>
+                              {isLoading ? <Skeleton height={'1.3rem'} /> : item.titles[0]} 
+                              </div>
+                              <div className='text-sm font-light text-slate-400 mt-1 tracking-wide min-w-full whitespace-nowrap overflow-hidden text-ellipsis'>
+                                {isLoading ? <Skeleton height={'.8rem'} className='mt-2' /> : getHost(item.url) ?? item.descriptions[0]}
+                              </div>
+                          </div>
+                      </div>
+                    </a>
+                  </Link>
                   ))
                 }
                 {
-                 !isLoading && Boolean(debouncedValue?.length) && !Boolean(data?.length) && 
+                 !isLoading && !Boolean(results?.results?.length) && 
                  <div className=' w-full h-96 flex flex-col justify-center items-center'>
                    <div className=' w-40 h-auto'>
                     <img src='/no-results.svg' alt='no-results' className='object-cover min-w-full'/>

@@ -17,21 +17,10 @@ function RelatedArticles(props: Props & React.DetailedHTMLProps<React.HTMLAttrib
         </div>
         <div className='grid overflow-hidden gap-2 overflow-y-auto mt-5'>
           {
-            articles.map((article, index) => (
-              <ListItem 
-                key={index} 
-                item={{
-                  desc: article.snippet,
-                  title: article.title,
-                  image: article.image.imageUrl,
-                  source: article.source,
-                  category: 'Static',
-                  favicon: 'https://ssl.gstatic.com/adsense/apps/static/bidi/adsense3_antipasti_server_20220316-04_RC00/common/resources/favicon.ico'
-                }}  
-              />
+            articles.map((item, index) => (
+              <ListItem key={index} item={item} />
             ))
           }
-          
         </div>
       </div>
     </div>
