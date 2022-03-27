@@ -60,6 +60,17 @@ function StoryContent(props: Props & React.DetailedHTMLProps<React.HTMLAttribute
 
   return (
     <div {...rest}>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678"
+          crossOrigin="anonymous"></script>
+      <ins className="adsbygoogle"
+          style={{display:"block", textAlign:"center"}}
+          data-ad-layout="in-article"
+          data-ad-format="fluid"
+          data-ad-client="ca-pub-7718309551494678"
+          data-ad-slot="8672063873"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
       <div className='bg-white px-10 py-10 lg:px-20 lg:py-16'>
         <div className='text-4xl font-bold'>{content?.titles?.[0]}</div>
         

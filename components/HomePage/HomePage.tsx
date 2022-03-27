@@ -35,8 +35,28 @@ function HomePage(props: Props) {
       <TopGrid gridStories={storiesWithImages} />
       <TrendingHeading title='Trending now' />
       <SmallGrid smallGridStories={restOfStories.splice(0, 12)} />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678"
+        crossOrigin="anonymous"></script>
+        <ins className="adsbygoogle"
+            style={{display:"block"}}
+            data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-7718309551494678"
+            data-ad-slot="7320249911"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
       <TrendingHeading title={`Today's trends`} />
       <SimpleGrid simpleGridStories={restOfStories.splice(0, 8)} />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678"
+        crossOrigin="anonymous"></script>
+        <ins className="adsbygoogle"
+            style={{display:"block"}}
+            data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-7718309551494678"
+            data-ad-slot="7320249911"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
       <TrendingHeading title={`Latest Updates`} />
       <RandomItemsGrid randomItemsGrid={restOfStories.splice(0, 12)} />
       <HomeFooter />
