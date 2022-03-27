@@ -1,9 +1,18 @@
 import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import HomePage, { validURL } from '../components/HomePage/HomePage'
+import { v4 as uuidv4 } from 'uuid';
+import { useEffect } from 'react';
 
 
 const Home = (props: any) => {
+
+  useEffect(() => {
+    document.cookie = `uniqid=${props.cookies.uniqid}; expires=2058-01-19, 03:14:08 UTC; Secure`
+    document.cookie = `seen=${props.cookies.seen}; expires=2058-01-19, 03:14:08 UTC; Secure`
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
   <>
     <Head>
@@ -38,18 +47,25 @@ export default Home
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
+
   // const geo = await fetch("https://api.geoapify.com/v1/ipinfo?apiKey=589ae61973f3443faf4b13b2f1c57ae9")
   // .then(r => r.json())
+  const uniqid = ctx.req.cookies['uniqid'] || uuidv4()
+  const seen = ctx.req.cookies['seen'] || 0
 
+  const limit = 42;
+  const offset = uniqid && Number(seen) && (Number(seen) === 2) && (Number(seen) * 42);
 
-  const {params, query} = ctx;
-  const id = params?.id
-  const res = await fetch(`https://trendscads-backend.herokuapp.com/stories`, {method: 'GET'}).then(res => res.json())
+  const res = await fetch(`https://trendscads-backend.herokuapp.com/stories?offset=${offset}&limit=${limit}`, {method: 'GET'}).then(res => res.json())
 
   return {
     props: {
       res: res.results,
-      geo: 'DE'
+      geo: 'DE',
+      cookies: {
+        uniqid,
+        seen: Number(seen) === 2 ? 0 : Number(seen) + 1
+      },
     }
   }
 
