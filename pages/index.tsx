@@ -5,11 +5,23 @@ import { v4 as uuidv4 } from 'uuid';
 import { useEffect } from 'react';
 
 
+
 const Home = (props: any) => {
 
+  const createCookie = (name: string, value: string, minutes: number) =>  {
+    if (minutes) {
+        var date = new Date();
+        date.setTime(date.getTime()+(minutes*60*1000));
+        var expires = "; expires="+date.toUTCString();
+    } else {
+        var expires = "";
+    }
+    document.cookie = `${name}=${value}; expires=${expires}; path=/; Secure`;
+  }
+
   useEffect(() => {
-    document.cookie = `uniqid=${props.cookies.uniqid}; expires=2058-01-19, 03:14:08 UTC; Secure`
-    document.cookie = `seen=${props.cookies.seen}; expires=2058-01-19, 03:14:08 UTC; Secure`
+    createCookie('uniqid', props.cookies.uniqid, 60)
+    createCookie('seen', props.cookies.seen, 60)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -54,7 +66,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const seen = ctx.req.cookies['seen'] || 0
 
   const limit = 42;
-  const offset = uniqid && Number(seen) && (Number(seen) === 2) && (Number(seen) * 42);
+  const offset = uniqid && Number(seen) && (Number(seen) * 42);
 
   const res = await fetch(`https://trendscads-backend.herokuapp.com/stories?offset=${offset}&limit=${limit}`, {method: 'GET'}).then(res => res.json())
 
@@ -64,7 +76,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       geo: 'DE',
       cookies: {
         uniqid,
-        seen: Number(seen) === 2 ? 0 : Number(seen) + 1
+        seen: Number(seen) + 1,
       },
     }
   }

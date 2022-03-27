@@ -109,7 +109,7 @@ function StoryContent(props: Props & React.DetailedHTMLProps<React.HTMLAttribute
           </div>
         </div>
 
-        <div className={`text-lg font-light tracking-wide ${Boolean(image) ? 'mt-8' : 'mt-5'} mt-10`} dangerouslySetInnerHTML={{__html: content?.html as string}}></div>
+        <div className={`text-lg font-light tracking-wide overflow-hidden ${Boolean(image) ? 'mt-8' : 'mt-5'} mt-10`} dangerouslySetInnerHTML={{__html: content?.html as string}}></div>
         
         {
           related_queries.length > 0 && 
