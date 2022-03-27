@@ -4,7 +4,9 @@ import { getFaviconByUrl } from '../HomePage/SmallGridItem'
 import Tags from '../shared/Tags'
 import RelatedQueries from './RelatedQueries'
 import RelatedSearches from './RelatedSearches'
+import  HtmlPage from './HtmlPage'
 import * as dates from 'date-fns'
+
 
 type Content = {
   titles: string[]
@@ -120,8 +122,7 @@ function StoryContent(props: Props & React.DetailedHTMLProps<React.HTMLAttribute
           </div>
         </div>
 
-        <div className={`text-lg font-light tracking-wide overflow-hidden ${Boolean(image) ? 'mt-8' : 'mt-5'} mt-10`} dangerouslySetInnerHTML={{__html: content?.html as string}}></div>
-        
+        <HtmlPage html={content?.html} image={image} />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678"
             crossOrigin="anonymous"></script>
         <ins className="adsbygoogle"

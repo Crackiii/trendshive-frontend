@@ -1,0 +1,11 @@
+.image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.image img {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}

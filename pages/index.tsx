@@ -3,6 +3,7 @@ import Head from 'next/head'
 import HomePage, { validURL } from '../components/HomePage/HomePage'
 import { v4 as uuidv4 } from 'uuid';
 import { useEffect } from 'react';
+import Script from 'next/script';
 
 
 
