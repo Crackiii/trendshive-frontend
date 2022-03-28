@@ -22,8 +22,8 @@ const Home = (props: any) => {
   }
 
   useEffect(() => {
-    createCookie('uniqid', props.cookies.uniqid, 900)
-    createCookie('seen', props.cookies.seen, 900)
+    createCookie('uniqid', props.cookies.uniqid, 60 * 60)
+    createCookie('seen', props.cookies.seen, 60 * 60)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
