@@ -123,6 +123,11 @@ function StoryContent(props: Props & React.DetailedHTMLProps<React.HTMLAttribute
         </div>
 
         <HtmlPage html={content?.html} image={image} />
+        {/* <button className='w-full h-60 border flex flex-col justify-center items-center'>
+          <button className='uppercase tracking-wider bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white py-2 px-5 rounded-md'>Load details</button>
+        </button> */}
+        
+
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678"
             crossOrigin="anonymous"></script>
         <ins className="adsbygoogle"
