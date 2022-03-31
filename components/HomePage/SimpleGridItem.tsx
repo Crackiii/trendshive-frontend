@@ -26,7 +26,7 @@ function SimpleGridItem({item}: Props) {
             <a href="#" className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">{item.titles[0]}</a> 
             <p className="mt-2 dark:text-gray-300 text-slate-400 font-light text-sm ">{item.descriptions[0]?.slice(0, 150) || ''}</p>
             <div className='mt-2'>
-              <Tags tags={tags.slice(0, 5)} />  
+              <Tags tags={tags?.slice(0, 5) || []} />  
             </div>
           </div> 
           <div className="flex items-center justify-between mt-4">

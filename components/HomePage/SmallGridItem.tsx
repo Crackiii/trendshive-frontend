@@ -32,7 +32,7 @@ function SmallGridItem({item}: Props) {
             {
               item.category || item.keywords.split(',')[0].trim().length > 0 &&
               <span className='w-fit text-xs items-center leading-sm font-light'>
-                <Tags tags={[item.category ?? item.keywords.split(',')[0]]} /> 
+                <Tags tags={[item.category || item.keywords.split(',')[0] || []]} /> 
               </span>
             }
           </div>

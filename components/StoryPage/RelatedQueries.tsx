@@ -16,7 +16,7 @@ function RelatedQueries(props: Props & React.DetailedHTMLProps<React.HTMLAttribu
         <span className='text-white bg-slate-800 py-1 px-5 inline-block uppercase tracking-wider'>People also search for</span>
       </div>
       <div className='overflow-hidden overflow-y-auto mt-5'>
-        <Tags tags={tags}/>
+        <Tags tags={tags || []}/>
       </div>
     </div>
   )
