@@ -1,5 +1,4 @@
 import React from 'react'
-import { getFaviconByUrl } from '../HomePage/SmallGridItem'
 import ListItem from './ListItem'
 
 interface Props {

@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import * as dates from 'date-fns'
-import { getHost } from '../HomePage/GridItem'
-import { getFaviconByUrl } from '../HomePage/SmallGridItem'
 import Tags from '../shared/Tags'
 import Link from 'next/link'
+import { getFaviconByUrl, getHost } from '../../utils/common'
 
 interface Props {
   item: any
@@ -12,13 +11,17 @@ interface Props {
 
 function MoreInterestingItem({item}: Props) {
 
+  console.log({item})
+
   const source = getHost(item.url)
   const favicon = getFaviconByUrl(item.url)
   const image = item.images[0] || favicon
-  const keywords = item.keywords?.trim().length ? item.keywords?.split(',') : []
+  const keywords = item.keywords.filter(Boolean) || []
   const tags = keywords.length ? keywords : item.related_queries
-  const title = item.titles[0]
+  const title = item.title
   const description = item.descriptions[0]
+  const time = dates.formatDistanceToNow(new Date(item?.time || Date.now()))
+  const category = item.category
 
   return (
     <Link href={`${item.id}`}>
@@ -30,9 +33,9 @@ function MoreInterestingItem({item}: Props) {
             </div>
             <div className='flex flex-col justify-start'>
               <div className='flex justify-end'>
-                <span className='text-xs bg-slate-700 hover:bg-slate-800 text-white inline-block min-w-fit py-1 px-2 text-center rounded-md'>{item.category}</span>
+                <span className='text-xs bg-slate-700 hover:bg-slate-800 text-white inline-block min-w-fit py-1 px-2 text-center rounded-md'>{category}</span>
               </div>
-              <div className='text-xs text-slate-300 text-right mt-5'>{dates.formatDistanceToNow(new Date(item?.date || Date.now()))}</div>
+              <div className='text-xs text-slate-300 text-right mt-5'>{time}</div>
               <div className='text-sm text-blue-400 text-right mt-3'>{source}</div>
             </div>
           </div>

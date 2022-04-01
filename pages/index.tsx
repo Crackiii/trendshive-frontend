@@ -71,7 +71,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const limit = 42;
   const offset = uniqid && Number(seen) && (Number(seen) * 42);
 
-  const res = await fetch(`http://localhost:8000/stories?offset=${offset}&limit=${limit}`, {method: 'GET'}).then(res => res.json())
+  const res = await fetch(`https://trendscads-backend.herokuapp.com/stories?offset=${offset}&limit=${limit}`, {method: 'GET'}).then(res => res.json())
 
   return {
     props: {

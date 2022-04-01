@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react'
-import { gridItems } from '../HomePage/data'
-import Tags from '../shared/Tags'
 import MoreInterestingItem from './MoreInterestingItem'
 
 interface Props {

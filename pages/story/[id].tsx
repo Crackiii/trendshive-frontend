@@ -2,16 +2,17 @@ import React from 'react'
 import TopBar from '../../components/shared/TopBar'
 import HomeFooter from '../../components/shared/HomeFooter'
 import StoryContent from '../../components/StoryPage/StoryContent'
-import { story } from '../../components/StoryPage/data'
 import RelatedArticles from '../../components/StoryPage/RelatedArticles'
 import MoreInteresting from '../../components/StoryPage/MoreInteresting'
 import TrendingHeading from '../../components/shared/TrendingHeading'
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
 
-function Story({res}: {res: any}) {
+function Story({story}: {story: any}) {
 
-  const metas = res.websiteData?.social
+  console.log({story})
+
+  const metas = story?.social
 
   const facebookMappedMetas = metas?.[0]?.map((meta: any) => {
     if(/url/gmi.test(meta.property)) {
@@ -36,7 +37,7 @@ function Story({res}: {res: any}) {
   return (
     <>
       <Head>
-        <title>{res.websiteData?.titles?.[0]}</title>
+        <title>{story?.titles?.[0]}</title>
         {
           facebookMappedMetas.map((m: any, index: number) => (
             <meta property={m.property} content={m.content} key={index} />
@@ -50,12 +51,11 @@ function Story({res}: {res: any}) {
       </Head>
       <TopBar />
       <div className='grid grid-cols-1 gap-4 grid-rows-1 md:grid-cols-5 md:p-10'>
-        <StoryContent className='col-start-1 col-span-5 md:col-span-3 overflow-hidden' content={{...res.websiteData, category: res.websiteData.category_short, country:res.websiteData.country}} related_queries={res.websiteData.related_queries} related_searches={res.websiteData.links} />
-        <RelatedArticles articles={res.websiteData.related_articles || []} className={'col-start-1 col-span-5 md:col-span-2 xl:col-span-1 md:col-start-4 '} />
-      </div>
+        <StoryContent className='col-start-1 col-span-5 md:col-span-3 overflow-hidden' story={story} />
+        <RelatedArticles articles={story.related_articles || []} className={'col-start-1 col-span-5 md:col-span-2 xl:col-span-1 md:col-start-4 '} />      </div>
       <div className='md:p-10'>
         <TrendingHeading title='More popular topics' />
-        <MoreInteresting allStories={res.websiteData.allStories} />
+        <MoreInteresting allStories={story.allStories} /> 
       </div>
       <HomeFooter  />
     </>
@@ -73,7 +73,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return {
     props: {
-      res
+      story: res.websiteData
     }
   }
 
