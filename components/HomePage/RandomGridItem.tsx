@@ -14,7 +14,7 @@ function RandomGridItem({item}: Props) {
 
   const favicon = getFaviconByUrl(item.url || item.source) || validURL(item.favicon) && item.favicon
   const keywords = item.keywords.trim().length ? item.keywords.split(',').slice(0,5) : item.queries?.slice(0,5) || []
-  const image = item.images.find(validURL) || favicon
+  const image = item?.images?.find(validURL) || favicon
   const source = getHost(item.url || item.source)
   const description = item.descriptions.find((d: string) => !validURL(d)) || item.short_description
   const correctDescription = (description !== 'undefined' || description !== undefined ? description : '').trim()
