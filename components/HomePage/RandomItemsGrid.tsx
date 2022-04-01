@@ -1,11 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-import Link from 'next/link'
 import React from 'react'
-import Tags from '../shared/Tags'
-import { gridItems } from './data'
-import { validURL } from './HomePage'
-import * as dates from 'date-fns'
-import { getHost } from './GridItem'
 import RandomGridItem from './RandomGridItem'
 
 interface Props {

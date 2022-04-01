@@ -2,8 +2,6 @@ import React from 'react'
 import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import GridItem from './GridItem';
-import { gridItems } from './data';
-
 
 interface Props {
   gridStories?: any[]

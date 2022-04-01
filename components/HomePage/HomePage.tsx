@@ -17,17 +17,18 @@ export const validURL = (str: string) =>  {
 function HomePage(props: Props) {
 
   const storiesWithImages = props?.stories?.filter(story => {
-    if(story.images.length > 0) {
+    if(story.images?.length > 0) {
       const isValidUrl = story.images.find(validURL)
+      const validDescription = story.descriptions.find((d: string) => d)
      
-      if(isValidUrl) {
+      if(isValidUrl && validDescription) {
         story.images = [isValidUrl]
         return story
       }
     }
   }).slice(0,8)
   const storiesWithImagesIds = storiesWithImages.map(s => s.id)
-  const restOfStories = props?.stories?.filter(story => !storiesWithImagesIds.includes(story.id))
+  const stories = props?.stories?.filter(story => !storiesWithImagesIds.includes(story.id))
 
   return (
     <div>
@@ -45,7 +46,7 @@ function HomePage(props: Props) {
       <TopBar />
       <TopGrid gridStories={storiesWithImages} />
       <TrendingHeading title='Trending now' />
-      <SmallGrid smallGridStories={restOfStories.splice(0, 12)} />
+      <SmallGrid smallGridStories={stories.splice(0, 12)} />
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678"
         crossOrigin="anonymous"></script>
         <ins className="adsbygoogle"
@@ -57,7 +58,7 @@ function HomePage(props: Props) {
             (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
       <TrendingHeading title={`Today's trends`} />
-      <SimpleGrid simpleGridStories={restOfStories.splice(0, 8)} />
+      <SimpleGrid simpleGridStories={stories.splice(0, 8)} />
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678"
         crossOrigin="anonymous"></script>
         <ins className="adsbygoogle"
@@ -69,7 +70,7 @@ function HomePage(props: Props) {
             (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
       <TrendingHeading title={`Latest Updates`} />
-      <RandomItemsGrid randomItemsGrid={restOfStories.splice(0, 12)} />
+      <RandomItemsGrid randomItemsGrid={stories.splice(0, 12)} />
       <HomeFooter />
     </div>
   )

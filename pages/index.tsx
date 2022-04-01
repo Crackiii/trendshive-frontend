@@ -8,7 +8,7 @@ import CookiePopup from '../components/CookiePopup';
 
 
 
-const Home = (props: any) => {
+const Home = ({stories, cookies}: any) => {
 
   const createCookie = (name: string, value: string, minutes: number) =>  {
     if (minutes) {
@@ -22,8 +22,8 @@ const Home = (props: any) => {
   }
 
   useEffect(() => {
-    createCookie('uniqid', props.cookies.uniqid, 60 * 6)
-    createCookie('seen', props.cookies.seen, 60 * 6)
+    createCookie('uniqid', cookies.uniqid, 60 * 6)
+    createCookie('seen', cookies.seen, 60 * 6)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -51,7 +51,7 @@ const Home = (props: any) => {
       <link rel="icon" type="image/x-icon" href="/logo.ico" />
     </Head>
     <CookiePopup />
-    <HomePage stories={props.res} />
+    <HomePage stories={stories} />
   </>
   )
    
@@ -75,7 +75,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return {
     props: {
-      res: res.results,
+      stories: res.results,
       geo: 'DE',
       cookies: {
         uniqid,
