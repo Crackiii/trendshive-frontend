@@ -7,6 +7,7 @@ import MoreInteresting from '../../components/StoryPage/MoreInteresting'
 import TrendingHeading from '../../components/shared/TrendingHeading'
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
+import extractor from 'keyword-extractor'
 
 function Story({story, videos, news}: {story: any, videos: any, news: any}) {
 
@@ -53,11 +54,15 @@ function Story({story, videos, news}: {story: any, videos: any, news: any}) {
       <div className='grid grid-cols-1 gap-4 grid-rows-1 md:grid-cols-5 md:p-10'>
         <StoryContent className='col-start-1 col-span-5 md:col-span-3 overflow-hidden' story={story} />
         <div className={'col-start-1 col-span-5 md:col-span-2 xl:col-span-1 md:col-start-4 '}>
-          <RelatedArticles articles={story.related_articles || []}  />
-
-          <RelatedArticles className='mt-10' articles={news || []}  />
-
-          <RelatedArticles className='mt-10' articles={videos}  />
+          {
+            story.related_articles.length > 0 && <RelatedArticles articles={story.related_articles || []}  />
+          }
+          {
+            news.length > 0 && <RelatedArticles className='mt-10' articles={news || []}  />
+          }
+          {
+            videos.length > 0 && <RelatedArticles className='mt-10' articles={videos || []}  />
+          }
         </div>
       </div>
       <div className='md:p-10'>
@@ -79,7 +84,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const res = await fetch(`https://trendscads-backend.herokuapp.com/story/${id}`, {method: 'GET'}).then(res => res.json())
 
   const title = res.websiteData?.title
-  const encodedtitle = `${title}`
+  const encodedtitle = `${extractor.extract(title, {remove_digits: true, return_changed_case: true, remove_duplicates: true}).join(" ")}`;
 
   const videos = await fetch(`https://trendscads-backend.herokuapp.com/search/videos?searchQuery=${encodedtitle}`, {method: 'GET'})
                   .then(res => res.json()).catch(e => [])

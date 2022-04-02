@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { getFaviconByUrl, getHost, getYoutubeEmbedUrl } from '../../utils/common'
-import * as dates from 'date-fns'
 import { useTime } from '../../utils/hooks'
 import YoutubeModal from '../shared/YoutubeModal'
 interface Props {
