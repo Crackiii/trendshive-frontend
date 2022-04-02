@@ -64,8 +64,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { query } = ctx;
 
   const res = await fetch(`https://trendscads-backend.herokuapp.com/search?searchQuery=${query.searchQuery}&limit=${query.limit}&offset=${query.offset}`, {method: 'GET'}).then(res => res.json())
-  const videos = await fetch(`http://localhost:8000/search/videos?searchQuery=${query.searchQuery}`, {method: 'GET'}).then(res => res.json())
-  const news = await fetch(`http://localhost:8000/search/news?searchQuery=${query.searchQuery}`, {method: 'GET'}).then(res => res.json())
+  const videos = await fetch(`https://trendscads-backend.herokuapp.com/search/videos?searchQuery=${query.searchQuery}`, {method: 'GET'}).then(res => res.json())
+  const news = await fetch(`https://trendscads-backend.herokuapp.com/search/news?searchQuery=${query.searchQuery}`, {method: 'GET'}).then(res => res.json())
 
 
   return {
