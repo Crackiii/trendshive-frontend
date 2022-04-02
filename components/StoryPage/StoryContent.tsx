@@ -6,6 +6,7 @@ import RelatedSearches from './RelatedSearches'
 import  HtmlPage from './HtmlPage'
 import * as dates from 'date-fns'
 import { getFaviconByUrl, getHost, validURL } from '../../utils/common'
+import { useImage, useTime } from '../../utils/hooks'
 interface Props {
   story: any
 }
@@ -21,11 +22,10 @@ function StoryContent(props: Props & React.DetailedHTMLProps<React.HTMLAttribute
   const source = getHost(story?.url)
   const url = story?.url
   const favicon = getFaviconByUrl(story?.url) || validURL(story?.favicon)  && story?.url || '/fallback.png'
-  const image = story?.images?.filter(validURL)?.[0] || favicon
-  const time = dates.formatDistanceToNow(new Date(story?.time))
+  const {image} = useImage(story?.images?.find(validURL) || favicon) 
+  const time = useTime(story.relative_time || story?.date || story?.time || story?.published)
   const category = story.category
   const [video] = story.videos || []
-
 
   return (
     <div {...rest}>
@@ -83,7 +83,7 @@ function StoryContent(props: Props & React.DetailedHTMLProps<React.HTMLAttribute
 
         <div className='mt-5'>
           <div className='w-full flex justify-center'>
-            <img className='block' src={image} alt='image' onError={(ev) => ev.currentTarget.src = '/fallback.png'} />
+            <img className='block' src={image} alt='image' />
           </div>
         </div>
 

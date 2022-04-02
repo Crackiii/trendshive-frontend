@@ -5,6 +5,7 @@ import Tags from '../shared/Tags';
 import * as dates from 'date-fns'
 import { getHost, truncate } from '../../utils/common';
 import { validURL } from './HomePage';
+import { useTime } from '../../utils/hooks';
 
 interface Props {
   item: any
@@ -15,7 +16,7 @@ function SimpleGridItem({item}: Props) {
   const keywords = item.keywords.trim().length ? item.keywords.split(',') : null
   const tags = (keywords ?? item.queries).slice(0, 8);
   const source = truncate(getHost(item.source), 10, 8, 20)
-  const time = dates.formatDistanceToNow(new Date(item?.time)) || ''
+  const time = useTime(item.relative_time || item?.date || item?.time || item?.published || Date.now())
   const description = item.descriptions.find((d: string) => !validURL(d))?.slice(0, 150) || item.short_description
   const descriptionText = description !== undefined || description !== 'undefined' ? description : ''
   const title = item.title || '';
@@ -23,7 +24,8 @@ function SimpleGridItem({item}: Props) {
 
   return (
     <div className="mb-2 sm:mb-0 px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800 border">
-      <Link href={`/story/${item.id}`}>
+      <Link href={`/story/${item.id}`} passHref>
+        <span>
         <a className='flex flex-col justify-between'>
           <div className="flex items-center justify-between">
             <span className="text-sm font-light text-gray-600 dark:text-gray-400">{time}</span> 
@@ -43,6 +45,7 @@ function SimpleGridItem({item}: Props) {
             </div>
           </div>
         </a>
+        </span>
       </Link>
     </div>
   )

@@ -4,6 +4,8 @@ import * as dates from 'date-fns'
 import Tags from '../shared/Tags'
 import Link from 'next/link'
 import { getFaviconByUrl, getHost } from '../../utils/common'
+import { validURL } from '../HomePage/HomePage'
+import { useImage, useTime } from '../../utils/hooks'
 
 interface Props {
   item: any
@@ -13,21 +15,22 @@ function MoreInterestingItem({item}: Props) {
 
   const source = getHost(item.url)
   const favicon = getFaviconByUrl(item.url)
-  const image = item.images[0] || favicon
+  const {image} = useImage(item.images.find(validURL) || favicon)
   const keywords = item.keywords.filter(Boolean) || []
   const tags = keywords.length ? keywords : item.related_queries
   const title = item.title
   const description = item.descriptions[0]
-  const time = dates.formatDistanceToNow(new Date(item?.time || Date.now()))
+  const time = useTime(item.relative_time || item?.date || item?.time || item?.published)
   const category = item.category
 
   return (
-    <Link href={`${item.id}`}>
+    <Link href={`${item.id}`} passHref>
+      <span>
       <a>
         <div className="break-inside bg-white flex flex-col justify-start px-8 py-8 group cursor-pointer" style={{marginBottom: '1rem'}}>
           <div className='flex justify-between'>
             <div className=' w-28 h-28 overflow-hidden rounded-lg shadow-2xl'>
-              <img src={image || favicon || '/fallback.png'} alt='img' onError={(ev) => ev.currentTarget.src = favicon || '/fallback.png'} className=' object-cover min-h-full min-w-full' />
+              <img src={image} alt='img' className=' object-cover min-h-full min-w-full' />
             </div>
             <div className='flex flex-col justify-start'>
               <div className='flex justify-end'>
@@ -44,6 +47,7 @@ function MoreInterestingItem({item}: Props) {
           </div>
         </div>
       </a>
+      </span>
     </Link>
   )
 }

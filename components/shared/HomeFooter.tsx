@@ -5,11 +5,15 @@ function HomeFooter() {
   return (
     <div className='h-16 bg-slate-900 mt-16 text-white flex flex-row justify-center items-center'>
       <div>
-        <Link href='/privacy-policy'>
-          <a className='ml-3'>Privacy policy</a>
+        <Link href='/privacy-policy' passHref>
+          <span>
+            <a className='ml-3'>Privacy policy</a>
+          </span>
         </Link>
-        <Link href='/cookie-policy'>
-          <a className='ml-3'>Cookie policy</a>
+        <Link href='/cookie-policy' passHref>
+          <span>
+            <a className='ml-3'>Cookie policy</a>
+          </span>
         </Link>
       </div>
       <div className='ml-3'>

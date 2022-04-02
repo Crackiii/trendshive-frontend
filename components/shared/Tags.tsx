@@ -28,12 +28,14 @@ function Tags({tags, show}: Props) {
     <>
       {
         tags?.slice(0, show ?? tags.length)?.map((tag, index) => (
-          <Link key={index} href={`/search?searchQuery=${tag.toLowerCase()}&offset=0&limit=20`}>
+          <Link key={index} href={`/search?searchQuery=${tag.toLowerCase()}&offset=0&limit=20`} passHref>
+            <span>
             <a className='inline-block  last:mr-0 mr-1 mb-1'>
               <span  className={`text-xs font-semibol py-1 px-2 rounde lowercase ${colors[Math.floor(Math.random() * colors.length)]}`}>
                 {tag}
               </span>
             </a>
+            </span>
           </Link>
 
         ))

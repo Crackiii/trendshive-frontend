@@ -22,8 +22,8 @@ const Home = ({stories, cookies}: any) => {
   }
 
   useEffect(() => {
-    createCookie('uniqid', cookies.uniqid, 60 * 6)
-    createCookie('seen', cookies.seen, 60 * 6)
+    createCookie('uniqid', cookies.uniqid, 60 * 24)
+    createCookie('seen', cookies.seen, 60 * 24)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

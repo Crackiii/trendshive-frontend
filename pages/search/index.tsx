@@ -5,10 +5,10 @@ import HomeFooter from '../../components/shared/HomeFooter'
 import { GetServerSideProps } from 'next'
 import RandomGridItem from '../../components/HomePage/RandomGridItem'
 import axios from 'axios'
+import YoutubeModal from '../../components/shared/YoutubeModal'
 
 function Search({results, videos, news}: any) {
   const params = useRouter()
-
   const mixedData = [...results.results, ...videos, ...news]
 
   //sort mixedData based on date and time

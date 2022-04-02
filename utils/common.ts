@@ -25,3 +25,26 @@ export const truncate = (text: string, startChars: number, endChars: number, max
   }
   return text;
 }
+
+
+export const getYoutubeVideoId = (url: string) => {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+
+  if (match && match[2].length === 11) {
+    return match[2];
+  } else {
+    return '';
+  }
+}
+
+export const generateYoutubeEmebedUrl = (videoId: string) => {
+  return `https://www.youtube.com/embed/${videoId}`
+}
+
+export const getYoutubeEmbedUrl = (url: string) => {
+  const videoId = getYoutubeVideoId(url)
+  const embedUrl = generateYoutubeEmebedUrl(videoId)
+
+  return embedUrl
+}
