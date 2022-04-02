@@ -10,8 +10,6 @@ import { GetServerSideProps } from 'next'
 
 function Story({story}: {story: any}) {
 
-  console.log({story})
-
   const metas = story?.social
 
   const facebookMappedMetas = metas?.[0]?.map((meta: any) => {

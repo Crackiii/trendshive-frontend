@@ -11,8 +11,6 @@ interface Props {
 
 function MoreInterestingItem({item}: Props) {
 
-  console.log({item})
-
   const source = getHost(item.url)
   const favicon = getFaviconByUrl(item.url)
   const image = item.images[0] || favicon

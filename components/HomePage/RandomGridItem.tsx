@@ -13,26 +13,32 @@ interface Props {
 function RandomGridItem({item}: Props) {
 
   const favicon = getFaviconByUrl(item.url || item.source) || validURL(item.favicon) && item.favicon
-  const keywords = item.keywords.trim().length ? item.keywords.split(',').slice(0,5) : item.queries?.slice(0,5) || []
-  const image = item?.images?.find(validURL) || favicon
-  const source = getHost(item.url || item.source)
-  const description = item.descriptions.find((d: string) => !validURL(d)) || item.short_description
-  const correctDescription = (description !== 'undefined' || description !== undefined ? description : '').trim()
-  const date = dates.formatDistanceToNow(new Date(item?.date || item?.time))
+  const keywords = item.keywords?.trim().length ? item.keywords.split(',').slice(0,5) : item.queries?.slice(0,5) || []
+  const image = item.image || item.images?.medium || item?.images?.find(validURL) || favicon
+  const source = !validURL(item.source) ? item.source : getHost(item.url || item.source)
+  const description = (item.description)?.slice(0, 100) || item.descriptions?.find((d: string) => !validURL(d)) || item.short_description || item.excerpt
+  const correctDescription = (description !== 'undefined' || description !== undefined ? description : '')?.trim()
+  const date = item.relative_time || dates.formatDistanceToNow(new Date(item?.date || item?.time || item?.published || Date.now()))
   const category = item.category || ''
   const title = item.title || ''
+  const isVideo = item.embed_html || item.embed_url
+  const isExternalLink = !item.id
+  const externalUrl = item.embed_url || item.url
   
   return (
     <div className="break-inside bg-white flex flex-col justify-star px-8 py-8 group cursor-pointer" style={{marginBottom: '1rem'}}>
-      <Link href={`/story/${item.id}`}>
-        <a>
+      <Link href={isExternalLink ? externalUrl || '' :`/story/${item.id}` || ''}>
+        <a target={'_blank'}>
           <div className='flex justify-between'>
             <div className=' w-28 h-28 overflow-hidden rounded-lg shadow-2xl'>
-              <img src={favicon || image} onError={(ev) => ev.currentTarget.src = image || favicon} alt='img' className=' object-cover min-h-full min-w-full' />
+              <img src={image || favicon} onError={(ev) => ev.currentTarget.src = image || favicon} alt='img' className=' object-cover min-h-full min-w-full' />
             </div>
             <div className='flex flex-col justify-start'>
               <div className='flex justify-end'>
-                <span className='text-xs bg-slate-700 hover:bg-slate-800 text-white inline-block min-w-fit py-1 px-2 text-center rounded-md'>{category}</span>
+                {
+                  Boolean(category) &&
+                  <span className='text-xs bg-slate-700 hover:bg-slate-800 text-white inline-block min-w-fit py-1 px-2 text-center rounded-md'>{category}</span>
+                }
               </div>
               <div className='text-xs text-slate-300 text-right mt-5'>{date} ago</div>
               <div className='text-sm text-blue-400 text-right mt-3'>{source}</div>
