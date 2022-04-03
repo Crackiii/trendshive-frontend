@@ -13,9 +13,9 @@ function RelatedArticles(props: Props & React.DetailedHTMLProps<React.HTMLAttrib
     <div {...rest}>
       <div className=' col-start-4 col-span-1 h-auto' >
         <div className='block'>
-          <span className='text-white bg-slate-800 py-1 px-5 block uppercase text-center tracking-wider'>Related News</span>
+          <span className='text-white bg-slate-800 py-1 px-5 block uppercase text-center tracking-wider'>Related Articles</span>
         </div>
-        <div className='grid overflow-hidden gap-1 overflow-y-auto mt-5' style={{maxHeight: '45rem'}}>
+        <div className='grid overflow-hidden gap-1 overflow-y-auto mt-1' style={{maxHeight: '45rem'}}>
           {
             articles.map((item, index) => (
               <ListItem key={index} item={item} />

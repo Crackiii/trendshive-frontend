@@ -10,8 +10,14 @@ import SearchItem from './SearchItem'
 
 const useSearch = (query: string) => {
   const {isLoading, data} = useQuery(['SEARCH_RESULTS', query], () => {
+    if(!Boolean(query?.length) && query !== '') return []
+
     return fetch(`https://trendscads-backend.herokuapp.com/search?searchQuery=${query}&limit=20&offset=0`, {method: 'GET'}).then(res => res.json())
-  }, {refetchOnWindowFocus: false, enabled: Boolean(query?.length), retry: false})
+  }, {
+    refetchOnWindowFocus: false, 
+    enabled: Boolean(query?.length) && query !== '', 
+    retry: false
+  })
 
   return {isLoading, data}
 }

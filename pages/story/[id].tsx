@@ -13,8 +13,6 @@ function Story({story, videos, news}: {story: any, videos: any, news: any}) {
 
   const metas = story?.social
 
-  console.log(story.title)
-
   const facebookMappedMetas = metas?.[0]?.map((meta: any) => {
     if(/url/gmi.test(meta.property)) {
       meta['content'] = `https://trendscads.com`
@@ -53,23 +51,21 @@ function Story({story, videos, news}: {story: any, videos: any, news: any}) {
       </Head>
       <TopBar />
       <div className='grid grid-cols-1 gap-4 grid-rows-1 md:grid-cols-5 md:p-10'>
-        <StoryContent className='col-start-1 col-span-5 md:col-span-3 overflow-hidden' story={story} />
+        <StoryContent className='col-start-1 col-span-5 md:col-span-3 overflow-hidden' story={story} /> 
         <div className={'col-start-1 col-span-5 md:col-span-2 xl:col-span-1 md:col-start-4 '}>
-          {
-            story.related_articles.length > 0 && <RelatedArticles articles={story.related_articles || []}  />
-          }
-          {
-            news.length > 0 && <RelatedArticles className='mt-10' articles={news || []}  />
-          }
-          {
-            videos.length > 0 && <RelatedArticles className='mt-10' articles={videos || []}  />
-          }
+          <RelatedArticles articles={news || []}  />
+          <RelatedArticles className='mt-10' articles={videos || []}  />
+          <RelatedArticles className='mt-10' articles={story.related_articles || []}  />
         </div>
       </div>
-      <div className='md:p-10'>
-        <TrendingHeading title='More popular topics' />
-        <MoreInteresting allStories={story.allStories} /> 
-      </div>
+      {
+        story?.allStories?.length && 
+        <div className='md:p-10'>
+          <TrendingHeading title='More popular topics' />
+          <MoreInteresting allStories={story?.allStories || []} /> 
+        </div>
+      }
+      
       <HomeFooter  />
     </>
   )
@@ -84,8 +80,15 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const id = params?.id
   const res = await fetch(`https://trendscads-backend.herokuapp.com/story/${id}`, {method: 'GET'}).then(res => res.json())
 
-  const title = res.websiteData?.title
-  const encodedtitle = `${extractor.extract(title, {remove_digits: true, return_changed_case: true, remove_duplicates: true}).join(" ")}`;
+  if(res.error) {
+    return {
+      notFound: true
+    }
+  }
+    
+  const title = res?.websiteData?.title || ''
+  const splittedTitle = extractor.extract(title, {remove_digits: true, return_changed_case: true, remove_duplicates: true})
+  const encodedtitle = splittedTitle.length > 5 ? splittedTitle.slice(0, 5)  : splittedTitle;
 
   const videos = await fetch(`https://trendscads-backend.herokuapp.com/search/videos?searchQuery=${encodedtitle}`, {method: 'GET'})
                   .then(res => res.json()).catch(e => [])
@@ -94,9 +97,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return {
     props: {
-      story: res.websiteData,
-      videos,
-      news
+      story: res?.websiteData,
+      videos: videos,
+      news: news
     }
   }
 
