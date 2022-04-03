@@ -27,7 +27,11 @@ function Tags({tags, show}: Props) {
   return (
     <>
       {
-        tags?.slice(0, show ?? tags.length)?.map((tag, index) => (
+        tags
+        .slice(0, show ?? tags.length) // show all tags if show is not defined
+        .filter((t: string) => t.trim().length > 3) // filter out short tags
+        .filter((t: string) => isNaN(Number(t))) // filter out numbers
+        .map((tag, index) => (
           <Link key={index} href={`/search?searchQuery=${tag.toLowerCase()}&offset=0&limit=20`} passHref>
             <span className='inline-block last:mr-0 mr-1 mb-1 cursor-pointer'>
               <a>
@@ -37,7 +41,6 @@ function Tags({tags, show}: Props) {
               </a>
             </span>
           </Link>
-
         ))
       }
   </>

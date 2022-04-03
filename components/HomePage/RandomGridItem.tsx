@@ -55,7 +55,7 @@ function RandomGridItem({item}: Props) {
             </div>
           </div>
           <div className='text-xl font-bold group-hover:text-blue-400 group-hover:underline mt-5'>{title}</div>
-          <div className='text-base font-light text-slate-500 mt-5'>{correctDescription}</div>
+          <div className='text-base font-light text-slate-500 mt-5 overflow-hidden'>{correctDescription}</div>
           <div className='mt-5'>
             <Tags tags={keywords} />
           </div>
