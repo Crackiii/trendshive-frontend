@@ -53,9 +53,9 @@ function Story({story, videos, news}: {story: any, videos: any, news: any}) {
       <div className='grid grid-cols-1 gap-4 grid-rows-1 md:grid-cols-5 md:p-10'>
         <StoryContent className='col-start-1 col-span-5 md:col-span-3 overflow-hidden' story={story} /> 
         <div className={'col-start-1 col-span-5 md:col-span-2 xl:col-span-1 md:col-start-4 '}>
-          <RelatedArticles articles={news || []}  />
-          <RelatedArticles className='mt-10' articles={videos || []}  />
-          <RelatedArticles className='mt-10' articles={story.related_articles || []}  />
+          {news.length > 0 && <RelatedArticles articles={news || []} title={'Related News'} /> }
+          {videos.length > 0 && <RelatedArticles className='mt-10' title={'Related Videos'} articles={videos || []}  /> }
+          {story.related_articles.length > 0 && <RelatedArticles className='mt-10' title={'Related Articles'} articles={story.related_articles || []}  /> }
         </div>
       </div>
       {

@@ -8,7 +8,7 @@ import Head from 'next/head'
 
 function Search({results, videos, news}: any) {
   const params = useRouter()
-  const mixedData = [...results.results, ...videos, ...news]
+  const mixedData = [...results, ...videos, ...news]
 
   //sort mixedData based on date and time
   mixedData.sort((a: any, b: any) => {
@@ -69,11 +69,10 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const res = await fetch(`https://trendscads-backend.herokuapp.com/search?searchQuery=${query.searchQuery}&limit=${query.limit}&offset=${query.offset}`, {method: 'GET'}).then(res => res.json())
   const videos = await fetch(`https://trendscads-backend.herokuapp.com/search/videos?searchQuery=${query.searchQuery}`, {method: 'GET'}).then(res => res.json())
   const news = await fetch(`https://trendscads-backend.herokuapp.com/search/news?searchQuery=${query.searchQuery}`, {method: 'GET'}).then(res => res.json())
-
-  console.log({videos, news})
+  console.log({FUCK: res})
   return {
     props: {
-      results: res,
+      results: res?.error ? [] : res.results,
       videos: videos.error ? [] : videos,
       news: news.error ? [] : news
     }
