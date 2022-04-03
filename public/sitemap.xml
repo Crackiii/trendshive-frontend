@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.trendscads.com</loc>
+    <lastmod>2022-04-03T14:08:49.381Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/search</loc>
+    <lastmod>2022-04-03T11:08:49.382Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/story</loc>
+    <lastmod>2022-04-03T12:08:49.382Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/privacy-policy</loc>
+    <lastmod>2022-02-03T16:08:49.382Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/cookie-policy</loc>
+    <lastmod>2022-01-03T16:08:49.382Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

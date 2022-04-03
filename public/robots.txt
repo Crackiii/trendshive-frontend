@@ -6,6 +6,8 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://www.trendscads.com/sitemap.xml
+
 User-agent: Applebot
 Allow: /
 
