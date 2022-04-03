@@ -48,7 +48,7 @@ const Home = ({stories, cookies}: any) => {
       <meta name="twitter:image" content="/logo.jpeg" />
       <meta name="twitter:site" content="@Trendscads" />
       <meta name="twitter:creator" content="@Trendscads" />
-      <link rel="icon" type="image/x-icon" href="/logo.ico" />
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
     <CookiePopup />
     <HomePage stories={stories} />

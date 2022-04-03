@@ -4,8 +4,7 @@ import TopBar from '../../components/shared/TopBar'
 import HomeFooter from '../../components/shared/HomeFooter'
 import { GetServerSideProps } from 'next'
 import RandomGridItem from '../../components/HomePage/RandomGridItem'
-import axios from 'axios'
-import YoutubeModal from '../../components/shared/YoutubeModal'
+import Head from 'next/head'
 
 function Search({results, videos, news}: any) {
   const params = useRouter()
@@ -21,6 +20,10 @@ function Search({results, videos, news}: any) {
 
   return (
     <>
+      <Head>
+        <title>{`${params.query['searchQuery']}`} - trendscads.com</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      </Head>
       <TopBar />
         <div className='my-10 mx-10 uppercase'>Showing results for: <b className='font-bolder ml-3 text-xl'>{params?.query['searchQuery']}</b></div>
         <div className="md:masonry-2-col lg:masonry-3-col xl:masonry-4-col box-border mx-auto before:box-inherit after:box-inherit">

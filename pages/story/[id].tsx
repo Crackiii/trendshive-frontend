@@ -49,6 +49,7 @@ function Story({story, videos, news}: {story: any, videos: any, news: any}) {
             <meta property={m.property} content={m.content} key={index} />
           ))
         }
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <TopBar />
       <div className='grid grid-cols-1 gap-4 grid-rows-1 md:grid-cols-5 md:p-10'>
