@@ -55,7 +55,7 @@ function Story({story, videos, news}: {story: any, videos: any, news: any}) {
         <div className={'col-start-1 col-span-5 md:col-span-2 xl:col-span-1 md:col-start-4 '}>
           {news.length > 0 && <RelatedArticles articles={news || []} title={'Related News'} /> }
           {videos.length > 0 && <RelatedArticles className='mt-10' title={'Related Videos'} articles={videos || []}  /> }
-          {story.related_articles.length > 0 && <RelatedArticles className='mt-10' title={'Related Articles'} articles={story.related_articles || []}  /> }
+          {story.related_articles.length > 0 && <RelatedArticles className='mt-10' title={'Interests'} articles={story.related_articles || []}  /> }
         </div>
       </div>
       {
