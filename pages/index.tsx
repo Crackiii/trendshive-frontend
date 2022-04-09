@@ -1,31 +1,46 @@
 import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import HomePage, { validURL } from '../components/HomePage/HomePage'
+import HomePage from '../components/HomePage/HomePage'
 import { v4 as uuidv4 } from 'uuid';
-import { useEffect } from 'react';
-import Script from 'next/script';
 import CookiePopup from '../components/CookiePopup';
+import NewPage from '../components/NewPage';
+import axios from 'axios';
+import { useState } from 'react';
+import TopBar from '../components/shared/TopBar';
+import TrendingHeading from '../components/shared/TrendingHeading';
+import HomeFooter from '../components/shared/HomeFooter';
+import { useQuery } from 'react-query';
+import YoutubeGrid from '../components/New/YoutubeGrid';
+import SimpleGrid from '../components/New/SimpleGrid';
+import SmallGrid from '../components/New/SmallGrid';
+import RandomItemsGrid from '../components/New/RandomItemsGrid';
 
+const useYoutubeVideos = () => {
+  const {isLoading, data: videos} = useQuery(['YOUTUBE'], () => {
+    //axios.get('https://trendscads-backend.herokuapp.com/home/youtube').then(res => res.data)
+    return []
+  }, {
+    cacheTime: 1000 * 60 * 60 * 2,
+    refetchInterval: 1000 * 60 * 60 * 2,
+    staleTime: 1000 * 60 * 60 * 2,
+    refetchOnWindowFocus: false,
+    refetchOnMount: true,
+    refetchIntervalInBackground: true,
+  })
 
+  return {isLoading, videos}
+}
 
-const Home = ({stories, cookies}: any) => {
+const Home = ({ realtime, daily }: { realtime: any, daily: any, youtube: any }) => {
 
-  const createCookie = (name: string, value: string, minutes: number) =>  {
-    if (minutes) {
-        var date = new Date();
-        date.setTime(date.getTime()+(minutes*60*1000));
-        var expires = "; expires="+date.toUTCString();
-    } else {
-        var expires = "";
-    }
-    document.cookie = `${name}=${value}; expires=${expires}; path=/; Secure`;
-  }
+  const [realtimeStories] = useState(realtime)
+  const [dailyStories] = useState(daily)
 
-  useEffect(() => {
-    createCookie('uniqid', cookies.uniqid, 60 * 24)
-    createCookie('seen', cookies.seen, 60 * 24)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  const {isLoading, videos} =  useYoutubeVideos()
+
+  const realtimeArticles = realtime.filter((r: any) => r)
+  .map((r: any) => r.articles)
+  .flatMap((r: any) => r)
 
   return (
   <>
@@ -51,7 +66,18 @@ const Home = ({stories, cookies}: any) => {
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
     <CookiePopup />
-    <HomePage stories={stories} />
+    
+    <div>
+      <TopBar />
+        <YoutubeGrid stories={realtimeArticles.splice(0, 40)} />
+        <TrendingHeading title='Trending now' />
+        <SimpleGrid stories={realtimeArticles.splice(0, 40)} />
+        <TrendingHeading title='Recent stories' />
+        <SmallGrid stories={realtimeArticles.splice(0, 40)} />
+        <TrendingHeading title='Keep reading' />
+        <RandomItemsGrid stories={realtimeArticles.splice(0, 40)} />
+      <HomeFooter />
+    </div>
   </>
   )
    
@@ -62,26 +88,18 @@ export default Home
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
+    const geo = await fetch("https://api.geoapify.com/v1/ipinfo?apiKey=589ae61973f3443faf4b13b2f1c57ae9")
+  .then(r => r.json())
 
-  // const geo = await fetch("https://api.geoapify.com/v1/ipinfo?apiKey=589ae61973f3443faf4b13b2f1c57ae9")
-  // .then(r => r.json())
-  const uniqid = ctx.req.cookies['uniqid'] || uuidv4()
-  const seen = ctx.req.cookies['seen'] || 0
-
-  const limit = 42;
-  const offset = uniqid && Number(seen) && (Number(seen) * 42);
-
-  const res = await fetch(`https://trendscads-backend.herokuapp.com/stories?offset=${offset}&limit=${limit}`, {method: 'GET'}).then(res => res.json())
+  const [realtime, daily] = await Promise.all([
+    axios(`https://trendscads-backend.herokuapp.com/home/google/realtime?country=${geo.country.iso_code}`).then(res => res.data),
+    axios(`https://trendscads-backend.herokuapp.com/home/google/daily?country=${geo.country.iso_code}`).then(res => res.data)
+  ]).catch(() => [])
 
   return {
     props: {
-      stories: res.results,
-      geo: 'DE',
-      cookies: {
-        uniqid,
-        seen: Number(seen) + 1,
-      },
+      realtime,
+      daily
     }
   }
-
 }
