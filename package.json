@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@trendyol-js/react-carousel": "^2.0.1",
     "axios": "^0.26.1",
     "date-fns": "^2.28.0",
     "keyword-extractor": "^0.0.21",
@@ -23,6 +24,7 @@
     "react-query": "^3.34.16",
     "react-slick": "^0.28.1",
     "react-use": "^17.3.2",
+    "twitter-api-v2": "^1.11.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

@@ -10,7 +10,7 @@ function YoutubeTile({item}: any) {
   return (
     <div className="bg-white cursor-pointer rounded-md overflow-hidden relative">
       <div className="block rounded-md w-full h-52 overflow-hidden">
-        <img src={image} alt={item.title} className={'w-full bg-cover'} />
+        <img src={image} alt={item.title} className={'object-cover min-h-full min-w-full'} />
       </div>
       <div className='text-base font-normal p-5'>{item.title}</div>
       <div className='text-base font-light text-slate-300 absolute top-2 right-2 '>

@@ -1,0 +1,7 @@
+.scrollbarhide::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scrollbarhide::-webkit-scrollbar {
+  background: red;
+}

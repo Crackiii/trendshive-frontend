@@ -35,7 +35,7 @@ function Item({image, background, favicon, title, description, time, sourceCorre
       <div className='col-start-1 col-span-5 mt-4 text-blue-400 font-light text-sm text-right lowercase'>
         <div className='flex justify-start w-full text-ellipsis whitespace-nowrap '>
           <div className='rounded-full overflow-hidden w-4 h-4 mr-2'>
-            <img className='bg-cover min-h-full min-w-full' src={favicon} alt={'source'} />
+            <img className='object-cover min-h-full min-w-full' src={favicon} alt={'source'} />
           </div>
           <span>{sourceCorrect}</span>
         </div>

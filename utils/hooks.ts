@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
 import * as dates from 'date-fns'
+import { getFaviconByUrl } from "./common";
 
 export const useImage = (url: string) => {
   const [image, setImage] = useState<string>('/fallback.png');
   const [error, setError] = useState<boolean>(false);
+
+  if(/gstatic/.test(url) && !/https/.test(url)) {
+
+    console.log({url})
+    url = 'https:' + url
+  }
 
   useEffect(() => {
     const fetchImage = async () => {

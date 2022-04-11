@@ -42,6 +42,8 @@ const Home = ({ realtime, daily }: { realtime: any, daily: any, youtube: any }) 
   .map((r: any) => r.articles)
   .flatMap((r: any) => r)
 
+  console.log({realtime, daily})
+
   return (
   <>
     <Head>

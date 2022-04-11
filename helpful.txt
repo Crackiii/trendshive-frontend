@@ -1,0 +1,2 @@
+Udemy api = https://www.udemy.com/api-2.0/search-courses/?q=python&src=sac&kw=python&skip_price=true
+Codeacademy api = https://www.codecademy.com/search?query=javascript%20&page=1
