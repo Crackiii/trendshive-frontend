@@ -1,5 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
+import { usePageContext } from './PageContext'
 
 type MenuItem = {
   label: string
@@ -35,7 +38,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     label: 'Science/Tech',
-    value: 'sci/tech',
+    value: 'technology',
     icon_30: '/icons/technology-30-60/30.png',
     icon_60: '/icons/technology-30-60/60.png'  
   },
@@ -98,20 +101,50 @@ export const menuItems: MenuItem[] = [
     value: 'live',
     icon_30: '/icons/live-30-60/30.png',
     icon_60: '/icons/live-30-60/60.png'  
+  },
+  {
+    label: 'Jobs',
+    value: 'jobs',
+    icon_30: '/icons/jobs-30-60/30.png',
+    icon_60: '/icons/jobs-30-60/60.png'  
+  },
+  {
+    label: 'Shopping',
+    value: 'shopping',
+    icon_30: '/icons/shopping-30-60/30.png',
+    icon_60: '/icons/shopping-30-60/60.png'  
   }
 ]
 
-function SideBar() {
+interface Props {}
+
+function SideBar(_: Props) {
+  const {toggleNavBar} = usePageContext()
+  const params = useRouter().query
 
   return (
-    <div className='bg-white py-3' style={{height: 'calc(100vh - 60px)', width: '240px'}}>
+    <div className=' py-3 ' style={{height: 'calc(100vh - 60px)', width: toggleNavBar ? '70px' : '240px'}}>
       {
-        menuItems.map((item, index) => (
-          <div key={index} className='w-full flex justify-start items-center h-10 px-6 cursor-pointer group hover:bg-slate-100'>
-            <img src={item.icon_30} className={'w-6 h-6 opacity-50 group-hover:opacity-100'} alt={item.label} />
-            <span className={'ml-6 text-sm text-slate-700 font-light'}>{item.label}</span>
-          </div>
-        ))
+        menuItems.map((item, index) => 
+          {
+            const isActive = params.category === item.value
+            return (
+              <Link key={index} href={`/categories/${item.value}`}>
+                <a>
+                  <div 
+                    className={`w-full flex justify-start items-center h-10 px-6 mb-2 rounded-lg cursor-pointer group ${isActive ? 'bg-white shadow-md shadow-slate-200' : 'shadow-none'} hover:bg-white hover:bg-opacity-60`}>
+                    <img src={item.icon_30} className={`w-6 h-6 ${isActive ? 'opacity-100' : 'opacity-50'}  group-hover:opacity-100`} alt={item.label} />
+                   {!toggleNavBar && 
+                      <span className={`ml-6 text-sm  ${isActive ? 'text-slate-900 font-normal' : 'text-slate-700 font-light'}`}>
+                        {item.label}
+                      </span>
+                    }
+                  </div>
+                </a>
+              </Link>
+            )
+          }
+        )
       }
     </div>
   )

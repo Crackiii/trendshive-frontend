@@ -3193,3 +3193,694 @@ export const daily = [
       "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=DE&tt=Mick+Schumacher#Mick%20Schumacher"
   }
 ]
+
+
+
+export const youtube_videos = [
+    {
+        "thumbnail": "https://i.ytimg.com/vi/TYoUS5gm1m8/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB3n9VeQz2qf3lmo80Wja0o2X9MEw",
+        "title": "Most beautiful Quran recitation || sheikh Abdul Rahman Mossad",
+        "link": "/watch?v=TYoUS5gm1m8"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/AWbYJgsXHQ4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANBNNHQuMuLt0XDbl72em9E3i7yA",
+        "title": "Next.js Tutorial - 20 - Inspecting Static Generation Builds",
+        "link": "/watch?v=AWbYJgsXHQ4"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/ikUcFTMDUJ4/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC8XUJ0qEJg5rD5AvQTIFt4RfUVrw",
+        "title": "Great Shots And Rallies In Alexander Zverev vs Jannik Sinner Thriller | Monte Carlo 2022 Highlights",
+        "link": "/watch?v=ikUcFTMDUJ4"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/q4QH4JAMbEc/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLArXR8yDXVgsjJUodOZy0lc1OvZvg",
+        "title": "Faslon ko takaluf hai hum se agar -Qari Waheed zafar",
+        "link": "/watch?v=q4QH4JAMbEc"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/DM5xtx1OwEU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQ6lxWFbxlOyhEvNV3KqWroCTNwA",
+        "title": "ABDUR RAHMAN MOSSAD 2 HOURS RELAXING AND PEACEFUL no adds",
+        "link": "/watch?v=DM5xtx1OwEU"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/kvSYGi9GVw8/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDOXWYEtseoXUxnhQFqoY8BnZsvFQ",
+        "title": "IELTS LISTENING PRACTICE TEST | V2 IELTS | 14 - APRIL - 2022",
+        "link": "/watch?v=kvSYGi9GVw8"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/irPrP_Fp9sQ/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDOSV2uS7EG3zJWI0u1pYAvhw_1_g",
+        "title": "Cubs and Brewers benches clear over hit by pitches, a breakdown",
+        "link": "/watch?v=irPrP_Fp9sQ"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/phQxK5u8IEs/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBeAhmXycdcWc6Vh1s7ZqDQ6gGZow",
+        "title": "Our Father | Official Trailer | Netflix",
+        "link": "/watch?v=phQxK5u8IEs"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/uI-0jM6oRt4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDpoDZMQYtsXlTVVcv7_kQ5a8_rEw",
+        "title": "Surah Aal -e-Imran Full | By Sheikh Abdur Rehman Al Ossi| سورة آل عمران",
+        "link": "/watch?v=uI-0jM6oRt4"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/ji6r4X7KDcM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBIESr2CAfbL_GhYkVN2czOxIA7Sw",
+        "title": "Javed Amirkhil - Shah Zargare جاوید امیرخېل - شاه زرګرې",
+        "link": "/watch?v=ji6r4X7KDcM"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/GznmPACXBlY/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDHxn7NjbG-GPPbYkzggL5yIryiWg",
+        "title": "How I built a software agency website with Next.js + Tailwind CSS (in nature)",
+        "link": "/watch?v=GznmPACXBlY"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/5Eqb_-j3FDA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCmqHUqxnAhhIsNCS7l2xBvSY6ZXA",
+        "title": "Coke Studio | Season 14 | Pasoori | Ali Sethi x Shae Gill",
+        "link": "/watch?v=5Eqb_-j3FDA"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/0NEjPc9EgOA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCB1iQl01uNBInqPhAScUCZ7mAMYQ",
+        "title": "First Time Trying Fasting for Ramadan",
+        "link": "/watch?v=0NEjPc9EgOA"
+    },
+    {
+        "thumbnail": "https://i.ytimg.com/vi/j4nAZaPQzwc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAn6oynCn5W-2p0Md7NgLawy0A3eg",
+        "title": "Next.js Tutorial - 27 - getStaticPaths fallback true",
+        "link": "/watch?v=j4nAZaPQzwc"
+    },
+    {
+        "thumbnail": null,
+        "title": "Balenciaga 360° Show Winter 22 Collection",
+        "link": "/watch?v=NTXbCdS5hdY"
+    },
+    {
+        "thumbnail": null,
+        "title": "Relaxing Quran Recitation | Surah Al Fatiha, Ayatul Kursi, Surah Yaseen | No music",
+        "link": "/watch?v=MSZ5KKu-r14"
+    },
+    {
+        "thumbnail": null,
+        "title": "Quizzing Muslims about Islam for an iPad! PART 1",
+        "link": "/watch?v=K6WL6Vpt5s4"
+    },
+    {
+        "thumbnail": null,
+        "title": "Bulbuli | Coke Studio Bangla | Season One | Ritu Raj X Nandita",
+        "link": "/watch?v=9c1NIrAqXe4"
+    },
+    {
+        "thumbnail": null,
+        "title": "MLB | Reaction Hit by Pitch",
+        "link": "/watch?v=JdsJWCOWhIk"
+    },
+    {
+        "thumbnail": null,
+        "title": "Awakening Music  - The Ramadan Album 2022",
+        "link": "/watch?v=lCk7wAY9hbM"
+    },
+    {
+        "thumbnail": null,
+        "title": "Learning Functional Programming with JavaScript - Anjana Vakil - JSUnconf",
+        "link": "/watch?v=e-5obm1G_FY"
+    },
+    {
+        "thumbnail": null,
+        "title": "Build and Deploy THE BEST Modern Blog App with React | GraphQL, NextJS, Tailwind CSS",
+        "link": "/watch?v=HYv55DhgTuA"
+    },
+    {
+        "thumbnail": null,
+        "title": "Red Sox vs. Yankees Game Highlights (4/8/22) | MLB Highlights",
+        "link": "/watch?v=k8Uxvg548Yw"
+    },
+    {
+        "thumbnail": null,
+        "title": "Amazing View Point for IFTAR 😍in Makkah & Arab Traditional Food with Sunset & Masjid Al Haram View",
+        "link": "/watch?v=39ajCYA-OYs"
+    },
+    {
+        "thumbnail": null,
+        "title": "আবেগময় সূরা কাহফ এর তিলাওয়াত ┇ Beautiful Surah Kahf Recited by Ismail Al Nouri ┇ An Nafee ┇ আন নাফী",
+        "link": "/watch?v=5R06LRdUCSE"
+    },
+    {
+        "thumbnail": null,
+        "title": "Rabab Music muneem und zia",
+        "link": "/watch?v=Y8-baIDplh4"
+    },
+    {
+        "thumbnail": null,
+        "title": "Javed Amirkhil - Watana Mor e Zmong جاوید امیرخیل - وطنه مور یی زمونگ OFFICIAL VIDEO",
+        "link": "/watch?v=vxOviTR_lpY"
+    },
+    {
+        "thumbnail": null,
+        "title": "Baraa Masoud - Surah Al Fatihah | براء مسعود - سورة الفاتحة",
+        "link": "/watch?v=Mh99q7frpjI"
+    },
+    {
+        "thumbnail": null,
+        "title": "Trying Ramadan Fasting 2022 (What to expect)",
+        "link": "/watch?v=VXrTVD4MPhM"
+    },
+    {
+        "thumbnail": null,
+        "title": "Sholawat Merdu ⚜️⚜️ Cover By Ayisha Abdul Basith #001",
+        "link": "/watch?v=tJRFuRQxVa0"
+    },
+    {
+        "thumbnail": null,
+        "title": "Create Pages & Fetch Data in Next.js Using Static & Dynamic Routes",
+        "link": "/watch?v=pjhjqUrG9O4"
+    },
+    {
+        "thumbnail": null,
+        "title": "Next.js in 100 Seconds // Plus Full Beginner's Tutorial",
+        "link": "/watch?v=Sklc_fQBmcs"
+    },
+    {
+        "thumbnail": null,
+        "title": "6 Tiger Encounters That Will Haunt You Forever",
+        "link": "/watch?v=5jigNvTSWWA"
+    },
+    {
+        "thumbnail": null,
+        "title": "Stranger Things 4 | Official Trailer | Netflix India",
+        "link": "/watch?v=wC8rg_DNmqs"
+    },
+    {
+        "thumbnail": null,
+        "title": "EPICS GALORE Featuring Tsitsipas, Zverev, Sinner & More! | Monte Carlo 2022 Quarter-Final Highlights",
+        "link": "/watch?v=_Ao_VpKKbyw"
+    },
+    {
+        "thumbnail": null,
+        "title": "Dior Made With Love - The \"Millefiori\" Tale",
+        "link": "/watch?v=ObLi99ND3qQ"
+    },
+    {
+        "thumbnail": null,
+        "title": "Abdulrahman Mossad | 2 hrs of  relaxing quran recitations",
+        "link": "/watch?v=VlCj8S3oU00&t=936s"
+    },
+    {
+        "thumbnail": null,
+        "title": "Abdul rahman mossad. Quran pak. Status",
+        "link": "/watch?v=4Br7vGwG02A"
+    },
+    {
+        "thumbnail": null,
+        "title": "How to Make Desktop Look Awesome (PART 7)",
+        "link": "/watch?v=lck0j-zkwF0"
+    },
+    {
+        "thumbnail": null,
+        "title": "JavaScript |  Beginning to Mastery Complete Tutorial (Part 1)",
+        "link": "/watch?v=chx9Rs41W6g"
+    },
+    {
+        "thumbnail": null,
+        "title": "Stranger Things 4 | Official Trailer | Netflix",
+        "link": "/watch?v=yQEondeGvKo"
+    },
+    {
+        "thumbnail": null,
+        "title": "Next.js Tutorial - 15 - Pre-rendering",
+        "link": "/watch?v=BeXbCgRxifs"
+    },
+    {
+        "thumbnail": null,
+        "title": "Woman Reacts to Her Viral Masjid Al Haram Photos",
+        "link": "/watch?v=TgMevPk5V2Q"
+    },
+    {
+        "thumbnail": null,
+        "title": "😍 সূরা হাশর এর অন্তর শীতল করা কণ্ঠে তিলাওয়াত ┇ Recited by Ismail An Nouri ┇ An Nafee ┇ আন নাফী",
+        "link": "/watch?v=MUQsEQasIe8"
+    },
+    {
+        "thumbnail": null,
+        "title": "ABDULRAHMAN MOSSAD || BEAUTIFUL QURAN RECITATION",
+        "link": "/watch?v=mDmQ2c1sRG8"
+    },
+    {
+        "thumbnail": null,
+        "title": "Next.js Crash Course",
+        "link": "/watch?v=mTz0GXj8NN0"
+    },
+    {
+        "thumbnail": null,
+        "title": "Next.js Tutorial - 9 - Catch All Routes",
+        "link": "/watch?v=ZHn726VDoIY"
+    },
+    {
+        "thumbnail": null,
+        "title": "Javed Amirkhil - Naat e Sharif ( live Video)",
+        "link": "/watch?v=KQ-9tMGxgy0"
+    },
+    {
+        "thumbnail": null,
+        "title": "MUSTAFA JAAN E REHMAT | DAROOD O SALAAM | Atif Aslam | Boss Menn",
+        "link": "/watch?v=HvkqvbdwOlw"
+    },
+    {
+        "thumbnail": null,
+        "title": "React Course - Beginner's Tutorial for React JavaScript Library [2022]",
+        "link": "/watch?v=bMknfKXIFA8"
+    },
+    {
+        "thumbnail": null,
+        "title": "syaikh abdurrahman mossad",
+        "link": "/watch?v=piizh5iNukc"
+    },
+    {
+        "thumbnail": null,
+        "title": "Next.js Tutorial - 29 - Incremental Static Regeneration",
+        "link": "/watch?v=d5unMDna5ng"
+    },
+    {
+        "thumbnail": null,
+        "title": "Javed Amirkhil - Naat e Sharif جاوید امیرخیل - (نعت شریف) د ستاینې سرود",
+        "link": "/watch?v=k8xmsBbYwos"
+    },
+    {
+        "thumbnail": null,
+        "title": "the most beautiful Quran Recitation Heart Touching  Really emotional  surah ad duha  سورة الضحى AWAZ",
+        "link": "/watch?v=P4ejKuM8G1M"
+    },
+    {
+        "thumbnail": null,
+        "title": "NEXT.JS Crash Course for Beginners - Build 6 Apps in 17 Hours (SSR, Auth, Full-Stack + More) [2022]",
+        "link": "/watch?v=6fNy0iD3hsk"
+    },
+    {
+        "thumbnail": null,
+        "title": "Top 5 Naats Of Qari Waheed Zafar Qasmi | Allah Hoo Allah Hoo | Faslon Ko Takalluf | Zahe Muqaddar",
+        "link": "/watch?v=7JmPr9QRNlo"
+    },
+    {
+        "thumbnail": null,
+        "title": "Next.js Tutorial - 16 - Static Generation",
+        "link": "/watch?v=keP1PygtJ8c"
+    },
+    {
+        "thumbnail": null,
+        "title": "Javed Amirkhil - Watan جاوید امیرخیل - وطن",
+        "link": "/watch?v=J4aQkMBNeyM"
+    },
+    {
+        "thumbnail": null,
+        "title": "Coke Studio Season 12 | Wohi Khuda Hai | Atif Aslam",
+        "link": "/watch?v=74cVT_tUpck"
+    },
+    {
+        "thumbnail": null,
+        "title": "Surah Al Infitar (Be Heaven) Omar Hisham عمرهشام العربي - سورة الإنفطار",
+        "link": "/watch?v=hAY2_2u-emE"
+    },
+    {
+        "thumbnail": null,
+        "title": "10 Most Iconic Heart Evangelista PFW Looks | Preview 10 | PREVIEW",
+        "link": "/watch?v=JqOnSBB181U"
+    },
+    {
+        "thumbnail": null,
+        "title": "Next.js Tutorial - 22 - SSG with Dynamic Parameters",
+        "link": "/watch?v=1XEe-ng57GA"
+    },
+    {
+        "thumbnail": null,
+        "title": "Javed Amirkhil - Kakari Gharhiجاویدامیرخېل  - کاکړۍ  غاړې",
+        "link": "/watch?v=yOtTJaDeUdw"
+    },
+    {
+        "thumbnail": null,
+        "title": "Balaghal Ula Bi Kamaalihi | Ali Zafar | Naat",
+        "link": "/watch?v=yR9ZW4mS_EA"
+    },
+    {
+        "thumbnail": null,
+        "title": "I built the same app 10 times // Which JS Framework is best?",
+        "link": "/watch?v=cuHDQhDhvPE"
+    },
+    {
+        "thumbnail": null,
+        "title": "INSANE Stefanos Tsitsipas Dive And Match Point vs Diego Schwartzman | Monte Carlo 202",
+        "link": "/watch?v=zoQZu91Hru8"
+    },
+    {
+        "thumbnail": null,
+        "title": "Next.js Tutorial - 17 - Static Generation with getStaticProps",
+        "link": "/watch?v=7UouvxZ6OaM"
+    },
+    {
+        "thumbnail": null,
+        "title": "Surah Al-Kahf | سورۃ الکھف | Beautiful Recitation By Ismail Annuri | English Translation [HD]",
+        "link": "/watch?v=5B38bcaSRF4"
+    },
+    {
+        "thumbnail": null,
+        "title": "O Mere Maula | Abida Parveen ft. Pankaj Tripathi | Salim Sulaiman | Eid 2022 Ramadan Special",
+        "link": "/watch?v=-WDG7XGzhf4"
+    },
+    {
+        "thumbnail": null,
+        "title": "a beautiful azan training||azan misri||azan makkah||by qari hammad ullah sajid",
+        "link": "/watch?v=GEkBEyLkoFk"
+    },
+    {
+        "thumbnail": null,
+        "title": "Nasheed Collection #1 | One Hour of Inspiring Nasheeds | No Music",
+        "link": "/watch?v=2bd0PXsTi8E"
+    }
+]
+
+
+export const news = [
+    {
+      "date": 1650099786,
+      "excerpt": "Islamabad is likely to witness further instability in the corridors of power that will make the task of governing effectively difficult for the new administration.",
+      "fetch_image": 1,
+      "image": "https://images.firstpost.com/wp-content/uploads/2022/04/Imran-Khan-AFP.jpg",
+      "relative_time": "20 minutes ago",
+      "source": "Firstpost on MSN.com",
+      "syndicate": "Bing",
+      "title": "Pakistan after the fall of Imran Khan: Get ready for a fresh round of instability",
+      "url": "https://www.msn.com/en-in/news/world/pakistan-after-the-fall-of-imran-khan-get-ready-for-a-fresh-round-of-instability/ar-AAWgW7J",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650097454,
+      "excerpt": "As Pakistan PM Shehbaz Sharif accused former PM <b>Imran</b> <b>Khan</b> of selling gifts that belong to the treasury, a Pakistani news platform claimed <b>Imran</b> <b>Khan</b> and Bushra Bibi kept 112 Toshakhana gifts by paying less than 30% of their actual price.",
+      "fetch_image": 1,
+      "image": "https://images.hindustantimes.com/img/2022/04/16/1600x900/PAKISTAN-POLITICS-2_1650097109313_1650097142573.jpg",
+      "relative_time": "59 minutes ago",
+      "source": "Hindustan Times on MSN.com",
+      "syndicate": "Bing",
+      "title": "'Imran Khan's gift, he sold. What is the problem?': Former Pakistan minister on Toshakhana case",
+      "url": "https://www.msn.com/en-in/news/world/imran-khans-gift-he-sold-what-is-the-problem-former-pakistan-minister-on-toshakhana-case/ar-AAWhj1G",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650097560,
+      "excerpt": "Tens of thousands flooded the streets across the country. Protesters brawled in a small mosque. And, at the upscale Islamabad Marriott Hotel, a fist fight broke out at an Iftar dinner between a lawmaker in Pakistan&#x27;s new government and a supporter of the recently ousted prime minister,",
+      "image": "https://d30fl32nd2baj9.cloudfront.net/media/2022/04/16/imran-khan-160422-01-smr.jpg/BINARY/imran-khan-160422-01-smr.jpg",
+      "relative_time": "57 minutes ago",
+      "source": "bdnews24",
+      "syndicate": "Bing",
+      "title": "Days after ouster, Imran Khan is back on the trail in Pakistan",
+      "url": "https://bdnews24.com/world/south-asia/2022/04/16/days-after-ouster-imran-khan-is-back-on-the-trail-in-pakistan",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650100618,
+      "excerpt": "In Pakistan, the Punjab Assembly hall turned into a battle-ground today (Saturday) as PTI lawmakers manhandled Deputy Speaker Dost Mohammad Mazari when he arrived to chair the session convened to elect the chief minister.",
+      "fetch_image": 1,
+      "image": "https://gumlet.assettype.com/freepressjournal/2022-04/698d2b20-40d5-4fa1-9dc7-19889e8aea72/punjab_ass.png?rect=0%2C0%2C3900%2C2048&w=1200&auto=format%2Ccompress&ogImage=true",
+      "relative_time": "6 minutes ago",
+      "source": "The Free Press Journal on MSN.com",
+      "syndicate": "Bing",
+      "title": "Pakistan: Chaos in Punjab Assembly as Imran Khan's PTI members attack Deputy Speaker",
+      "url": "https://www.msn.com/en-us/news/world/pakistan-chaos-in-punjab-assembly-as-imran-khans-pti-members-attack-deputy-speaker/ar-AAWgZrA",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650100020,
+      "excerpt": "Pakistan former finance minister and economist Hafeez A Pasha has said that <b>Imran</b> <b>Khan</b>-led Pakistan Tehreek-e-Insaaf PTI government presented wrong and exag",
+      "relative_time": "16 minutes ago",
+      "source": "Big News Network.com",
+      "syndicate": "Bing",
+      "title": "Pak economist claims Imran Khan govt exaggerated employment figures",
+      "url": "https://www.bignewsnetwork.com/news/272486428/pak-economist-claims-imran-khan-govt-exaggerated-employment-figures",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650088980,
+      "excerpt": "After <b>Imran</b> <b>Khan</b> ouster as Prime Minister, Pakistan has again been reminded that the main power lies in the hands of the Army Chief.",
+      "image": "https://cdn.bignewsnetwork.com/ani1650090006.jpg",
+      "relative_time": "3 hours ago",
+      "source": "Malaysia Sun",
+      "syndicate": "Bing",
+      "title": "Imran Khan's ouster affirms power in Pakistan lies with Army Chief",
+      "url": "https://www.malaysiasun.com/news/272486240/imran-khan-ouster-affirms-power-in-pakistan-lies-with-army-chief",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650028140,
+      "excerpt": "<b>Imran</b> <b>Khan&#x27;s</b> three-plus years as prime minister of Pakistan came to an unceremonious end. His government fell after losing a no-confidence vote, a standard procedural tool in parliamentary democracies for ousting prime ministers who have lost their majority in the legislature.",
+      "image": "https://cdn-live.foreignaffairs.com/sites/default/files/styles/x_large_1x/public/images/2022/04/14/RTS6P3ZF.JPG?itok=Yff8cprR",
+      "relative_time": "20 hours ago",
+      "source": "Foreign Affairs",
+      "syndicate": "Bing",
+      "title": "The Shambolic End of Imran Khan",
+      "url": "https://www.foreignaffairs.com/articles/pakistan/2022-04-15/shambolic-end-imran-khan",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650068340,
+      "excerpt": "Podcast hosts Ankit Panda and Katie Putz are joined by Mohammad Taqi, a columnist for The Wire, to discuss Pakistan&#x27;s April 2022 political crisis, which led to the end of <b>Imran</b>",
+      "image": "https://thediplomat.com/wp-content/uploads/2018/09/sizes/td-story-s-2/thediplomat-41645161_2937308699644864_4894677642579542016_o.jpg",
+      "relative_time": "9 hours ago",
+      "source": "The Diplomat",
+      "syndicate": "Bing",
+      "title": "Continuity and Change in Pakistani Politics: The End of Imran Khan and What's Next",
+      "url": "https://thediplomat.com/2022/04/continuity-and-change-in-pakistani-politics-the-end-of-imran-khan-and-whats-next/",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650071220,
+      "excerpt": "The United States State Department Spokesperson on Ned Price on April 15 said the US government agreed with the statement of the Pakistan Army regarding a &quot;foreign conspiracy&quot; to oust former prime minister <b>Imran</b> <b>Khan</b>.",
+      "image": "https://indiawest.com/wp-content/uploads/2022/04/maxresdefault.jpeg",
+      "relative_time": "8 hours ago",
+      "source": "India West",
+      "syndicate": "Bing",
+      "title": "US Agrees With Pakistan Army Stand - No Foreign Conspiracy to Oust Imran Khan",
+      "url": "https://indiawest.com/2022/04/15/us-agrees-with-pakistan-army-stand-no-foreign-conspiracy-to-oust-imran-khan/",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1649871120,
+      "excerpt": "Supporters of <b>Imran</b> <b>Khan</b> take to the streets Farooq Naeem/AFP via Getty Images)A protracted political drama in Pakistan turned a page on April 10, 2022, with Prime Minister <b>Imran</b> <b>Khan</b> being removed from office following a vote of no confidence in the country&#x27;s Parliament.",
+      "fetch_image": 1,
+      "image": "https://s.yimg.com/ny/api/res/1.2/Kjme2z1GxhenwLP8LGdGOg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03OTY-/https://s.yimg.com/uu/api/res/1.2/e.Rux9Fhf6NVGhg9I_EaBA--~B/aD05NTU7dz0xNDQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/the_conversation_us_articles_815/f1133db2f666dbc227e9666e22b45766",
+      "relative_time": "3 days ago",
+      "source": "YAHOO!News",
+      "syndicate": "Bing",
+      "title": "What's next for Pakistan after Imran Khan's ouster?",
+      "url": "https://news.yahoo.com/whats-next-pakistan-imran-khans-173216056.html",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650097380,
+      "excerpt": "Maryam Nawaz Sharif, vice president of Pakistan Muslim League Nawaz (PML-N) on Friday questioned Former Pakistan Prime Minister <b>Imran</b> <b>Khan</b> for having purchased expensive gifts and asked him to reveal his other source of income.",
+      "relative_time": "1 hour ago",
+      "source": "Webindia 123",
+      "syndicate": "Bing",
+      "title": "Pakistan: Maryam Nawaz accuses Former PM Imran Khan of being corrupt",
+      "url": "https://news.webindia123.com/news/Articles/World/20220416/3931701.html",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1649984400,
+      "excerpt": "The ousting of Pakistan&#x27;s prime minister in a vote of no confidence followed a period of intense political turmoil. Yale political scientist Sarah <b>Khan</b> describes what could come next",
+      "fetch_image": 1,
+      "image": "https://i.guim.co.uk/img/media/49523f8dbed711638d8187ace7bdd2fac74b6c35/0_0_3551_2131/master/3551.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=e07207a7bc5379f50f8e157304f75240",
+      "relative_time": "1 day ago",
+      "source": "The Guardian",
+      "syndicate": "Bing",
+      "title": "Where did it all go wrong for Imran Khan?",
+      "url": "https://www.theguardian.com/news/audio/2022/apr/15/where-did-it-all-go-wrong-for-imran-khan-podcast",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1649887402,
+      "excerpt": "Just days after being ousted in a no confidence vote, former prime minister <b>Imran</b> <b>Khan</b> was already laying the groundwork for a political comeback, launching a national street campaign calling on the new government to hold elections.",
+      "fetch_image": 1,
+      "image": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/AEOXDWF3NMI6ZKJNY5R55AMMEE.jpg&w=1440",
+      "relative_time": "2 days ago",
+      "source": "Washington Post on MSN.com",
+      "syndicate": "Bing",
+      "title": "Even out of office, Imran Khan shows he can still draw a crowd",
+      "url": "https://www.msn.com/en-us/news/world/even-out-of-office-imran-khan-shows-he-can-still-draw-a-crowd/ar-AAWcmlp",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1649987640,
+      "excerpt": "<b>Imran</b> <b>Khan&#x27;s</b> point, during his national address on the eve of the contentious no-confidence vote that removed him, was that &quot;no superpower can dictate terms to India&quot;.",
+      "image": "https://img.onmanorama.com/content/dam/mm/en/news/world/images/2022/4/10/imran-khan.jpg",
+      "relative_time": "1 day ago",
+      "source": "onmanorama",
+      "syndicate": "Bing",
+      "title": "Imran Khan's 'khuddar qaum' ploy is a subtle attack on Pak military",
+      "url": "https://www.onmanorama.com/news/tharoor-line/2022/04/14/imran-khan-subtle-attack-on-pak-military.html",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1649928720,
+      "excerpt": "If nothing else, you know Paaji&#x27;s (Navjot Sidhu&#x27;s) place is vacant in The Kapil Sharma Show. And now, he is also into shero-shayari (Urdu couplets), said Reham <b>Khan</b> said while talking about her ex-husband <b>Imran</b> <b>Khan</b>.",
+      "image": "https://static.india.com/wp-content/uploads/2016/11/Imran-Khan-and-Reham-Khan.jpg",
+      "relative_time": "2 days ago",
+      "source": "India.com",
+      "syndicate": "Bing",
+      "title": "Imran Khan Could Join 'The Kapil Sharma Show': Reham Khan On Ex-Husband's 'Comic Talent'",
+      "url": "https://www.india.com/news/world/former-pakistan-pm-imran-khan-should-join-the-kapil-sharma-show-says-ex-wife-reham-khan-5337651/",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1649958600,
+      "excerpt": "Pakistan&#x27;s military establishment has dismissed ousted prime minister <b>Imran</b> <b>Khan&#x27;s</b> claims that he was the victim of a US-led conspiracy, and described his visit to Moscow on t",
+      "image": "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2F3db8d573-6956-4e25-95b3-7bb4400ab4e0.jpg?source=next-opengraph&fit=scale-down&width=900",
+      "relative_time": "2 days ago",
+      "source": "The Financial Times",
+      "syndicate": "Bing",
+      "title": "Pakistan army dismisses Imran Khan's US conspiracy claim",
+      "url": "https://www.ft.com/content/68e0e88a-8765-47c8-a925-4a5aaa23bc86",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1649971080,
+      "excerpt": "Pakistan&#x27;s ousted prime minister makes the U.S. a scapegoat, but the truth is that he angered the military establishment.",
+      "fetch_image": 1,
+      "image": "https://images.wsj.net/im-524459/social",
+      "relative_time": "2 days ago",
+      "source": "Wall Street Journal",
+      "syndicate": "Bing",
+      "title": "Imran Khan Rails Against America",
+      "url": "https://www.wsj.com/articles/pakistan-ousted-prime-minister-rails-against-america-imran-khan-peshawar-afghanistan-nuclear-proliferation-state-department-islamist-india-11649967159",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1649874698,
+      "excerpt": "The fall of Pakistan&#x27;s Prime Minster <b>Imran</b> <b>Khan</b> promises to reshape the country&#x27;s foreign policy as it tries to balance China and the U.S.",
+      "fetch_image": 1,
+      "image": "https://api.time.com/wp-content/uploads/2022/04/GettyImages-1239957669.jpg?quality=85&w=1024&h=628&crop=1",
+      "relative_time": "3 days ago",
+      "source": "Time on MSN.com",
+      "syndicate": "Bing",
+      "title": "What Imran Khan's Ouster Means for Pakistan's Future",
+      "url": "https://www.msn.com/en-us/news/world/what-imran-khans-ouster-means-for-pakistans-future/ar-AAWcdJv",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1649977260,
+      "excerpt": "A Conservative MP found guilty of sexually assaulting a teenage boy is to step down from the Commons, triggering a by-election. <b>Imran</b> Ahmad <b>Khan</b>, 48, who was elected MP for Wakefield in 2019, was convicted on Monday of assaulting the 15-year old boy as he lay terrified in bed.",
+      "image": "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fbe1452cc-bc2c-11ec-b79e-9ccd39d2c9e7.jpg?crop=2221%2C1249%2C0%2C116&resize=1200",
+      "relative_time": "1 day ago",
+      "source": "The Times",
+      "syndicate": "Bing",
+      "title": "Tory MP Imran Khan resigns: Wakefield by-election after sex offender MP quits",
+      "url": "https://www.thetimes.co.uk/article/tory-mp-imran-khan-resigns-wakefield-by-election-k6g907fbb",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1649938921,
+      "excerpt": "Pakistan&#x27;s powerful military does not see a U.S. &quot;conspiracy&quot; behind the regime change in the country, its spokesman said, after claims by former Prime Minister <b>Imran</b> <b>Khan</b> that Biden administration orchestrated his ouster.",
+      "fetch_image": 1,
+      "image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAWdB6P.img?h=630&w=1200&m=6&q=60&o=t&l=f&f=jpg&x=1104&y=415",
+      "relative_time": "2 days ago",
+      "source": "Bloomberg on MSN.com",
+      "syndicate": "Bing",
+      "title": "Pakistan Army Distances from Imran Khan's U.S. Conspiracy Claim",
+      "url": "https://www.msn.com/en-us/news/world/pakistan-s-khan-approached-army-chief-for-help-before-ouster/ar-AAWdip4",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650023823,
+      "excerpt": "Goldsmith referred to the time she spent as the PTI chairman&#x27;s wife with her in-laws in Lahore and posted a poster for protests outside her house called by former PML-N minister Abid Sher Ali",
+      "fetch_image": 1,
+      "image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAWfXmw.img?h=630&w=1200&m=6&q=60&o=t&l=f&f=jpg&x=569&y=130",
+      "relative_time": "21 hours ago",
+      "source": "News18 on MSN.com",
+      "syndicate": "Bing",
+      "title": "'Like I'm Back in 90s Lahore': Imran Khan's Ex-wife Jemima Goldsmith Slams Protestors for Targeting Her in London",
+      "url": "https://www.msn.com/en-in/news/world/like-i-m-back-in-90s-lahore-imran-khan-s-ex-wife-jemima-goldsmith-slams-protestors-for-targeting-her-in-london/ar-AAWfK6O",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650028560,
+      "excerpt": "Shehbaz Sharif said that the expensive gifts included diamond jewellery sets, bracelets and wristwatches. Islamabad: New Prime Minister of Pakistan Shehbaz Sharif on Friday accused his predecessor <b>Imran</b> <b>Khan</b> of selling Toshakhana gifts worth PKR 140 ...",
+      "image": "https://static.india.com/wp-content/uploads/2022/04/QT-Shehbaz-Sharif.jpg",
+      "relative_time": "20 hours ago",
+      "source": "India.com",
+      "syndicate": "Bing",
+      "title": "Shehbaz Sharif Accuses Imran Khan of Selling Toshakhana Gifts Worth PKR 140 mn In Dubai",
+      "url": "https://www.india.com/news/world/shehbaz-sharif-accuses-imran-khan-of-selling-toshakhana-gifts-worth-pkr-140-mn-in-dubai-5339980/",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1649536080,
+      "excerpt": "The political opposition ousted the embattled leader in a no confidence vote after several of <b>Khan&#x27;s</b> allies and a key coalition party deserted him.",
+      "image": "https://npr.brightspotcdn.com/dims4/default/02beef0/2147483647/strip/true/crop/6000x3150+0+314/resize/1200x630!/quality/90/?url=https%3A%2F%2Fmedia.npr.org%2Fassets%2Fimg%2F2022%2F04%2F09%2Fap22099186512021_custom-1a0eede6f4f2842ea705f818a122ba87dab1b1a8.jpg",
+      "relative_time": "7 days ago",
+      "source": "MTPR",
+      "syndicate": "Bing",
+      "title": "Imran Khan has been ousted as Pakistan's prime minister",
+      "url": "https://www.mtpr.org/2022-04-09/imran-khan-has-been-ousted-as-pakistans-prime-minister",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650086580,
+      "excerpt": "SOMETIMES the difference between a coup and a democratic process can be so narrow as to be interchangeable. The move to oust Pakistani Prime Minister <b>Imran</b> <b>Khan</b> had been in the offing for some",
+      "image": "https://cdn.thenewsnigeria.com.ng/2018/09/Imran-Khan-2.jpg",
+      "relative_time": "4 hours ago",
+      "source": "thenewsnigeria.com.ng",
+      "syndicate": "Bing",
+      "title": "Imran Khan fallen, but not in the streets",
+      "url": "https://thenewsnigeria.com.ng/2022/04/16/imran-khan-fallen-but-not-in-the-streets/",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650039000,
+      "excerpt": "Cursed Danish politician Gert Wilders has expressed happiness over the fall of former Prime Minister <b>Imran</b> <b>Khan&#x27;s</b> government. On the social networking site",
+      "image": "https://timesofislamabad.com/digital_images/large/2022-04-15/cursed-gert-wilders-again-expresses-happiness-over-fall-of-pakistani-pm-imran-khan-1650039127-1168.jpg",
+      "relative_time": "17 hours ago",
+      "source": "The Times of Islamabad",
+      "syndicate": "Bing",
+      "title": "Cursed Gert Wilders again expresses happiness over fall of Pakistani PM Imran Khan",
+      "url": "https://timesofislamabad.com/15-Apr-2022/cursed-gert-wilders-again-expresses-happiness-over-fall-of-pakistani-pm-imran-khan",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650024480,
+      "excerpt": "Prime Minister Shehbaz Sharif reportedly said Thursday he can confirm that his predecessor, PTI Chairman <b>Imran</b> <b>Khan</b>, took gifts from the Toshakhana and sold them in Dubai.",
+      "image": "https://www.suchtv.pk/media/k2/items/cache/47e87268a11ae58fbe1b7eb4cdff63e5_XL.jpg",
+      "relative_time": "21 hours ago",
+      "source": "SUCH TV",
+      "syndicate": "Bing",
+      "title": "PM Shehbaz says Imran Khan sold Toshakhana gifts worth Rs140m in Dubai",
+      "url": "https://www.suchtv.pk/pakistan/general/item/112589-pm-shehbaz-says-imran-khan-sold-toshakhana-gifts-worth-rs140m-in-dubai.html",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1648728420,
+      "excerpt": "A defiant Pakistan Prime Minister <b>Imran</b> <b>Khan</b> said on Thursday that he will not resign despite losing the majority and insisted that he will play till the last ball and face the vote of no ...",
+      "is_old": 1,
+      "relative_time": "16 days ago",
+      "source": "NDTV",
+      "syndicate": "Bing",
+      "title": "Imran Khan No-Trust Vote Live Updates: Imran Khan Says He Won't Resign, Ready To Face No-Trust Vote",
+      "url": "https://www.ndtv.com/world-news/imran-khan-no-trust-vote-live-updates-pak-pms-address-to-nation-today-2854442",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1650027480,
+      "excerpt": "ISLAMABAD: Prime Minister Shehbaz Sharif on Friday accused PTI chairman and former prime minister <b>Imran</b> <b>Khan</b> of selling gifts received during foreign visits.",
+      "image": "https://timesofislamabad.com/digital_images/large/2022-04-15/in-a-new-low-pm-shahbaz-sharif-accuses-imran-khan-of-selling-gifts-as-a-mode-of-corruption-1650027547-6086.jpeg",
+      "relative_time": "20 hours ago",
+      "source": "The Times of Islamabad",
+      "syndicate": "Bing",
+      "title": "In a new low, PM Shahbaz Sharif accuses Imran Khan of selling gifts as a mode of corruption",
+      "url": "https://timesofislamabad.com/15-Apr-2022/in-a-new-low-pm-shahbaz-sharif-accuses-imran-khan-of-selling-gifts-as-a-mode-of-corruption",
+      "use_relevancy": 0
+    },
+    {
+      "date": 1648286280,
+      "excerpt": "IMAGE: Pakistan Prime Minister <b>Imran</b> <b>Khan</b> gives the keynote speech at the Organisation of Islamic Cooperation council of foreign ministers in Islamabad March 22, 2022. Photograph: Saiyna Bashir ...",
+      "is_old": 1,
+      "relative_time": "21 days ago",
+      "source": "rediff.com",
+      "syndicate": "Bing",
+      "title": "'Imran Khan is down, but most certainly not out'",
+      "url": "https://www.rediff.com/news/interview/michael-kugelman-imran-khan-is-down-but-most-certainly-not-out/20220325.htm",
+      "use_relevancy": 0
+    }
+  ]

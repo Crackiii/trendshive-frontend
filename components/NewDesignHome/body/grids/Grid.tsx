@@ -4,7 +4,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import GridItem from './GridItem';
 
 interface Props {
-  gridStories?: any[]
+  articles?: any[]
 }
 
 function TopGrid(props?: Props) {
@@ -21,13 +21,13 @@ function TopGrid(props?: Props) {
   ]
 
   const images = [
-    '/images/bitcoin.jpeg',
+    '/images/cryptocurrency.jpeg',
     '/images/entertainment.jpeg',
     '/images/fashion.jpeg',
     '/images/gaming.jpeg',
     '/images/learning.jpeg',
-    '/images/technology.jpg',
-    '/images/trends.jpeg',
+    '/images/technology.jpeg',
+    '/images/trending.jpeg',
     '/images/travel.jpeg',
   ]
 
@@ -35,7 +35,7 @@ function TopGrid(props?: Props) {
     <>
      <div className="grid-rows-1 grid-cols-1 gap-1 grid-flow-row sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
       {
-        [{}, {}, {}, {}, {}, {}, {}, {}]?.map((item, index) => (
+        props?.articles?.map((item, index) => (
             <div key={index} className={`${gridItemStyles[index]} h-60 min-h-full`}>
               <GridItem item={{...item, image: images[index]}} />
             </div>
@@ -50,7 +50,7 @@ function TopGrid(props?: Props) {
       >
         <Slider>
             {
-              props?.gridStories?.map((item, index) => (
+              props?.articles?.map((item, index) => (
                 <Slide index={index} key={index}>
                    <GridItem item={item} />
                 </Slide>

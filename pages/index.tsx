@@ -1,48 +1,14 @@
-import type { GetServerSideProps } from 'next'
-import Head from 'next/head'
-import HomePage from '../components/HomePage/HomePage'
-import { v4 as uuidv4 } from 'uuid';
-import CookiePopup from '../components/CookiePopup';
-import NewPage from '../components/NewPage';
 import axios from 'axios';
-import { useState } from 'react';
-import TopBar from '../components/shared/TopBar';
-import TrendingHeading from '../components/shared/TrendingHeading';
-import HomeFooter from '../components/shared/HomeFooter';
-import { useQuery } from 'react-query';
-import YoutubeGrid from '../components/New/YoutubeGrid';
-import SimpleGrid from '../components/New/SimpleGrid';
-import SmallGrid from '../components/New/SmallGrid';
-import RandomItemsGrid from '../components/New/RandomItemsGrid';
+import Head from 'next/head'
+import CookiePopup from '../components/CookiePopup';
+import Category from '../components/NewDesignHome/body/category/Category';
+import Grid from '../components/NewDesignHome/body/grids/Grid';
+import Page from '../components/NewDesignHome/Page';
+import { PageContextProvider } from '../components/NewDesignHome/PageContext';
+import { menuItems } from '../components/NewDesignHome/SideBar';
 
-const useYoutubeVideos = () => {
-  const {isLoading, data: videos} = useQuery(['YOUTUBE'], () => {
-    //axios.get('https://trendscads-backend.herokuapp.com/home/youtube').then(res => res.data)
-    return []
-  }, {
-    cacheTime: 1000 * 60 * 60 * 2,
-    refetchInterval: 1000 * 60 * 60 * 2,
-    staleTime: 1000 * 60 * 60 * 2,
-    refetchOnWindowFocus: false,
-    refetchOnMount: true,
-    refetchIntervalInBackground: true,
-  })
 
-  return {isLoading, videos}
-}
-
-const Home = ({ realtime, daily }: { realtime: any, daily: any, youtube: any }) => {
-
-  const [realtimeStories] = useState(realtime)
-  const [dailyStories] = useState(daily)
-
-  const {isLoading, videos} =  useYoutubeVideos()
-
-  const realtimeArticles = realtime.filter((r: any) => r)
-  .map((r: any) => r.articles)
-  .flatMap((r: any) => r)
-
-  console.log({realtime, daily})
+const Home = ({contents}: {contents: any}) => {
 
   return (
   <>
@@ -69,17 +35,22 @@ const Home = ({ realtime, daily }: { realtime: any, daily: any, youtube: any }) 
     </Head>
     <CookiePopup />
     
-    <div>
-      <TopBar />
-        <YoutubeGrid stories={realtimeArticles.splice(0, 40)} />
-        <TrendingHeading title='Trending now' />
-        <SimpleGrid stories={realtimeArticles.splice(0, 40)} />
-        <TrendingHeading title='Recent stories' />
-        <SmallGrid stories={realtimeArticles.splice(0, 40)} />
-        <TrendingHeading title='Keep reading' />
-        <RandomItemsGrid stories={realtimeArticles.splice(0, 40)} />
-      <HomeFooter />
-    </div>
+    <PageContextProvider>
+      <Page left={
+        <div className='overflow-hidden'>
+          <Grid articles={contents?.articles?.[""]?.splice(0, 8)} />
+          {
+            menuItems.map((item, index) => (
+              <Category 
+                key={index} label={item.label} name={item.value} icon={item.icon_30 || ''} 
+                videos={[...(contents?.videos?.[item.value] || []).slice(0, 8)]} 
+                articles={[...(contents?.articles?.[item.value] || []).slice(0, 8)]} 
+                search={[...(contents?.links?.[item.value] || []).slice(0, 8)]} />
+            ))
+          }
+        </div>
+      } right={<></>} />
+    </PageContextProvider>
   </>
   )
    
@@ -88,20 +59,17 @@ const Home = ({ realtime, daily }: { realtime: any, daily: any, youtube: any }) 
 export default Home
 
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps = async () => {
 
-    const geo = await fetch("https://api.geoapify.com/v1/ipinfo?apiKey=589ae61973f3443faf4b13b2f1c57ae9")
-  .then(r => r.json())
+  const geo = await (await axios.get("https://api.geoapify.com/v1/ipinfo?apiKey=589ae61973f3443faf4b13b2f1c57ae9")).data
 
-  const [realtime, daily] = await Promise.all([
-    axios(`https://trendscads-backend.herokuapp.com/home/google/realtime?country=${geo.country.iso_code}`).then(res => res.data),
-    axios(`https://trendscads-backend.herokuapp.com/home/google/daily?country=${geo.country.iso_code}`).then(res => res.data)
-  ]).catch(() => [])
+  const home = await axios.get(`http://localhost:3000/api/home?country=${geo.country.iso_code}`)
+  const { data } = home
 
   return {
     props: {
-      realtime,
-      daily
+      contents: data.results
     }
   }
+
 }

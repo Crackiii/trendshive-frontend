@@ -8,7 +8,6 @@ export const useImage = (url: string) => {
 
   if(/gstatic/.test(url) && !/https/.test(url)) {
 
-    console.log({url})
     url = 'https:' + url
   }
 
