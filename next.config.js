@@ -5,6 +5,7 @@ const nextConfig = {
     domains: ['v1.tailwindcss.com'],
     formats: ['image/avif', 'image/webp'],
   },
+  basePath: '',
 }
 
 module.exports = nextConfig 
