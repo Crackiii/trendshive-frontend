@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function CookiePopup() {
   const [showCookie, setShowCookie] = useState<boolean>()
@@ -13,12 +13,13 @@ function CookiePopup() {
   }, [])
 
   const createCookie = (name: string, value: string, minutes: number) =>  {
+    let expires = null;
     if (minutes) {
         var date = new Date();
         date.setTime(date.getTime()+(minutes*60*1000));
-        var expires = "; expires=" + date.toUTCString();
+        expires = "; expires=" + date.toUTCString();
     } else {
-        var expires = "";
+        expires = "";
     }
     document.cookie = `${name}=${value}; expires=${expires}; path=/; Secure`;
   }

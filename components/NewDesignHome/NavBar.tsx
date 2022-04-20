@@ -3,10 +3,7 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import { usePageContext } from './PageContext'
 
-interface Props {}
-
-
-function NavBar(_: Props) {
+function NavBar() {
   const { toggleNavBar, setToggleNavBar } = usePageContext()
   const history = useRouter()
 
