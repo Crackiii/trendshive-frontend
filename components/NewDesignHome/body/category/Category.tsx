@@ -14,27 +14,6 @@ export type Category = {
   search: any[]
 }
 
-const options = { 
-  className: "os-theme-thin-light",
-  resize               : "none",
-  sizeAutoCapable      : true,
-  clipAlways           : true,
-  clickScrolling: true,
-  normalizeRTL         : true,
-  paddingAbsolute      : false,
-  autoUpdate           : null,
-  overflowBehavior : {
-    x : "scroll",
-    y : "hidden"
-  },
-  scrollbars: 
-  { 
-    dragScrolling : true, 
-    touchSupport: true, 
-    autoHide: 'leave' 
-  },
-}
-
 function Category(props: Category) {
 
   const {toggleNavBar} = usePageContext()
