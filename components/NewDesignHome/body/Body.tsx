@@ -2,7 +2,6 @@ import React from 'react'
 import BodyLeftContent from './BodyLeftContent'
 import BodyRightContent from './BodyRightContent'
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
-import 'overlayscrollbars/css/OverlayScrollbars.css';
 import { usePageContext } from '../PageContext';
 
 interface Props {

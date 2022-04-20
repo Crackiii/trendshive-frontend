@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import axios from 'axios';
 import { GetServerSideProps } from 'next'
-import 'overlayscrollbars/css/OverlayScrollbars.css';
 import React from 'react'
 import Page from '../../components/NewDesignHome/Page'
 import { PageContextProvider } from '../../components/NewDesignHome/PageContext'

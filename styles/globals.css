@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('overlayscrollbars/css/OverlayScrollbars.css');
 
 @layer utilities {
   @variants responsive {

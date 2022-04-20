@@ -1,7 +1,6 @@
 import React, { createRef } from 'react'
 import Youtube from '../../tiles/Youtube'
 import CategoryHead from './CategoryHead'
-import 'pure-react-carousel/dist/react-carousel.es.css';
 import Article from '../../tiles/Article';
 import Link from '../../tiles/Link';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
