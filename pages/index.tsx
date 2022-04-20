@@ -31,6 +31,7 @@ const Home = ({contents}: {contents: any}) => {
       <meta name="twitter:image" content="/logo.jpeg" />
       <meta name="twitter:site" content="@Trendscads" />
       <meta name="twitter:creator" content="@Trendscads" />
+
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
     <CookiePopup />
@@ -67,13 +68,14 @@ export const getServerSideProps = async () => {
     const basePath = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://trendscads.com'
     const home = await axios.get(`${basePath}/api/home?country=${geo.country.iso_code}`)
     const { data } = home
-
+    console.log({home})
     return {
       props: {
         contents: data.results || []
       }
     }
   } catch(error) {
+    console.log(error)
     return {
       props: {
         contents: []
