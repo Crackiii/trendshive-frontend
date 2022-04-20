@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
+import NavBar from '../../components/NewDesignHome/NavBar'
 import HomeFooter from '../../components/shared/HomeFooter'
-import TopBar from '../../components/shared/TopBar'
 
 function index() {
   return (
     <>
-      <TopBar />
+      <NavBar />
       <div className='p-16 bg-white'>
         <h1 className=' text-2xl font-extrabold my-4'>Cookie Policy for Trends Scads</h1>
         <p >This is the Cookie Policy for Trends Scads, accessible from https://www.trendscads.com/</p>

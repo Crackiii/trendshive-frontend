@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
+import NavBar from '../../components/NewDesignHome/NavBar'
 import HomeFooter from '../../components/shared/HomeFooter'
-import TopBar from '../../components/shared/TopBar'
 
 function PrivacyPolicy() {
   return (
     <>
-    <TopBar />
+    <NavBar />
     <div className='bg-white py-20 px-20'>
       <h1 className=' text-2xl font-bold'>Privacy Policy</h1>
       <p className='my-5'>Last updated: March 27, 2022</p>
