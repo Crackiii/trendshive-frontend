@@ -63,7 +63,7 @@ export const getServerSideProps = async () => {
 
   const geo = await (await axios.get("https://api.geoapify.com/v1/ipinfo?apiKey=589ae61973f3443faf4b13b2f1c57ae9")).data
 
-  const home = await axios.get(`http://localhost:3000/api/home?country=${geo.country.iso_code}`)
+  const home = await axios.get(`https://www.trendscads.com/api/home?country=${geo.country.iso_code}`)
   const { data } = home
 
   return {
