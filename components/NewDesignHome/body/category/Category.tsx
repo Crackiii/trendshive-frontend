@@ -3,8 +3,6 @@ import Youtube from '../../tiles/Youtube'
 import CategoryHead from './CategoryHead'
 import Article from '../../tiles/Article';
 import Link from '../../tiles/Link';
-// import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
-import 'overlayscrollbars/css/OverlayScrollbars.css';
 import { usePageContext } from '../../PageContext';
 
 export type Category = {
