@@ -2,35 +2,140 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.trendscads.com</loc>
-    <lastmod>2022-04-03T14:08:49.381Z</lastmod>
+    <lastmod>2022-04-20T12:18:18.178Z</lastmod>
     <changefreq>hourly</changefreq>
     <priority>1</priority>
   </url>
 
   <url>
-    <loc>https://www.trendscads.com/search</loc>
-    <lastmod>2022-04-03T11:08:49.382Z</lastmod>
+    <loc>https://www.trendscads.com/categories/business</loc>
+    <lastmod>2022-03-20T14:18:18.178Z</lastmod>
     <changefreq>hourly</changefreq>
     <priority>1</priority>
   </url>
 
   <url>
-    <loc>https://www.trendscads.com/story</loc>
-    <lastmod>2022-04-03T12:08:49.382Z</lastmod>
+    <loc>https://www.trendscads.com/categories/sports</loc>
+    <lastmod>2022-01-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/entertainment</loc>
+    <lastmod>2021-12-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/health</loc>
+    <lastmod>2022-01-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/technology</loc>
+    <lastmod>2022-01-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/news</loc>
+    <lastmod>2022-01-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/trending</loc>
+    <lastmod>2022-01-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/fashion</loc>
+    <lastmod>2021-12-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/travel</loc>
+    <lastmod>2021-12-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/food</loc>
+    <lastmod>2022-03-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/culture</loc>
+    <lastmod>2022-02-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/cryptocurrency</loc>
+    <lastmod>2022-03-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/learning</loc>
+    <lastmod>2022-01-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/gaming</loc>
+    <lastmod>2022-03-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/live</loc>
+    <lastmod>2022-01-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/jobs</loc>
+    <lastmod>2021-12-20T14:18:18.179Z</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trendscads.com/categories/shopping</loc>
+    <lastmod>2022-01-20T14:18:18.179Z</lastmod>
     <changefreq>hourly</changefreq>
     <priority>1</priority>
   </url>
 
   <url>
     <loc>https://www.trendscads.com/privacy-policy</loc>
-    <lastmod>2022-02-03T16:08:49.382Z</lastmod>
+    <lastmod>2022-03-20T14:18:18.179Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://www.trendscads.com/cookie-policy</loc>
-    <lastmod>2022-01-03T16:08:49.382Z</lastmod>
+    <lastmod>2022-01-20T14:18:18.179Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

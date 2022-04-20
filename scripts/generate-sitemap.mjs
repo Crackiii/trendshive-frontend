@@ -3,8 +3,63 @@ import globby from 'globby';
 import prettier from 'prettier';
 import * as dates from 'date-fns'
 
+
+
 async function generate() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
+  const more_pages = [
+    {
+      value: 'business',
+    },
+    {
+      value: 'sports',
+    },
+    {
+      value: 'entertainment',
+    },
+    {
+      value: 'health',
+    },
+    {
+      value: 'technology',
+    },
+    {
+      value: 'news',
+    },
+    {
+      value: 'trending',
+    },
+    {
+      value: 'fashion',
+    },
+    {
+      value: 'travel',
+    },
+    {
+      value: 'food',
+    },
+    {
+      value: 'culture',
+    },
+    {
+      value: 'cryptocurrency',
+    },
+    {
+      value: 'learning',
+    },
+    {
+      value: 'gaming',
+    },
+    {
+      value: 'live',
+    },
+    {
+      value: 'jobs',
+    },
+    {
+      value: 'shopping',
+    }
+  ]
   const pages = [
     {
       path: '',
@@ -12,18 +67,12 @@ async function generate() {
       changefreq: 'hourly',
       lastmod: dates.subHours(Date.now(), Math.random() * 4 + 1).toISOString()
     },
-    {
-      path: '/search',
+    ...more_pages.map((item => ({
+      path: '/categories/' + item.value,
       priority: 1,
       changefreq: 'hourly',
-      lastmod: dates.subHours(Date.now(), Math.random() * 4 + 1).toISOString()
-    },
-    {
-      path: '/story',
-      priority: 1,
-      changefreq: 'hourly',
-      lastmod: dates.subHours(Date.now(), Math.random() * 4 + 1).toISOString()
-    },
+      lastmod: dates.subMonths(Date.now(), Math.random() * 4 + 1).toISOString()
+    }))),
     {
       path: '/privacy-policy',
       priority: 0.5,
@@ -37,6 +86,8 @@ async function generate() {
       lastmod: dates.subMonths(Date.now(), Math.random() * 4 + 1).toISOString()
     }
   ]
+
+
 
   const sitemap = `
     <?xml version="1.0" encoding="UTF-8"?>
