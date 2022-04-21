@@ -102,8 +102,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const params = ctx.query
   const geo = await (await axios.get("https://api.geoapify.com/v1/ipinfo?apiKey=589ae61973f3443faf4b13b2f1c57ae9")).data
   try {
-    const basePath = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://trendscads.com'
-    const home = await axios.get(`${basePath}/api/categories/${params.category}?country=${geo.country.iso_code}`)
+    const basePath = 'https://api.trendscads.com'
+    const home = await axios.get(`${basePath}/categories/${params.category}?country=${geo.country.iso_code}`)
     const { data } = home
 
     return {
