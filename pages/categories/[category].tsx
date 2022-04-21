@@ -35,7 +35,7 @@ function Category({params, data}: {params: any, data: any}) {
               {
                 currentTab === 'all' && 
                 <div className='w-full mt-10'>
-                    <div className='sm:masonry-1-col md:masonry-2-col lg:masonry-3-col xl:masonry-5-col box-border mx-auto before:box-inherit after:box-inherit'>
+                    <div className='sm:masonry-1-col md:masonry-3-col lg:masonry-4-col 2xl:masonry-5-col box-border mx-auto before:box-inherit after:box-inherit'>
                       {
                         [...(data?.flatMap((a: any) => a) || [])]
                           .slice(0, 100).map((item: any, index: number) => (
@@ -61,12 +61,12 @@ function Category({params, data}: {params: any, data: any}) {
               }
               { currentTab === 'videos' &&
                 
-                <div className='mt-10 sm:masonry-1-col md:masonry-2-col lg:masonry-3-col xl:masonry-6-col box-border mx-auto before:box-inherit after:box-inherit'>
+                <div className='mt-10 sm:masonry-1-col md:masonry-3-col lg:masonry-4-col 2xl:masonry-5-col box-border before:box-inherit after:box-inherit'>
                   {
                     data?.[1]?.length > 0 ?
                       data?.[1]?.map((item: any, index: number) => (
-                        <div key={index} className='mb-4 inline-block'>
-                          <Youtube video={item} />
+                        <div key={index} className='mb-4'>
+                          <Youtube video={item} width={'min-w-full'} />
                         </div>
                       )): <>No videos</>
                   }

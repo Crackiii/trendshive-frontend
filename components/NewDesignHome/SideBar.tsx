@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import { useWindowSize } from 'react-use'
 import { usePageContext } from './PageContext'
 
 type MenuItem = {
@@ -119,33 +120,87 @@ export const menuItems: MenuItem[] = [
 interface Props {}
 
 function SideBar(_: Props) {
-  const {toggleNavBar} = usePageContext()
+  const { width } = useWindowSize();
+  const {toggleNavBar, setToggleNavBar} = usePageContext()
   const params = useRouter().query
+  const sideBarRef = useRef(null)
 
+  const handleClick = (ev: React.MouseEvent<HTMLDivElement>) => {
+    if(ev.target !== sideBarRef.current) {
+      setToggleNavBar(false)
+    }
+  }
+
+  //overflow-hidden overflow-y-auto
   return (
-    <div className=' py-3 ' style={{height: 'calc(100vh - 60px)', width: toggleNavBar ? '70px' : '240px'}}>
+    <div>
       {
-        
-        menuItems.map((item, index) => 
+        width > 1024 && 
+        <div className='py-3 overflow-hidden overflow-y-auto' style={{height: 'calc(100vh - 60px)', width: toggleNavBar ? '70px' :'240px', overflow: 'overlay'}}>
           {
-            const isActive = params.category === item.value
-            return (
-              <Link key={index} href={`/categories/${item.value}`}>
-                <a>
-                  <div 
-                    className={`w-full flex justify-start items-center h-10 px-6 mb-2 rounded-lg cursor-pointer group ${isActive ? 'bg-white shadow-md shadow-slate-200' : 'shadow-none'} hover:bg-white hover:bg-opacity-60`}>
-                    <img src={item.icon_30} className={`w-6 h-6 ${isActive ? 'opacity-100' : 'opacity-50'}  group-hover:opacity-100`} alt={item.label} />
-                   {!toggleNavBar && 
-                      <span className={`ml-6 text-sm  ${isActive ? 'text-slate-900 font-normal' : 'text-slate-700 font-light'}`}>
-                        {item.label}
-                      </span>
-                    }
-                  </div>
-                </a>
-              </Link>
+            menuItems.map((item, index) => 
+              {
+                const isActive = params.category === item.value
+                return (
+                  <Link key={index} href={`/categories/${item.value}`}>
+                    <a>
+                      <div 
+                        className={`flex flex-row justify-start items-center h-10 px-6 mb-2 rounded-lg cursor-pointer group ${isActive ? 'bg-white shadow-md shadow-slate-200' : 'shadow-none'} hover:bg-white hover:bg-opacity-60`}>
+                        <div className='w-6 h-6'>
+                          <img src={item.icon_30} className={`min-w-full min-h-full object-cover ${isActive ? 'opacity-100' : 'opacity-50'}  group-hover:opacity-100`} alt={item.label} />
+                        </div>
+                        {!toggleNavBar && 
+                          <span className={`ml-6 text-sm  ${isActive ? 'text-slate-900 font-normal' : 'text-slate-700 font-light'}`}>
+                            {item.label}
+                          </span>
+                        }
+                      </div>
+                    </a>
+                  </Link>
+                )
+              }
             )
           }
-        )
+        </div>
+      }
+      {
+         width < 1024 && toggleNavBar &&
+         <div className='fixed w-full h-full left-0 top-0 z-50 bg-slate-900 bg-opacity-50' onClick={handleClick}>
+          <div className='py-3 overflow-hidden overflow-y-auto bg-white' style={{height: '100vh', width: '240px', overflow: 'overlay'}}>
+            <div className='flex flex-row justify-start items-center px-6'>
+              <div className='cursor-pointer' onClick={() => ''}>
+                <img className='w-6 h-6 opacity-60 hover:opacity-100' src='/icons/hamburger-30-60/30.png' alt='icon' />
+              </div>
+              <div className='w-9 h-9 ml-6 rounded-full overflow-hidden cursor-pointer' onClick={() => ''}>
+                <img src='/logo.jpeg' alt='logo' />
+              </div>
+            </div>
+            <div className='mt-6' ref={sideBarRef}>
+              {
+                menuItems.map((item, index) => 
+                  {
+                    const isActive = params.category === item.value
+                    return (
+                      <Link key={index} href={`/categories/${item.value}`}>
+                        <a>
+                          <div 
+                            className={`flex flex-row justify-start items-center h-10 px-6 mb-2 rounded-lg cursor-pointer group ${isActive ? 'bg-white shadow-md shadow-slate-200' : 'shadow-none'} hover:bg-white hover:bg-opacity-60`}>
+                            <div className='w-6 h-6'>
+                              <img src={item.icon_30} className={`min-w-full min-h-full object-cover ${isActive ? 'opacity-100' : 'opacity-50'}  group-hover:opacity-100`} alt={item.label} />
+                            </div>
+                            <span className={`ml-6 text-sm  ${isActive ? 'text-slate-900 font-normal' : 'text-slate-700 font-light'}`}>
+                              {item.label}
+                            </span>
+                          </div>
+                        </a>
+                      </Link>
+                    )
+                  }
+                )
+              }
+            </div>
+          </div>
+        </div>
       }
     </div>
   )
