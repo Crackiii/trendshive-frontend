@@ -38,7 +38,7 @@
     "@types/react-slick": "^0.23.8",
     "@types/uuid": "^8.3.4",
     "autoprefixer": "^10.4.4",
-    "eslint": "7.32.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.5.0",
