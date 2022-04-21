@@ -68,14 +68,14 @@ export const getServerSideProps = async () => {
     const basePath = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://trendscads.com'
     const home = await axios.get(`${basePath}/api/home?country=${geo.country.iso_code}`)
     const { data } = home
-    console.log({home})
+
     return {
       props: {
         contents: data.results || []
       }
     }
   } catch(error) {
-    console.log(error)
+    console.log({error})
     return {
       props: {
         contents: []

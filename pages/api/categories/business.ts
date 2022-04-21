@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { prisma } from '../../../client'
+import prisma from '../../../client'
 
 const handler = async (
   req: NextApiRequest,
@@ -7,7 +7,7 @@ const handler = async (
 ) =>  {
   try {
     const data = await Promise.all([
-      prisma.google.findMany({
+      prisma?.google.findMany({
         where: {
           catgory: {
             contains: 'business'
@@ -15,7 +15,7 @@ const handler = async (
           country: String(req.query.country) || 'US'
         }
       }),
-      prisma.youtube.findMany({
+      prisma?.youtube.findMany({
         where: {
           catgory: {
             contains: 'business'
@@ -23,7 +23,7 @@ const handler = async (
           country: String(req.query.country) || 'US'
         }
       }),
-      prisma.duckduckgo.findMany({
+      prisma?.duckduckgo.findMany({
         where: {
           category: {
             contains: 'business'

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import React from 'react'
+import { getHost, validURL } from '../../../utils/common'
 import { useImage } from '../../../utils/hooks'
 
 interface Props {
@@ -8,10 +9,24 @@ interface Props {
   width?: string
 }
 
+
+export const useSource = (sources: string[]) => {
+  const url = sources.find(validURL)
+  const text = sources.find(s => s !== '-')
+
+  if(text) return text;
+
+  if(url) {
+    return getHost(url).replace('www.', '')
+  }
+}
+
 function Youtube(props: Props) {
 
   const {image} = useImage(props.content.image_url || props.content.thumbnail_sm)
   const url = /watch\?v=/.test(props.content.url) ? `https://youtube.com${props.content.url}` : props.content.url
+  const source = useSource([props.content.source,  props.content.channel_name,  url])
+
   return (
     <Link href={url}>
       <a target={'_blank'}>
@@ -24,7 +39,7 @@ function Youtube(props: Props) {
           }
           <div className='px-3 pb-4'>
             <div className='flex flex-row justify-between items-center text-xs py-2'>
-              <div className='text-sky-500'>#{props.content.source || props.content.channel_name}</div>
+              <div className='text-sky-500'>#{source}</div>
               <div className='text-slate-400'>{props.content.time}</div>
             </div>
             <div className='text-slate-600 text-base font-normal group-hover:underline group-hover:text-sky-500'>

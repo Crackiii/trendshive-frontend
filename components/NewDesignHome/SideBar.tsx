@@ -125,6 +125,7 @@ function SideBar(_: Props) {
   return (
     <div className=' py-3 ' style={{height: 'calc(100vh - 60px)', width: toggleNavBar ? '70px' : '240px'}}>
       {
+        
         menuItems.map((item, index) => 
           {
             const isActive = params.category === item.value

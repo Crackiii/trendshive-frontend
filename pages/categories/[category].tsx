@@ -37,7 +37,7 @@ function Category({params, data}: {params: any, data: any}) {
                 <div className='w-full mt-10'>
                     <div className='sm:masonry-1-col md:masonry-2-col lg:masonry-3-col xl:masonry-5-col box-border mx-auto before:box-inherit after:box-inherit'>
                       {
-                        [...(data?.articles || []), ...(data?.videos || []), ...(data?.news || [])]
+                        [...(data?.flatMap((a: any) => a) || [])]
                           .slice(0, 100).map((item: any, index: number) => (
                           <div key={index} className='mb-4'>
                             <RandomData content={item} width={'min-w-full bg-white'} />
@@ -50,33 +50,37 @@ function Category({params, data}: {params: any, data: any}) {
               { currentTab === 'stories' &&
                 <div className='mt-10 sm:masonry-1-col md:masonry-2-col lg:masonry-3-col xl:masonry-4-col box-border mx-auto before:box-inherit after:box-inherit'>
                   {
-                     data?.articles?.map((item: any, index: number) => (
+                    data?.[0]?.length ?
+                     data?.[0]?.map((item: any, index: number) => (
                       <div key={index} className='mb-4'>
                         <Article article={item} width={'min-w-full border-none'} />
                       </div>
-                    ))
+                    )): <>No Stories</>
                   }
                 </div>
               }
               { currentTab === 'videos' &&
+                
                 <div className='mt-10 sm:masonry-1-col md:masonry-2-col lg:masonry-3-col xl:masonry-6-col box-border mx-auto before:box-inherit after:box-inherit'>
                   {
-                    data?.videos?.map((item: any, index: number) => (
-                      <div key={index} className='mb-4 inline-block'>
-                        <Youtube video={item} />
-                      </div>
-                    ))
+                    data?.[1]?.length > 0 ?
+                      data?.[1]?.map((item: any, index: number) => (
+                        <div key={index} className='mb-4 inline-block'>
+                          <Youtube video={item} />
+                        </div>
+                      )): <>No videos</>
                   }
-                </div>
+                </div> 
               }
               { currentTab === 'news' &&  
                 <div className='mt-10'>
                   {
-                    data?.news?.map((item: any, index: number) => (
+                    data?.[2]?.length > 0 ?
+                    data?.[2]?.map((item: any, index: number) => (
                       <div key={index} className='mb-4'>
                         <Link search={item} width={'min-w-full border-none'} />
                       </div>
-                    ))
+                    )): <>No News</>
                   }
                 </div>
               }
@@ -98,9 +102,10 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const params = ctx.query
   const geo = await (await axios.get("https://api.geoapify.com/v1/ipinfo?apiKey=589ae61973f3443faf4b13b2f1c57ae9")).data
   try {
-    const home = await axios.get(`https://www.trendscads.com/api/categories/${params.category}?country=${geo.country.iso_code}`)
+    const basePath = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://trendscads.com'
+    const home = await axios.get(`${basePath}/api/categories/${params.category}?country=${geo.country.iso_code}`)
     const { data } = home
-  
+
     return {
       props: {
         data,

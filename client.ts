@@ -1,12 +1,15 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from "@prisma/client"
 
-declare global {
-  // allow global `var` declarations
-  var prisma: PrismaClient | undefined
+let prisma: PrismaClient
+
+// @ts-ignore
+if (!global.prisma) {
+  console.log('[PRISMA CLIENT]: Created DB connection.');
+  // @ts-ignore
+  global.prisma = new PrismaClient()
 }
+console.log('[PRISMA CLIENT]: Returning DB connection.');
+// @ts-ignore
+prisma = global.prisma
 
-export const prisma =
-  global.prisma ||
-  new PrismaClient({
-    log: ['query'],
-  })
+export default prisma
