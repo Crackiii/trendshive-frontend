@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import GridItem from './GridItem';
@@ -31,12 +31,11 @@ function TopGrid(props?: Props) {
     '/images/trending.jpeg',
     '/images/travel.jpeg',
   ]
+  const bodyWidth = useMemo(() => width, [width])
 
   return (
     <>
-    {
-      width > 640 && 
-      <div className="sm:grid grid-rows-1 grid-cols-1 gap-1 grid-flow-row  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+      <div className="hidden sm:grid grid-rows-1 grid-cols-1 gap-1 grid-flow-row sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
         {
           props?.articles?.map((item, index) => (
               <div key={index} className={`${gridItemStyles[index]} h-60 min-h-full`}>
@@ -45,24 +44,24 @@ function TopGrid(props?: Props) {
           ))
         }
       </div>
-    }
-
-      <CarouselProvider
-        naturalSlideWidth={100}
-        className="sm:hidden h-96"
-        naturalSlideHeight={100}
-        totalSlides={gridItemStyles.length}
-      >
-        <Slider>
-            {
-              props?.articles?.map((item, index) => (
-                <Slide index={index} key={index}>
-                   <GridItem item={{...item, image: images[index]}} />
-                </Slide>
-              ))
-            }
-      </Slider>
-    </CarouselProvider>
+      <div className='sm:hidden h-96'>
+        <CarouselProvider
+          naturalSlideWidth={100}
+          className="h-96"
+          naturalSlideHeight={100}
+          totalSlides={gridItemStyles.length}
+        >
+          <Slider>
+              {
+                props?.articles?.map((item, index) => (
+                  <Slide index={index} key={index}>
+                    <GridItem item={{...item, image: images[index]}} />
+                  </Slide>
+                ))
+              }
+        </Slider>
+      </CarouselProvider>
+      </div>
     </>
     
   )
