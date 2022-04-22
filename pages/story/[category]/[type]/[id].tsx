@@ -35,7 +35,7 @@ function Story({data, type, category}: {data: any, type: string, category: strin
             (type === 'article' || type === 'search') &&
             <>
               <div className='w-full bg-white h-96 rounded-xl overflow-hidden relative'>
-                <img src={`/images/${category}.jpeg`} className='object-cover min-h-full min-w-full' alt={category} />
+                <img src={data[0]?.metaData?.images?.[0] || `/images/${category}.jpeg`} className='object-cover min-h-full min-w-full' alt={category} />
                 <div className={'absolute w-full h-full left-0 top-0 z-10 gradient-bg'}>
                   <div className='uppercase text-white font-black text-2xl flex flex-col justify-end px-10 pb-10 h-full'>{data[0]?.metaData?.title}</div>
                 </div>
@@ -43,12 +43,6 @@ function Story({data, type, category}: {data: any, type: string, category: strin
               <div className='my-4'>
                 <Tags tags={[...data[0]?.metaData?.keywords?.split(',')]} />
               </div>
-              {/* {
-                data[0]?.metaData?.images[0] && 
-                <div className='w-full h-96 my-2 overflow-hidden rounded-lg'>
-                  <img src={data[0]?.metaData?.images[0]} className='min-h-full min-w-full object-cover' alt={data[0]?.metaData?.keywords} />
-                </div>
-              } */}
               <div className='tracking-wider text-sm' dangerouslySetInnerHTML={{__html: data[0]?.html}}></div>
             </>
           }
