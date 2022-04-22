@@ -40,7 +40,7 @@ const Home = ({contents}: {contents: any}) => {
       <PageContextProvider>
         <Page left={
           <div className='overflow-hidden'>
-            <Grid articles={contents?.articles?.[""]?.splice(0, 8)} />
+            <Grid articles={contents?.articles?.["-"]?.splice(0, 8)} />
             {
               menuItems.map((item, index) => (
                 <Category 
