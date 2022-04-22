@@ -14,7 +14,7 @@ function NavBar() {
     let initialWidth = 'calc(100vw - 480px)';
 
     if(width < 1024) {
-      initialWidth = 'calc(100vw - 120px)'
+      initialWidth = 'calc(100vw - 170px)'
     } else {
       initialWidth = 'calc(100vw - 480px)'
     }
@@ -41,10 +41,10 @@ function NavBar() {
         </div>
       </div>
       <div style={{width: initialWidth}} className='relative w-full'>
-        <div className='absolute h-full flex flex-row justify-start items-center px-4'>
+        <div className='absolute h-full flex flex-row justify-start items-center -ml-3 sm:ml-0 sm:px-0 md:px-4'>
           <img src='/icons/mic-30-60/30.png' alt='mic' className='opacity-30 w-6 h-6 hover:opacity-90 cursor-pointer' />
         </div>
-        <input type={'text'} placeholder='Search and discover new trends...' className=' bg-white font-light h-full outline-none pl-12 pr-3 md:pr-12 text-base w-full'/>
+        <input type={'text'} placeholder='Search and discover new trends...' className=' bg-white font-light h-full outline-none pl-3 sm:pl-6 md:pl-12 pr-0 sm:pr-3 md:pr-12 text-base w-full'/>
       </div>
       <div className='relative flex justify-end items-center px-6 w-20 md:w-60'>
         {
