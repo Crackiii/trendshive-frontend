@@ -2,13 +2,14 @@ import React from 'react'
 import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import GridItem from './GridItem';
+import { useWindowSize } from 'react-use';
 
 interface Props {
   articles?: any[]
 }
 
 function TopGrid(props?: Props) {
-
+  const {width} = useWindowSize()
   const gridItemStyles: string[] = [
     `flex col-span-2 md:row-span-2 md:col-span-1 md:col-start-1 md:row-start-1`,
     `hidden md:flex  md:row-span-1 md:col-span-2 md:col-start-2 md:row-start-1`,
@@ -33,15 +34,19 @@ function TopGrid(props?: Props) {
 
   return (
     <>
-     <div className="grid-rows-1 grid-cols-1 gap-1 grid-flow-row sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-      {
-        props?.articles?.map((item, index) => (
-            <div key={index} className={`${gridItemStyles[index]} h-60 min-h-full`}>
-              <GridItem item={{...item, image: images[index]}} />
-            </div>
-        ))
-      }
+    {
+      width > 640 && 
+      <div className="sm:grid grid-rows-1 grid-cols-1 gap-1 grid-flow-row  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        {
+          props?.articles?.map((item, index) => (
+              <div key={index} className={`${gridItemStyles[index]} h-60 min-h-full`}>
+                <GridItem item={{...item, image: images[index]}} />
+              </div>
+          ))
+        }
       </div>
+    }
+
       <CarouselProvider
         naturalSlideWidth={100}
         className="sm:hidden h-96"
@@ -52,7 +57,7 @@ function TopGrid(props?: Props) {
             {
               props?.articles?.map((item, index) => (
                 <Slide index={index} key={index}>
-                   <GridItem item={item} />
+                   <GridItem item={{...item, image: images[index]}} />
                 </Slide>
               ))
             }
