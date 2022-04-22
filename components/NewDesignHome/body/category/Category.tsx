@@ -20,9 +20,9 @@ function Category(props: Category) {
   }
 
   return (
-    <div className='mt-20 pb-20 border-b border-slate-200 ' >
+    <div className='mt-10 pb-10 border-b border-slate-300 ' >
       <CategoryHead name={props.name} label={props.label} image={props.icon} link={''} />
-      <div className='w-full mt-10'>
+      <div className='w-full'>
           <div className='sm:masonry-1-col md:masonry-3-col lg:masonry-4-col 2xl:masonry-5-col box-border mx-auto before:box-inherit after:box-inherit'>
             {
               [...props.articles, ...props.videos, ...props.search].map((item: any, index: number) => (
