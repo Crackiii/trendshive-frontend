@@ -1,17 +1,36 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useWindowSize } from 'react-use';
 import { usePageContext } from './PageContext'
 
 function NavBar() {
   const { width } = useWindowSize();
   const { toggleNavBar, setToggleNavBar } = usePageContext()
+  const [initialWidth, setInitialWidth] = useState('calc(100vw - 480px)');
   const history = useRouter()
+
+  const calculatedWidth = useMemo(()=> {
+    let initialWidth = 'calc(100vw - 480px)';
+
+    if(width < 1024) {
+      initialWidth = 'calc(100vw - 120px)'
+    } else {
+      initialWidth = 'calc(100vw - 480px)'
+    }
+
+    return initialWidth
+
+  }, [width])
+
+
+  useEffect(() => {
+    setInitialWidth(calculatedWidth)
+  }, [calculatedWidth])
 
   return (
     <div className=' bg-white flex justify-start ' style={{height: '60px'}}>
-      <div className='flex flex-row justify-start items-center px-6 min-h-full' style={{width: '240px'}}>
+      <div className='flex flex-row justify-start items-center px-6 min-h-full w-40 md:w-60'>
         <div className='cursor-pointer' onClick={() => {
           setToggleNavBar(!toggleNavBar)
         }}>
@@ -21,13 +40,13 @@ function NavBar() {
           <img src='/logo.jpeg' alt='logo' />
         </div>
       </div>
-      <div className='relative' style={{width: 'calc(100vw - 480px)'}}>
+      <div style={{width: initialWidth}} className='relative w-full'>
         <div className='absolute h-full flex flex-row justify-start items-center px-4'>
           <img src='/icons/mic-30-60/30.png' alt='mic' className='opacity-30 w-6 h-6 hover:opacity-90 cursor-pointer' />
         </div>
-        <input type={'text'} placeholder='Search and discover new trends...' className=' bg-white font-light h-full outline-none px-12 text-base w-full'/>
+        <input type={'text'} placeholder='Search and discover new trends...' className=' bg-white font-light h-full outline-none pl-12 pr-3 md:pr-12 text-base w-full'/>
       </div>
-      <div className='relative flex justify-end items-center px-6' style={{width: '240px'}}>
+      <div className='relative flex justify-end items-center px-6 w-20 md:w-60'>
         {
           width < 1350 && 
           <div className='cursor-pointer' onClick={() => {
