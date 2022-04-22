@@ -28,7 +28,7 @@ function Youtube(props: Props) {
   const source = useSource([props.content.source,  props.content.channel_name,  url])
 
   return (
-    <Link href={url}>
+    <Link href={`/story/${props.content.category || props.content.catgory}/${props.content.type}/${props.content.id}`}>
       <a target={'_blank'}>
         <div className={`${props.width || 'w-48 mr-4' } inline-block rounded-lg group overflow-hidden font-light cursor-pointer hover:shadow-xl hover:shadow-zinc-200 transition-shadow`} >
           {

@@ -32,7 +32,7 @@ function Tags({tags, show}: Props) {
         .filter((t: string) => t.trim().length > 3) // filter out short tags
         .filter((t: string) => isNaN(Number(t))) // filter out numbers
         .map((tag, index) => (
-          <Link key={index} href={`/search?searchQuery=${tag.toLowerCase()}&offset=0&limit=20`} passHref>
+          <Link key={index} href={`/#`} passHref>
             <span className='inline-block last:mr-0 mr-1 mb-1 cursor-pointer'>
               <a>
                 <span  className={`text-xs font-semibol py-1 px-2 rounde lowercase ${colors[Math.floor(Math.random() * colors.length)]}`}>

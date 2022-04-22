@@ -29,7 +29,6 @@ export const useBodyWidth = () => {
   }
 
   if(width < 1024) {
-    console.log("CALLED")
     initialWidth = 0;
   }
 
@@ -51,7 +50,7 @@ function Body(props: Props) {
       </div>
       {
         windowWidth > 1350 && 
-        <div className='flex-2 border border-red-400 w-60' style={{height: 'calc(100vh - 60px)'}} >
+        <div className='flex-2 border w-60 overflow-hidden overflow-y-auto' style={{height: 'calc(100vh - 60px)'}} >
           <BodyRightContent>
             {props.right}
           </BodyRightContent>
