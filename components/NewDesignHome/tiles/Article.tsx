@@ -17,7 +17,7 @@ function Article(props: Props) {
   const source = props.article?.source === '-' ? getHost(props.article?.url) : props.article?.source
 
   return (
-    <Link href={props.article.url}>
+    <Link href={`/story/${props.article.category}/${props.article.type}/${props.article.id}`}>
       <a target={'_blank'}>
         <div className={`${props.width || 'w-72 mr-5' } bg-white p-2 rounded-md inline-block `}>
           <div className='flex justify-between items-start'>

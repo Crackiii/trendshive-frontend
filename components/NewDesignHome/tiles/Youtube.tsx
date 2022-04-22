@@ -16,7 +16,7 @@ function Youtube(props: Props) {
   const {image} = useImage(props.video.thumbnail_sm)
 
   return (
-    <Link href={`https://youtube.com${props.video.url}`}>
+    <Link href={`/story/${props.video.category}/${props.video.type}/${props.video.id}`}>
       <a target={'_blank'}>
         <div className={`${props.width || 'w-48 mr-4' } inline-block rounded-lg overflow-hidden font-light cursor-pointer`} onClick={() => setOpen(true)} >
           <div className='w-full rounded-lg overflow-hidden'>

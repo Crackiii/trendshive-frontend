@@ -11,7 +11,7 @@ function GridItem({item}: Props) {
 
   return (
     <div className='h-96 sm:h-auto w-full relative group overflow-hidden rounded-md '>
-      <Link href={item.url} passHref>
+      <Link href={`/story/${item.category}/${item.type}/${item.id}`} passHref>
           <a target={'_blank'}>
             <div className='w-full h-full min-h-full min-w-full relative sm:group-hover:scale-125 transition'>
               <img src={image} alt='image' className='object-cover w-full min-w-full h-full min-h-full' />

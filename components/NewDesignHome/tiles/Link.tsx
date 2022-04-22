@@ -14,9 +14,9 @@ function Search(props: Props) {
   const {image} = useImage(props?.search?.image_url)
   const time = props.search?.time === '-' ? dates.formatDistanceToNow(new Date(props.search?.created_at)) : props.search?.time
   const source = props.search?.source === '-' ? getHost(props.search?.url) : props.search?.source
-
+  
   return (
-    <Link href={props.search.url}>
+    <Link href={`/story/${props.search.category}/${props.search.type}/${props.search.id}`}>
       <a target={'_blank'}>
         <div className={`${props.width || 'w-96 pr-4'} border-r mr-4 inline-block`}>
           <div className='flex justify-between'>
