@@ -4,10 +4,11 @@ import Head from 'next/head'
 import React from 'react'
 import Page from '../../../../components/NewDesignHome/Page'
 import { PageContextProvider } from '../../../../components/NewDesignHome/PageContext'
+import RandomData from '../../../../components/NewDesignHome/tiles/RandomData'
 import Tags from '../../../../components/shared/Tags'
 import { getYoutubeEmbedUrl } from '../../../../utils/common'
 
-function Story({data, type, category}: {data: any, type: string, category: string}) {
+function Story({data, type, category, related}: {related: any, data: any, type: string, category: string}) {
 
   return (
     <>
@@ -41,11 +42,23 @@ function Story({data, type, category}: {data: any, type: string, category: strin
                 </div>
               </div>
               <div className='my-4'>
-                <Tags tags={[...data[0]?.metaData?.keywords?.split(',')]} />
+                <Tags tags={[...(data[0]?.metaData?.keywords || '').split(',')]} />
               </div>
               <div className='tracking-wider text-sm' dangerouslySetInnerHTML={{__html: data[0]?.html}}></div>
             </>
           }
+          <div className='w-full mt-10'>
+              <div className='px-16 text-slate-500 bg-white inline-block  mb-5 text-center py-2 rounded-md shadow-xl shadow-slate-200'>Might of your interest</div>
+              <div className='sm:masonry-1-col md:masonry-3-col lg:masonry-4-col 2xl:masonry-5-col box-border mx-auto before:box-inherit after:box-inherit'>
+                {
+                  [...related.articles, ...related.videos, ...related.search].map((item: any, index: number) => (
+                    <div key={index} className='mb-4'>
+                      <RandomData content={item} width={'min-w-full bg-white'} />
+                    </div>
+                  ))
+                }
+              </div>
+          </div>
         </div>
       } right={
         <></>
@@ -69,6 +82,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return {
       props: {
         data: data.result || {},
+        related: data.related,
         type,
         category
       }
