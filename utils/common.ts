@@ -48,3 +48,25 @@ export const getYoutubeEmbedUrl = (url: string) => {
 
   return embedUrl
 }
+
+export const categories = [
+  "business",
+  "sports",
+  "entertainment",
+  "health",
+  "technology",
+  "news",
+  "trending",
+  "fashion",
+  "travel",
+  "food",
+  "culture",
+  "cryptocurrency",
+  "learning",
+  "gaming",
+  "live",
+  "jobs",
+  "shopping"
+]
+
+export const types = ["article", "video", "search"]

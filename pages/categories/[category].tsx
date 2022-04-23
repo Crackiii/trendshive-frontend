@@ -10,7 +10,7 @@ import Article from '../../components/NewDesignHome/tiles/Article';
 import Link from '../../components/NewDesignHome/tiles/Link';
 import RandomData from '../../components/NewDesignHome/tiles/RandomData'
 import Youtube from '../../components/NewDesignHome/tiles/Youtube';
-
+import { categories } from '../../utils/common';
 
 function Category({params, data}: {params: any, data: any}) {
   const [currentTab, setCurrentTab] = React.useState('all')
@@ -113,6 +113,20 @@ export default Category
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const params = ctx.query
+
+  const { category } = ctx.query
+
+  if(!categories.includes(String(category))) {
+    return {
+      props: {
+        data: {}
+      },
+      redirect: {
+        destination: '/',
+      }
+    }
+  }
+
   const geo = await (await axios.get("https://api.geoapify.com/v1/ipinfo?apiKey=589ae61973f3443faf4b13b2f1c57ae9")).data
   try {
     const basePath = 'https://api.trendscads.com'

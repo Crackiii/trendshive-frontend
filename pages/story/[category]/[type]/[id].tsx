@@ -6,7 +6,7 @@ import Page from '../../../../components/NewDesignHome/Page'
 import { PageContextProvider } from '../../../../components/NewDesignHome/PageContext'
 import RandomData from '../../../../components/NewDesignHome/tiles/RandomData'
 import Tags from '../../../../components/shared/Tags'
-import { getYoutubeEmbedUrl } from '../../../../utils/common'
+import { categories, getYoutubeEmbedUrl, types } from '../../../../utils/common'
 
 function Story({data, type, category, related}: {related: any, data: any, type: string, category: string}) {
 
@@ -51,7 +51,7 @@ function Story({data, type, category, related}: {related: any, data: any, type: 
               <div className='px-16 text-slate-500 bg-white inline-block  mb-5 text-center py-2 rounded-md shadow-xl shadow-slate-200'>Might of your interest</div>
               <div className='sm:masonry-1-col md:masonry-3-col lg:masonry-4-col 2xl:masonry-5-col box-border mx-auto before:box-inherit after:box-inherit'>
                 {
-                  [...related.articles, ...related.videos, ...related.search].map((item: any, index: number) => (
+                  [...(related?.articles || []), ...(related?.videos || []), ...(related?.search || [])].map((item: any, index: number) => (
                     <div key={index} className='mb-4'>
                       <RandomData content={item} width={'min-w-full bg-white'} />
                     </div>
@@ -73,6 +73,17 @@ export default Story
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id, type, category } = context.query
+
+  if(!categories.includes(String(category)) || !types.includes(String(type)) || isNaN(Number(id))) {
+    return {
+      props: {
+        data: {}
+      },
+      redirect: {
+        destination: '/',
+      }
+    }
+  }
   
   try {
     const basePath = 'https://api.trendscads.com'
@@ -88,10 +99,20 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       }
     }
   } catch(error) {
-    console.log({error})
+   const status = (error as any)?.response.status
+
+   if(status === 404) {
     return {
       props: {
         data: {}
+      },
+      notFound: true
+    }
+   }
+    return {
+      props: {
+        data: {},
+        related: []
       }
     }
   }

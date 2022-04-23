@@ -12,8 +12,9 @@ interface Props {
 function Search(props: Props) {
 
   const {image} = useImage(props?.search?.image_url)
-  const time = props.search?.time === '-' ? dates.formatDistanceToNow(new Date(props.search?.created_at)) : props.search?.time
   const source = props.search?.source === '-' ? getHost(props.search?.url) : props.search?.source
+  const dateInstance = new Date(props.search.time);
+  const time = dateInstance instanceof Date && !isNaN(Number(dateInstance)) ? dates.formatDistanceToNow(new Date(props.search.time)) : props.search.time
   
   return (
     <Link href={`/story/${props.search.category}/${props.search.type}/${props.search.id}`}>
