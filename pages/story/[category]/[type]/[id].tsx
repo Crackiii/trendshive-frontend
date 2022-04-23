@@ -2,11 +2,13 @@ import axios from 'axios'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import React from 'react'
+import { commonBreakPoints } from '../../../../components/NewDesignHome/body/category/Category'
 import Page from '../../../../components/NewDesignHome/Page'
 import { PageContextProvider } from '../../../../components/NewDesignHome/PageContext'
 import RandomData from '../../../../components/NewDesignHome/tiles/RandomData'
 import Tags from '../../../../components/shared/Tags'
 import { categories, getYoutubeEmbedUrl, types } from '../../../../utils/common'
+import Masonry from 'react-masonry-css'
 
 function Story({data, type, category, related}: {related: any, data: any, type: string, category: string}) {
 
@@ -49,7 +51,7 @@ function Story({data, type, category, related}: {related: any, data: any, type: 
           }
           <div className='w-full mt-10'>
               <div className='px-16 text-slate-500 bg-white inline-block  mb-5 text-center py-2 rounded-md shadow-xl shadow-slate-200'>Might of your interest</div>
-              <div className='sm:masonry-1-col md:masonry-3-col lg:masonry-4-col 2xl:masonry-5-col box-border mx-auto before:box-inherit after:box-inherit'>
+              <Masonry breakpointCols={commonBreakPoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column" >
                 {
                   [...(related?.articles || []), ...(related?.videos || []), ...(related?.search || [])].map((item: any, index: number) => (
                     <div key={index} className='mb-4'>
@@ -57,7 +59,7 @@ function Story({data, type, category, related}: {related: any, data: any, type: 
                     </div>
                   ))
                 }
-              </div>
+              </Masonry>
           </div>
         </div>
       } right={

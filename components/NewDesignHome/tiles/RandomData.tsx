@@ -34,7 +34,7 @@ function Youtube(props: Props) {
   return (
     <Link href={`/story/${props.content.category || props.content.catgory}/${props.content.type}/${props.content.id}`}>
       <a target={'_blank'}>
-        <div className={`${props.width || 'w-48 mr-4' } inline-block rounded-lg group overflow-hidden font-light cursor-pointer hover:shadow-xl hover:shadow-zinc-200 transition-shadow`} >
+        <div className={`bg-white rounded-lg group overflow-hidden font-light cursor-pointer hover:shadow-xl hover:shadow-zinc-200 transition-shadow`} >
           {
             image !== '/fallback.png' &&
             <div className='w-full rounded-lg overflow-hidden'>
@@ -50,7 +50,7 @@ function Youtube(props: Props) {
               <div className=' whitespace-normal' dangerouslySetInnerHTML={{__html: props.content.title}}></div>
             </div>
             <div className='text-slate-600 text-xs mt-2 font-light'>
-              <div className=' whitespace-normal tracking-wide' dangerouslySetInnerHTML={{__html: props.content.description}}></div>
+              <div className=' whitespace-normal tracking-wide'>{props.content.description}</div>
             </div>
           </div>
         </div>

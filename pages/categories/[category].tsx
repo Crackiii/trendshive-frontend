@@ -11,6 +11,8 @@ import Link from '../../components/NewDesignHome/tiles/Link';
 import RandomData from '../../components/NewDesignHome/tiles/RandomData'
 import Youtube from '../../components/NewDesignHome/tiles/Youtube';
 import { categories } from '../../utils/common';
+import Masonry from 'react-masonry-css'
+import { commonBreakPoints } from '../../components/NewDesignHome/body/category/Category';
 
 function Category({params, data}: {params: any, data: any}) {
   const [currentTab, setCurrentTab] = React.useState('all')
@@ -47,7 +49,7 @@ function Category({params, data}: {params: any, data: any}) {
                 {
                   currentTab === 'all' && 
                   <div className='w-full mt-10'>
-                      <div className='sm:masonry-1-col md:masonry-3-col lg:masonry-4-col 2xl:masonry-5-col box-border mx-auto before:box-inherit after:box-inherit'>
+                      <Masonry breakpointCols={commonBreakPoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column" >
                         {
                           [...(data?.flatMap((a: any) => a) || [])]
                             .slice(0, 100).map((item: any, index: number) => (
@@ -56,7 +58,7 @@ function Category({params, data}: {params: any, data: any}) {
                             </div>
                           ))
                         }
-                      </div>
+                      </Masonry>
                   </div>
                 }
                 { currentTab === 'stories' &&
