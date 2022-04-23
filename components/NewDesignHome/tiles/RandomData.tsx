@@ -50,7 +50,7 @@ function Youtube(props: Props) {
               <div className=' whitespace-normal' dangerouslySetInnerHTML={{__html: props.content.title}}></div>
             </div>
             <div className='text-slate-600 text-xs mt-2 font-light'>
-              <div className=' whitespace-normal tracking-wide'>{props.content.description}</div>
+              <div className=' whitespace-normal tracking-wide' dangerouslySetInnerHTML={{__html: props.content.description}}></div>
             </div>
           </div>
         </div>
