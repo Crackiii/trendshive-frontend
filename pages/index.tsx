@@ -35,23 +35,24 @@ const Home = ({contents}: {contents: any}) => {
         <meta name="twitter:creator" content="@Trendscads" />
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <Script type="text/javascript">
+
+        <script src="https://contextual.media.net/dmedianet.js?cid=8CUB8V2KU" async={true}></script>
+      </Head>
+      <CookiePopup />
+      <Script id='script-a' type="text/javascript">
           {`
             window._mNHandle = window._mNHandle || {};
             window._mNHandle.queue = window._mNHandle.queue || [];
             medianet_versionId = "3121199";
           `}
         </Script>
-        <script src="https://contextual.media.net/dmedianet.js?cid=8CUB8V2KU" async={true}></script>
-      </Head>
-      <CookiePopup />
       
       <PageContextProvider>
         <Page left={
           <div className='overflow-hidden'>
             <Grid articles={contents?.daily_articles || []} />
             <div id="857289888">
-              <Script type="text/javascript">
+              <Script id='script-b' type="text/javascript">
                 {`
                   try {
                       window._mNHandle.queue.push(function (){
