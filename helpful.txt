@@ -1,2 +1,5 @@
 Udemy api = https://www.udemy.com/api-2.0/search-courses/?q=python&src=sac&kw=python&skip_price=true
 Codeacademy api = https://www.codecademy.com/search?query=javascript%20&page=1
+
+
+https://www.aliexpress.com/glosearch/api/product?ltype=affiliate&trafficChannel=af&CatId=100003088&categoryBrowse=y&origin=n&CatId=100003088&spm=a2g0o.best.102.6.23a12c25sgY0b7&catName=casual-shorts

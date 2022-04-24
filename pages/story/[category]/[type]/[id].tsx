@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { adsBreakPoints, commonBreakPoints } from '../../../../components/NewDesignHome/body/category/Category'
 import Page from '../../../../components/NewDesignHome/Page'
 import { PageContextProvider } from '../../../../components/NewDesignHome/PageContext'
@@ -9,7 +9,6 @@ import RandomData from '../../../../components/NewDesignHome/tiles/RandomData'
 import Tags from '../../../../components/shared/Tags'
 import { categories, getYoutubeEmbedUrl, types } from '../../../../utils/common'
 import Masonry from 'react-masonry-css'
-import Script from 'next/script'
 
 function Story({data, type, category, related}: {related: any, data: any, type: string, category: string}) {
 
@@ -53,44 +52,53 @@ function Story({data, type, category, related}: {related: any, data: any, type: 
                   width="728" height="90" scrolling="no" style={{border: 'none'}} frameBorder="0" 
                   sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
               </div>
-              <div className='tracking-wider text-sm' dangerouslySetInnerHTML={{__html: data[0]?.html}}></div>
+              <div className='grid grid-cols-12 gap-2'>
+                <div className='tracking-wider text-sm col-span-12 text-justify' dangerouslySetInnerHTML={{__html: data[0]?.html}}></div>
+                {/* <div className='col-span-3 flex justify-end'>
+                  <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=49&l=ur1&category=clothingandshoes&banner=0KGG5528RQ692034NDG2&f=ifr&linkID=1dbd930fe3882253f7fb6397a5c0016c&t=trendscadstor-20&tracking_id=trendscadstor-20" 
+                    width="300" height="600" scrolling="no" frameBorder="0" 
+                    sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+                </div> */}
+              </div>
             </>
           }
-
-            <Script id="recommendation" type="text/javascript">{`
-              amzn_assoc_placement = "adunit0";
-              amzn_assoc_search_bar = "true";
-              amzn_assoc_tracking_id = "trendscadstor-20";
-              amzn_assoc_search_bar_position = "top";
-              amzn_assoc_ad_mode = "search";
-              amzn_assoc_ad_type = "smart";
-              amzn_assoc_marketplace = "amazon";
-              amzn_assoc_region = "DE";
-              amzn_assoc_title = "More of your interest";
-              amzn_assoc_default_search_phrase = "mobile accessories";
-              amzn_assoc_default_category = "All";
-              amzn_assoc_linkid = "196f18c1edd8003cf88f632002d188b8";`}
-            </Script>
-            <Script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=DE"></Script>
 
           <div className='w-full mt-10'>
               <div className='px-16 text-slate-500 bg-white inline-block  mb-5 text-center py-2 rounded-md shadow-xl shadow-slate-200'>Might of your interest</div>
               <Masonry breakpointCols={adsBreakPoints} className="my-masonry-grid mb-3" columnClassName="my-masonry-grid_column">
-                <iframe 
-                src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=electronics&banner=1RJ5QAT5B55ECPXSXB82&f=ifr&linkID=cda624a45706f0e8c4ffa38ec807f84a&t=trendscadstor-20&tracking_id=trendscadstor-20" 
-                width="300" height="250" scrolling="no" style={{border: 'none'}} frameBorder="0" 
-                sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-                <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=kitchen&banner=0QWEN0JRDQEW51SWDM82&f=ifr&linkID=971c1edbbddb2300790b08d3204508a1&t=trendscadstor-20&tracking_id=trendscadstor-20" 
-                width="300" height="250" scrolling="no" style={{border: 'none'}} frameBorder="0" 
-                sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-                <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=kitchen&banner=03JSEEV8F677G77APHG2&f=ifr&linkID=39ca1284f6271790728f2c71db1e4289&t=trendscadstor-20&tracking_id=trendscadstor-20" 
-                width="300" height="250" scrolling="no" style={{border: 'none'}} frameBorder="0" 
-                sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-                <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=22&l=ur1&category=kitchen&banner=0YPWCZ4K9ZG2ASK6D082&f=ifr&linkID=852a9ab817709e27bc8f45bd4df6e9ab&t=trendscadstor-20&tracking_id=trendscadstor-20" 
-                width="250" height="250" scrolling="no" style={{border: 'none'}} frameBorder="0" 
-                sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+                <div className='flex justify-center'>
+                  <iframe 
+                  src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=electronics&banner=1RJ5QAT5B55ECPXSXB82&f=ifr&linkID=cda624a45706f0e8c4ffa38ec807f84a&t=trendscadstor-20&tracking_id=trendscadstor-20" 
+                  width="300" height="250" scrolling="no" frameBorder="0" 
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+                </div>
+                <div className='flex justify-center'>
+                  <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=kitchen&banner=0QWEN0JRDQEW51SWDM82&f=ifr&linkID=971c1edbbddb2300790b08d3204508a1&t=trendscadstor-20&tracking_id=trendscadstor-20" 
+                  width="300" height="250" scrolling="no" frameBorder="0" 
+                  className='m-auto'
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+                </div>
+                <div className='flex justify-center'>
+                  <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=kitchen&banner=03JSEEV8F677G77APHG2&f=ifr&linkID=39ca1284f6271790728f2c71db1e4289&t=trendscadstor-20&tracking_id=trendscadstor-20" 
+                  width="300" height="250" scrolling="no" frameBorder="0" 
+                  className='m-auto'
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+                </div>
+                <div className='flex justify-center'>
+                  <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=health&banner=0GX835FCXX9P2ZNK0W02&f=ifr&linkID=20c08984d185e268aa622b0b0a84f47a&t=trendscadstor-20&tracking_id=trendscadstor-20" 
+                  width="300" height="250" scrolling="no" frameBorder="0" 
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+                </div>
             </Masonry>
               <Masonry breakpointCols={commonBreakPoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column" >
+                <div className='mb-4 bg-white rounded-xl overflow-hidden flex'>
+                  <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=21&l=ur1&category=health&banner=0PE7YFGPS51S8D4NFP82&f=ifr&linkID=aadecda3d2a8b01452e82a964328f4a0&t=trendscadstor-20&tracking_id=trendscadstor-20" 
+                    width="125" height="125" scrolling="no" frameBorder="0" 
+                    sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+                  <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=6&l=ur1&category=health&banner=1BMSRKX70DMBS0JA0T02&f=ifr&linkID=b3990c4b85cadb620fbbd9aadf8e1522&t=trendscadstor-20&tracking_id=trendscadstor-20" 
+                  width="120" height="150" scrolling="no"  frameBorder="0" 
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+                </div>
                 {
                   [...(related?.articles || []), ...(related?.videos || []), ...(related?.search || [])].map((item: any, index: number) => (
                     <div key={index} className='mb-4'>
