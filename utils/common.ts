@@ -1,3 +1,8 @@
+import axios from "axios";
+import { IncomingMessage } from "http";
+import { NextApiRequest } from "next";
+import requestIp from "request-ip";
+
 export const getHost = (url: string) => {
   const isValidUrl = validURL(url)
 
@@ -47,6 +52,18 @@ export const getYoutubeEmbedUrl = (url: string) => {
   const embedUrl = generateYoutubeEmebedUrl(videoId)
 
   return embedUrl
+}
+
+export const getUserCountry = async (req: any) => {
+  let url = "https://api.geoapify.com/v1/ipinfo?apiKey=589ae61973f3443faf4b13b2f1c57ae9";
+  const ip = requestIp.getClientIp(req);
+  if(ip) {
+    url = `https://api.geoapify.com/v1/ipinfo?ip=${ip}&apiKey=589ae61973f3443faf4b13b2f1c57ae9`;
+  }
+  const geo = await (await axios.get(url)).data;
+  const country = geo.country?.iso_code ? geo.country?.iso_code : "US";
+
+  return country;
 }
 
 export const categories = [

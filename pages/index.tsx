@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head'
 import Script from 'next/script';
 import CookiePopup from '../components/CookiePopup';
@@ -8,10 +9,13 @@ import Page from '../components/NewDesignHome/Page';
 import { PageContextProvider } from '../components/NewDesignHome/PageContext';
 import { menuItems } from '../components/NewDesignHome/SideBar';
 import Tags from '../components/shared/Tags';
+import { getUserCountry } from '../utils/common';
 
 
-const Home = ({contents}: {contents: any}) => {
 
+const Home = ({contents, ctx}: {contents: any, ctx: any}) => {
+
+  console.log({ctx})
   return (
     <>
       <Head>
@@ -89,13 +93,12 @@ const Home = ({contents}: {contents: any}) => {
 export default Home
 
 
-export const getServerSideProps = async () => {
-
-  
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   try {
+    const country = await getUserCountry(ctx.req);
     const basePath = 'https://api.trendscads.com'
-    const home = await axios.get(`${basePath}/home`)
+    const home = await axios.get(`${basePath}/home?country=${country}`)
     const { data } = home
 
     return {
