@@ -9,6 +9,7 @@ function NavBar() {
   const { toggleNavBar, setToggleNavBar } = usePageContext()
   const [initialWidth, setInitialWidth] = useState('calc(100vw - 480px)');
   const history = useRouter()
+  const [value, setValue] = useState('')
 
   const calculatedWidth = useMemo(()=> {
     let initialWidth = 'calc(100vw - 480px)';
@@ -28,6 +29,11 @@ function NavBar() {
     setInitialWidth(calculatedWidth)
   }, [calculatedWidth])
 
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    history.push(`/search?q=${value}`)
+  }
+
   return (
     <div className=' bg-white flex justify-start ' style={{height: '60px'}}>
       <div className='flex flex-row justify-start items-center px-6 min-h-full w-40 md:w-60'>
@@ -44,7 +50,14 @@ function NavBar() {
         <div className='absolute h-full flex flex-row justify-start items-center -ml-3 sm:ml-0 sm:px-0 md:px-4'>
           <img src='/icons/mic-30-60/30.png' alt='mic' className='opacity-30 w-6 h-6 hover:opacity-90 cursor-pointer' />
         </div>
-        <input type={'text'} placeholder='Search and discover new trends...' className=' bg-white font-light h-full outline-none pl-3 sm:pl-6 md:pl-12 pr-0 sm:pr-3 md:pr-12 text-base w-full'/>
+        <form onSubmit={onSubmit} className='h-full w-full'>
+          <input 
+            type={'text'} 
+            placeholder='Search and discover new trends...' 
+            onChange={(ev) => setValue(ev.target.value)}
+            value={value}
+            className=' bg-white font-light h-full outline-none pl-3 sm:pl-6 md:pl-12 pr-0 sm:pr-3 md:pr-12 text-base w-full'/>
+        </form>
       </div>
       <div className='relative flex justify-end items-center px-6 w-20 md:w-60'>
         {
