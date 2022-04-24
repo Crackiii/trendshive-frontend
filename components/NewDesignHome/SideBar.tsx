@@ -13,11 +13,12 @@ type MenuItem = {
 }
 
 export const menuItems: MenuItem[] = [
+
   {
-    label: 'Business',
-    value: 'business',
-    icon_30: '/icons/business-30-60/30.png',
-    icon_60: '/icons/business-30-60/60.png'
+    label: 'News',
+    value: 'news',
+    icon_30: '/icons/news-30-60/30.png',
+    icon_60: '/icons/news-30-60/60.png'  
   },
   {
     label: 'Sports',
@@ -26,10 +27,16 @@ export const menuItems: MenuItem[] = [
     icon_60: '/icons/sports-30-60/60.png'
   },
   {
-    label: 'Entertainment',
-    value: 'entertainment',
-    icon_30: '/icons/entertainment-30-60/30.png',
-    icon_60: '/icons/entertainment-30-60/60.png'  
+    label: 'Trending',
+    value: 'trending',
+    icon_30: '/icons/trends-30-60/30.png',
+    icon_60: '/icons/trends-30-60/60.png'  
+  },
+  {
+    label: 'Business',
+    value: 'business',
+    icon_30: '/icons/business-30-60/30.png',
+    icon_60: '/icons/business-30-60/60.png'
   },
   {
     label: 'Health',
@@ -38,22 +45,22 @@ export const menuItems: MenuItem[] = [
     icon_60: '/icons/health-30-60/60.png'  
   },
   {
+    label: 'Shopping',
+    value: 'shopping',
+    icon_30: '/icons/shopping-30-60/30.png',
+    icon_60: '/icons/shopping-30-60/60.png'  
+  },
+  {
+    label: 'Entertainment',
+    value: 'entertainment',
+    icon_30: '/icons/entertainment-30-60/30.png',
+    icon_60: '/icons/entertainment-30-60/60.png'  
+  },
+  {
     label: 'Science/Tech',
     value: 'technology',
     icon_30: '/icons/technology-30-60/30.png',
     icon_60: '/icons/technology-30-60/60.png'  
-  },
-  {
-    label: 'News',
-    value: 'news',
-    icon_30: '/icons/news-30-60/30.png',
-    icon_60: '/icons/news-30-60/60.png'  
-  },
-  {
-    label: 'Trending',
-    value: 'trending',
-    icon_30: '/icons/trends-30-60/30.png',
-    icon_60: '/icons/trends-30-60/60.png'  
   },
   {
     label: 'Fashion',
@@ -109,12 +116,6 @@ export const menuItems: MenuItem[] = [
     icon_30: '/icons/jobs-30-60/30.png',
     icon_60: '/icons/jobs-30-60/60.png'  
   },
-  {
-    label: 'Shopping',
-    value: 'shopping',
-    icon_30: '/icons/shopping-30-60/30.png',
-    icon_60: '/icons/shopping-30-60/60.png'  
-  }
 ]
 
 interface Props {}
