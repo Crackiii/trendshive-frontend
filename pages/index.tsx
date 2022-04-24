@@ -15,21 +15,30 @@ const Home = ({contents}: {contents: any}) => {
   return (
     <>
       <Head>
-        <title>Trendscads - Trends at your finger tips</title>
+        <title>Trendscads - Trends at your finger tip</title>
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta name='keywords' content='Trends, daily trends, realtime trends, worldwide, news, trending stories, news, business, sports, entertainment, health, sci/tech, law, fintech' />
-        <meta name='description' content='Search and find top trending stories in any category (business, sports, entertainment, health, sci/tech, law, fintech) at your finger tip.' />
+        <meta name='keywords' content='
+          Trends, Search engine, search trends, top trends, 
+          trends hive, trending topics, daily trends, realtime trends, 
+          worldwide trends, news trends, trending stories, business trends, 
+          sports trends, entertainment trends, health trends, science and technology trends, 
+          law trends, fintech trends, ecommerce, ecommerce trends, products trends,
+          amazon trends, ali express trends, ebay trends, trending products, gaming trends, twitch trends, 
+          aliexpress trending products, amazon trending products, amazon todays deals, amazon movers and shakers,
+          amazon most wished in products, most wished in products, amazon new releases, youtube trends, food trends,
+          trending travels, youtube travels, top trending food videos, youtube top trending food videos, trending searches' />
+        <meta name='description' content='Trends at your finger tip, world # 1 trends search engine, million of trending stories, trending products, ecommerce news, science and technology topics, world news and many more.' />
         <meta name="robots" content="index, follow" />
         
         <meta property="og:type" content="story" />
         <meta property="og:title" content="Trends at your finger tips" />
-        <meta property="og:description" content="Search and find top trending stories in any category (business, sports, entertainment, health, sci/tech, law, fintech) at your finger tip." />
+        <meta property="og:description" content="Trends at your finger tip, world # 1 trends search engine, million of trending stories, trending products, ecommerce news, science and technology topics, world news and many more." />
         <meta property="og:image" content="/logo.jpeg" />
         <meta property="og:url" content="https://trendscads.com/" />
         <meta property="og:site_name" content="Trendscads" />
 
         <meta name="twitter:title" content="Trends at your finger tips" />
-        <meta name="twitter:description" content="Search and find top trending stories in any category (business, sports, entertainment, health, sci/tech, law, fintech) at your finger tip." />
+        <meta name="twitter:description" content="Trends at your finger tip, world # 1 trends search engine, million of trending stories, trending products, ecommerce news, science and technology topics, world news and many more." />
         <meta name="twitter:image" content="/logo.jpeg" />
         <meta name="twitter:site" content="@Trendscads" />
         <meta name="twitter:creator" content="@Trendscads" />

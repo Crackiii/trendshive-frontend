@@ -23,8 +23,8 @@ export const commonBreakPoints = {
 
 export const adsBreakPoints = {
   default: 4,
-  1280: 4,
-  1024: 3,
+  1280: 2,
+  1024: 2,
   768: 2,
   640: 1
 };

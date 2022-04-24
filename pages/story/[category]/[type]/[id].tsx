@@ -10,12 +10,42 @@ import Tags from '../../../../components/shared/Tags'
 import { categories, getYoutubeEmbedUrl, types } from '../../../../utils/common'
 import Masonry from 'react-masonry-css'
 
-function Story({data, type, category, related}: {related: any, data: any, type: string, category: string}) {
-
+function Story({data, type, category, related, id}: {related: any, data: any, type: string, category: string, id: string}) {
+  console.log(data)
   return (
     <>
     <Head>
       <title>{data?.title || data?.[0]?.metaData?.title}</title>
+
+      {/* Facebook metas */}
+      {
+        data[0]?.metaData?.facebook?.map(((meta: { property: string; content: string }) => {
+          if(/site_name/gmi.test(meta?.property)) {
+            return <meta key={meta.property} property={meta.property} content={'trendscads.com'} />
+          }
+          if(/url/gmi.test(meta?.property)) {
+            return <meta key={meta.property} property={meta.property} content={`https://trendscads.com/story/${category}/${type}/${id}`} />
+          }
+          return <meta key={meta?.property} property={meta?.property} content={meta?.content} />
+        }))
+      }
+
+      {/* Twitter metas */}
+      {
+        data[0]?.metaData?.twitter?.map(((meta: { property: string; content: string }) => {
+          if(/site/gmi.test(meta?.property)) {
+            return <meta key={meta.property} property={meta.property} content={'@Trendscads'} />
+          }
+          if(/creator/gmi.test(meta?.property)) {
+            return <meta key={meta.property} property={meta.property} content={'@Trendscads'} />
+          }
+          if(/url/gmi.test(meta?.property)) {
+            return <meta key={meta.property} property={meta.property} content={`https://trendscads.com/story/${category}/${type}/${id}`} />
+          }
+          return <meta key={meta?.property} property={meta?.property} content={meta?.content} />
+        }))
+      }
+      <meta name="robots" content="index, follow" /> 
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
     <PageContextProvider>
@@ -152,7 +182,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         data: data.result || {},
         related: data.related,
         type,
-        category
+        category,
+        id
       }
     }
   } catch(error) {
