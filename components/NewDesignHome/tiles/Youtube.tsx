@@ -25,7 +25,7 @@ function Youtube(props: Props) {
             <div className='text-slate-400'>{time}</div>
           </div>
           <div className='text-slate-600 text-sm font-normal'>
-            <div className=' whitespace-normal' dangerouslySetInnerHTML={{__html: props.video.title}}></div>
+            <div className=' whitespace-normal break-words' dangerouslySetInnerHTML={{__html: props.video.title}}></div>
           </div>
           {/* <YoutubeModal onClose={() => setOpen(false)} open={open} url={getYoutubeEmbedUrl(props.video.url)} /> */}
         </div>

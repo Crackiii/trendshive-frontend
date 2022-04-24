@@ -22,13 +22,13 @@ function Search(props: Props) {
         <div className={`${props.width || 'w-96 pr-4'} border-r mr-4 inline-block`}>
           <div className='flex justify-between'>
             <div className='flex-1 pr-2'>
-              <div className='whitespace-normal text-sky-500' dangerouslySetInnerHTML={{__html: props?.search?.title}}></div>
+              <div className='whitespace-normal text-sky-500 break-words' dangerouslySetInnerHTML={{__html: props?.search?.title}}></div>
               <div className='whitespace-normal flex justify-start text-slate-400 text-xs my-1'>
                 <div className=''>{source}</div>
                 <span className='mx-2'>|</span>
                 <div className=' whitespace-normal'>{time}</div>
               </div>
-              <div  className='whitespace-normal text-slate-800 text-sm' dangerouslySetInnerHTML={{__html: props?.search?.description}}></div>
+              <div  className='whitespace-normal text-slate-800 text-sm break-words' dangerouslySetInnerHTML={{__html: props?.search?.description}}></div>
             </div>
             <div className='overflow-hidden rounded-xl flex flex-col justify-start' style={{width: '80px', height: "80px"}}>
               <img src={image} alt='bitcoin' className='object-cover min-h-full min-w-full '/>
