@@ -33,7 +33,7 @@ function Youtube(props: Props) {
 
   return (
     <Link href={`/story/${props.content.category || props.content.catgory}/${props.content.type}/${props.content.id}`}>
-      <a target={'_blank'}>
+      <a>
         <div className={`bg-white rounded-lg group overflow-hidden font-light cursor-pointer hover:shadow-xl hover:shadow-zinc-200 transition-shadow`} >
           {
             image !== '/fallback.png' &&

@@ -3,6 +3,7 @@ import BodyLeftContent from './BodyLeftContent'
 import BodyRightContent from './BodyRightContent'
 import { usePageContext } from '../PageContext';
 import { useWindowSize } from 'react-use';
+import HomeFooter from '../../shared/HomeFooter';
 
 interface Props {
   left: JSX.Element
@@ -46,6 +47,7 @@ function Body(props: Props) {
           <BodyLeftContent>
             {props.left}
           </BodyLeftContent>
+          <HomeFooter />
         </div>
       </div>
       {

@@ -3,6 +3,15 @@ import type { AppProps } from 'next/app'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import Script from 'next/script'
 import Head from 'next/head'
+import "nprogress/nprogress.css";
+import dynamic from 'next/dynamic'
+
+const TopProgressBar = dynamic(
+  () => {
+    return import("../components/TopProgressBar");
+  },
+  { ssr: false },
+);
 
 const client = new QueryClient()
 
@@ -36,6 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     </Script>
     <Script src="https://contextual.media.net/dmedianet.js?cid=8CUB8V2KU" async={true}></Script>
     <QueryClientProvider client={client}>
+      <TopProgressBar />
       <Component {...pageProps} />
     </QueryClientProvider>
     </>

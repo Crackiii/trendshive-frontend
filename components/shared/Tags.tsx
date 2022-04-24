@@ -1,6 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 
 
@@ -21,7 +22,6 @@ function Tags({tags, show}: Props) {
     'text-purple-600 bg-purple-200 hover:bg-purple-300',
     'text-pink-600 bg-pink-200 hover:bg-pink-300',
   ])
-
   if(!tags.length) return <></>
 
   return (
@@ -32,7 +32,7 @@ function Tags({tags, show}: Props) {
         .filter((t: string) => t.trim().length > 3) // filter out short tags
         .filter((t: string) => isNaN(Number(t))) // filter out numbers
         .map((tag, index) => (
-          <Link key={index} href={`/#`} passHref>
+          <Link key={index} href={`/search?q=${tag}`} passHref>
             <span className='inline-block last:mr-0 mr-1 mb-1 cursor-pointer'>
               <a>
                 <span  className={`text-xs font-semibol py-1 px-2 rounde lowercase break-words ${colors[Math.floor(Math.random() * colors.length)]}`}>

@@ -18,7 +18,7 @@ function Article(props: Props) {
 
   return (
     <Link href={`/story/${props.article.category}/${props.article.type}/${props.article.id}`}>
-      <a target={'_blank'}>
+      <a>
         <div className={`${props.width || 'w-72 mr-5' } bg-white p-2 rounded-md inline-block `}>
           <div className='flex justify-between items-start'>
             <div className='w-20 h-20 overflow-hidden rounded-lg shadow-slate-300 shadow-xl'>

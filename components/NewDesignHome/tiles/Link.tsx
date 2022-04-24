@@ -18,7 +18,7 @@ function Search(props: Props) {
   
   return (
     <Link href={`/story/${props.search.category}/${props.search.type}/${props.search.id}`}>
-      <a target={'_blank'}>
+      <a>
         <div className={`${props.width || 'w-96 pr-4'} border-r mr-4 inline-block`}>
           <div className='flex justify-between'>
             <div className='flex-1 pr-2'>

@@ -6,7 +6,7 @@ interface Props {
 
 function BodyLeftContent(props: Props) {
   return (
-    <div className='p-5'>
+    <div className='p-5 pb-0'>
       {props.children}
     </div>
   )

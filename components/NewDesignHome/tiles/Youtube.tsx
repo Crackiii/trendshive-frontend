@@ -15,7 +15,7 @@ function Youtube(props: Props) {
 
   return (
     <Link href={`/story/${props.video.category}/${props.video.type}/${props.video.id}`}>
-      <a target={'_blank'}>
+      <a>
         <div className={`${props.width || 'w-48 mr-4' } inline-block rounded-lg overflow-hidden font-light cursor-pointer`} >
           <div className='w-full rounded-lg overflow-hidden'>
             <img src={image} alt='icon' className='object-cover min-h-full min-w-full' />
