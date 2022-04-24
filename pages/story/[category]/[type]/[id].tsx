@@ -9,6 +9,7 @@ import RandomData from '../../../../components/NewDesignHome/tiles/RandomData'
 import Tags from '../../../../components/shared/Tags'
 import { categories, getYoutubeEmbedUrl, types } from '../../../../utils/common'
 import Masonry from 'react-masonry-css'
+import Script from 'next/script'
 
 function Story({data, type, category, related}: {related: any, data: any, type: string, category: string}) {
 
@@ -21,6 +22,7 @@ function Story({data, type, category, related}: {related: any, data: any, type: 
     <PageContextProvider>
       <Page left={
         <div className='overflow-hidden'>
+                    
           {
             type === 'video' &&
             (
@@ -46,9 +48,30 @@ function Story({data, type, category, related}: {related: any, data: any, type: 
               <div className='my-4'>
                 <Tags tags={[...(data[0]?.metaData?.keywords || '').split(',')]} />
               </div>
+              <div className='flex justify-center my-10'>
+                <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=48&l=ur1&category=kitchen&banner=1BD9MBXK5KWFV9SX7202&f=ifr&linkID=edf16265b867e2918b8b3c8d30d50602&t=trendscadstor-20&tracking_id=trendscadstor-20" 
+                  width="728" height="90" scrolling="no" style={{border: 'none'}} frameBorder="0" 
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+              </div>
               <div className='tracking-wider text-sm' dangerouslySetInnerHTML={{__html: data[0]?.html}}></div>
             </>
           }
+
+            <Script type="text/javascript">{`
+              amzn_assoc_placement = "adunit0";
+              amzn_assoc_search_bar = "true";
+              amzn_assoc_tracking_id = "trendscadstor-20";
+              amzn_assoc_search_bar_position = "top";
+              amzn_assoc_ad_mode = "search";
+              amzn_assoc_ad_type = "smart";
+              amzn_assoc_marketplace = "amazon";
+              amzn_assoc_region = "DE";
+              amzn_assoc_title = "More of your interest";
+              amzn_assoc_default_search_phrase = "mobile accessories";
+              amzn_assoc_default_category = "All";
+              amzn_assoc_linkid = "196f18c1edd8003cf88f632002d188b8";`}
+            </Script>
+            <Script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=DE"></Script>
 
           <div className='w-full mt-10'>
               <div className='px-16 text-slate-500 bg-white inline-block  mb-5 text-center py-2 rounded-md shadow-xl shadow-slate-200'>Might of your interest</div>

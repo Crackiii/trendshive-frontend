@@ -46,6 +46,11 @@ function Category({params, data}: {params: any, data: any}) {
               </div>
               <div className='mt-5'>
                 <Tabs onTabChange={handleTabChange} onSearchChange={handleValueChange} activeTab={currentTab} />
+                <div className='my-7 flex justify-center'>
+                  <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=48&l=ur1&category=health&banner=0G5GGJ1N5H018KBVX3R2&f=ifr&linkID=101686b940a3f69fdb28d8aa694f76f9&t=trendscadstor-20&tracking_id=trendscadstor-20" 
+                  width="728" height="90" scrolling="no" style={{border: 'none'}} frameBorder="0" 
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+                </div>
                 {
                   currentTab === 'all' && 
                   <div className='w-full mt-10'>
@@ -102,7 +107,15 @@ function Category({params, data}: {params: any, data: any}) {
             </div>
           } 
           right={
-            <></>
+            <div className='flex flex-col justify-start items-center'>
+              <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=14&l=ur1&category=amazonfashion&banner=0AG50GY6P3KKHK2XTM02&f=ifr&linkID=2c3f7496a5314310d0f4b7335d325536&t=trendscadstor-20&tracking_id=trendscadstor-20" 
+              width="160" height="600" scrolling="no" style={{border: 'none'}} frameBorder="0" 
+              sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+              <div className='my-2'></div>
+              <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=14&l=ur1&category=outlet&banner=0KVZNKG64C5R895PMPR2&f=ifr&linkID=c06f70fb016b4d845dcb4253d1f8819c&t=trendscadstor-20&tracking_id=trendscadstor-20" 
+              width="160" height="600" scrolling="no" style={{border: 'none'}} frameBorder="0" 
+              sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+            </div>
           } 
         />
       </PageContextProvider>
