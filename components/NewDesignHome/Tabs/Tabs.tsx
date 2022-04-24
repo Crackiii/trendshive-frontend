@@ -10,15 +10,15 @@ const tabs: Tab[] = [
         name: 'all',
     },
     {
-        label: 'Top Stories',
+        label: 'Stories',
         name: 'stories'
     },
     {
-        label: 'Trending Videos',
+        label: 'Videos',
         name: 'videos'
     },
     {
-        label: 'Trending News',
+        label: 'News',
         name: 'news'
     }
 ]
@@ -33,7 +33,7 @@ function Tabs(props: Props) {
   return (
     <div>
       <div className="mb-4 border-b border-gray-200">
-        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+        <ul className="flex flex-wrap -mb-px text-xs sm:text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
             {
                 tabs.map((tab) => (
                     <li className="" key={tab.name} onClick={() => props.onTabChange(tab.name)}>
