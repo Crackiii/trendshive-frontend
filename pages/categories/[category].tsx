@@ -10,7 +10,7 @@ import Article from '../../components/NewDesignHome/tiles/Article';
 import Link from '../../components/NewDesignHome/tiles/Link';
 import RandomData from '../../components/NewDesignHome/tiles/RandomData'
 import Youtube from '../../components/NewDesignHome/tiles/Youtube';
-import { categories } from '../../utils/common';
+import { categories, getUserCountry } from '../../utils/common';
 import Masonry from 'react-masonry-css'
 import { commonBreakPoints } from '../../components/NewDesignHome/body/category/Category';
 
@@ -165,10 +165,10 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     }
   }
 
-  const geo = await (await axios.get("https://api.geoapify.com/v1/ipinfo?apiKey=589ae61973f3443faf4b13b2f1c57ae9")).data
   try {
+    const country = await getUserCountry(ctx.req);
     const basePath = 'https://api.trendscads.com'
-    const home = await axios.get(`${basePath}/categories/${params.category}?country=${geo.country.iso_code}`)
+    const home = await axios.get(`${basePath}/categories/${params.category}?country=${country}`)
     const { data } = home
 
     return {
