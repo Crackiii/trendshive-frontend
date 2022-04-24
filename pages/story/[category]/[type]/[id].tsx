@@ -57,7 +57,7 @@ function Story({data, type, category, related}: {related: any, data: any, type: 
             </>
           }
 
-            <Script type="text/javascript">{`
+            <Script id="recommendation" type="text/javascript">{`
               amzn_assoc_placement = "adunit0";
               amzn_assoc_search_bar = "true";
               amzn_assoc_tracking_id = "trendscadstor-20";
