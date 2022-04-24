@@ -21,6 +21,14 @@ export const commonBreakPoints = {
   640: 1
 };
 
+export const adsBreakPoints = {
+  default: 4,
+  1280: 4,
+  1024: 3,
+  768: 2,
+  640: 1
+};
+
 function Category(props: Category) {
 
   const noData = !props.articles.length && !props.videos.length && !props.search.length

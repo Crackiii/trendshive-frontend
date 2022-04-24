@@ -27,6 +27,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         gtag('config', 'G-90YBCKT146');
       `}
     </Script>
+    <Script id='medianet' type="text/javascript">
+      {`
+        window._mNHandle = window._mNHandle || {};
+        window._mNHandle.queue = window._mNHandle.queue || [];
+        medianet_versionId = "3121199";
+      `}
+    </Script>
+    <Script src="https://contextual.media.net/dmedianet.js?cid=8CUB8V2KU" async={true}></Script>
     <QueryClientProvider client={client}>
       <Component {...pageProps} />
     </QueryClientProvider>
