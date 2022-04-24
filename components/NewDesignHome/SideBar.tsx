@@ -150,7 +150,7 @@ function SideBar(_: Props) {
                           <img src={item.icon_30} className={`min-w-full min-h-full object-cover ${isActive ? 'opacity-100' : 'opacity-50'}  group-hover:opacity-100`} alt={item.label} />
                         </div>
                         {!toggleNavBar && 
-                          <span className={`ml-6 text-sm  ${isActive ? 'text-slate-900 font-normal' : 'text-slate-700 font-light'}`}>
+                          <span className={`ml-6 text-sm tracking-wide  ${isActive ? 'text-slate-900 font-normal' : 'text-slate-700 font-light'}`}>
                             {item.label}
                           </span>
                         }

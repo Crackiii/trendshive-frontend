@@ -55,8 +55,6 @@ const Home = ({contents}: {contents: any}) => {
                 `}
               </Script>
             </div>
-            <div id="amzn-assoc-ad-f17e26a0-d29a-4927-8529-c952c8d7c986"></div>
-            <Script id='recommendation-ads' async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=f17e26a0-d29a-4927-8529-c952c8d7c986"></Script>
             {
               menuItems.map((item, index) => (
                 <Category 
