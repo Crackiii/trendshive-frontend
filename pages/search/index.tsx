@@ -20,7 +20,7 @@ function Search({data, q}: {related: any, data: any, type: string, category: str
   }
 
   const handleValueChange = (value: string) => ''
-  console.log(data, q)
+
   return (
     <>
     <Head>

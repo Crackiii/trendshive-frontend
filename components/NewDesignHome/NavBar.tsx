@@ -24,7 +24,6 @@ function NavBar() {
 
   }, [width])
 
-
   useEffect(() => {
     setInitialWidth(calculatedWidth)
   }, [calculatedWidth])
@@ -55,7 +54,7 @@ function NavBar() {
             type={'text'} 
             placeholder='Search and discover new trends...' 
             onChange={(ev) => setValue(ev.target.value)}
-            value={value}
+            value={value.length ? value : history.query.q}
             className=' bg-white font-light h-full outline-none pl-3 sm:pl-6 md:pl-12 pr-0 sm:pr-3 md:pr-12 text-base w-full'/>
         </form>
       </div>
