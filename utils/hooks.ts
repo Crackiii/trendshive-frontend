@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import * as dates from 'date-fns'
-import { getFaviconByUrl, validURL } from "./common";
-import { useWindowSize } from "react-use";
+import { validURL } from "./common";
 
 export const useImage = (url: string) => {
   const [image, setImage] = useState<string>('/fallback.png');
@@ -48,7 +47,7 @@ export const useImageDimensions = (url: string) => {
   var image = new Image()
   image.src = url
 
-  if(image.width > 200 && image.height > 200) {
+  if(image.width > 260 && image.height > 260) {
     return true
   }
 
