@@ -53,3 +53,15 @@ export const useImageDimensions = (url: string) => {
 
   return false
 } 
+
+// is youtube url, check the url with regex and return true if it is a youtube url
+export const isYoutubeUrl = (url: string) => {
+  if(!validURL(url)) return false;
+  const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i;
+  const match = url?.match(regex);
+  if(match) {
+    return true
+  }
+
+  return false
+}

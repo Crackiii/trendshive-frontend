@@ -9,9 +9,9 @@ import RandomData from '../../../../components/NewDesignHome/tiles/RandomData'
 import Tags from '../../../../components/shared/Tags'
 import { categories, getYoutubeEmbedUrl, types } from '../../../../utils/common'
 import Masonry from 'react-masonry-css'
+import Link from 'next/link'
 
 function Story({data, type, category, related, id}: {related: any, data: any, type: string, category: string, id: string}) {
-  console.log(data)
   return (
     <>
     <Head>
@@ -69,10 +69,14 @@ function Story({data, type, category, related, id}: {related: any, data: any, ty
             (type === 'article' || type === 'search') &&
             <>
               <div className='w-full bg-white h-96 rounded-xl overflow-hidden relative'>
-                <img src={data[0]?.metaData?.images?.[0] || `/images/${category}.jpeg`} className='object-cover min-h-full min-w-full' alt={category} />
-                <div className={'absolute w-full h-full left-0 top-0 z-10 gradient-bg'}>
-                  <div className='uppercase text-white font-black text-2xl flex flex-col justify-end px-10 pb-10 h-full'>{data[0]?.metaData?.title}</div>
-                </div>
+                <Link href={data?.[0]?.metaData?.url || '/'}>
+                  <a>
+                    <img src={data[0]?.metaData?.images?.[0] || `/images/${category}.jpeg`} className='object-cover min-h-full min-w-full' alt={category} />
+                    <div className={'absolute w-full h-full left-0 top-0 z-10 gradient-bg'}>
+                      <div className='uppercase text-white font-black text-2xl flex flex-col justify-end px-10 pb-10 h-full'>{data[0]?.metaData?.title}</div>
+                    </div>
+                  </a>
+                </Link>
               </div>
               <div className='my-4'>
                 <Tags tags={[...(data[0]?.metaData?.keywords || '').split(',')]} />
