@@ -2,6 +2,7 @@ import axios from 'axios';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head'
 import Script from 'next/script';
+import { useEffect } from 'react';
 import CookiePopup from '../components/CookiePopup';
 import Category from '../components/NewDesignHome/body/category/Category';
 import Grid from '../components/NewDesignHome/body/grids/Grid';
@@ -11,11 +12,18 @@ import { menuItems } from '../components/NewDesignHome/SideBar';
 import Tags from '../components/shared/Tags';
 import { getUserCountry } from '../utils/common';
 
-
+declare let adsbygoogle: any;
 
 const Home = ({contents, ctx}: {contents: any, ctx: any}) => {
+  useEffect(() => {
+    var ads = document.getElementsByClassName("adsbygoogle").length;
+    for (var i = 0; i < ads; i++) {
+      try {
+        (adsbygoogle = (window as any).adsbygoogle || []).push({});
+      } catch (e) { }
+    }
+}, []);
 
-  console.log({ctx})
   return (
     <>
       <Head>
@@ -48,6 +56,7 @@ const Home = ({contents, ctx}: {contents: any, ctx: any}) => {
         <meta name="twitter:creator" content="@Trendscads" />
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678" crossOrigin="anonymous"></Script>
       </Head>
       <CookiePopup />
 
@@ -56,18 +65,12 @@ const Home = ({contents, ctx}: {contents: any, ctx: any}) => {
         <Page left={
           <div className='overflow-hidden'>
             <Grid articles={contents?.daily_articles || []} />
-            <div id="857289888">
-              <Script id='medianet-ad-unit1' type="text/javascript">
-                {`
-                  try {
-                      window._mNHandle.queue.push(function (){
-                          window._mNDetails.loadTag("857289888", "970x250", "857289888");
-                      });
-                  }
-                  catch (error) {}
-                `}
-              </Script>
-            </div>
+            <ins className="adsbygoogle"
+              style={{display: 'block'}}
+              data-ad-format="autorelaxed"
+              data-ad-client="ca-pub-7718309551494678"
+              data-ad-slot="9643583354">
+            </ins>
             {
               menuItems.map((item, index) => (
                 <Category 
