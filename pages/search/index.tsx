@@ -11,6 +11,7 @@ import RandomData from '../../components/NewDesignHome/tiles/RandomData'
 import Article from '../../components/NewDesignHome/tiles/Article'
 import Youtube from '../../components/NewDesignHome/tiles/Youtube'
 import Link from '../../components/NewDesignHome/tiles/Link'
+import Script from 'next/script'
 
 
 function Search({data, q}: {related: any, data: any, type: string, category: string, q: string}) {
@@ -53,6 +54,7 @@ function Search({data, q}: {related: any, data: any, type: string, category: str
         
         <meta name="robots" content="index, follow" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <Script id="CookieDeclaration" src="https://consent.cookiebot.com/c0c45e6c-e75e-499a-b086-0913896343f3/cd.js" type="text/javascript" async></Script>
     </Head>
     <PageContextProvider>
       <Page left={

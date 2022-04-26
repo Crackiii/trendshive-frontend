@@ -57,6 +57,7 @@ const Home = ({contents, ctx}: {contents: any, ctx: any}) => {
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678" crossOrigin="anonymous"></Script>
+        <Script id="CookieDeclaration" src="https://consent.cookiebot.com/c0c45e6c-e75e-499a-b086-0913896343f3/cd.js" type="text/javascript" async></Script>
       </Head>
       <CookiePopup />
 
