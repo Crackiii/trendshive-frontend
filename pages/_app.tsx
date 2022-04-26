@@ -21,10 +21,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Head>
       <link rel="icon" type="image/x-icon" href="/logo.ico" />
     </Head>
+    <Script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="c0c45e6c-e75e-499a-b086-0913896343f3" data-blockingmode="auto" type="text/javascript"></Script>
     <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718309551494678" crossOrigin="anonymous"></Script>
     <Script src="https://www.googletagmanager.com/gtag/js?id=G-90YBCKT146" strategy="afterInteractive" />
     <Script src="https://contextual.media.net/dmedianet.js?cid=8CUB8V2KU" async={true}></Script>
-    <Script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="c0c45e6c-e75e-499a-b086-0913896343f3" data-blockingmode="auto" type="text/javascript"></Script>
     <Script id="google-analytics" strategy="afterInteractive">
       {`
         window.dataLayer = window.dataLayer || [];
