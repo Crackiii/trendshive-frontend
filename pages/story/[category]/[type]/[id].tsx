@@ -48,12 +48,12 @@ function Story({data, type, category, related, id}: {related: any, data: any, ty
       }
       <meta name="robots" content="index, follow" /> 
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <Script id="CookieDeclaration" src="https://consent.cookiebot.com/c0c45e6c-e75e-499a-b086-0913896343f3/cd.js" type="text/javascript" async></Script>
+      
     </Head>
     <PageContextProvider>
       <Page left={
         <div className='overflow-hidden'>
-                    
+          <Script id="CookieDeclaration" src="https://consent.cookiebot.com/c0c45e6c-e75e-499a-b086-0913896343f3/cd.js" type="text/javascript" async></Script>   
           {
             type === 'video' &&
             (

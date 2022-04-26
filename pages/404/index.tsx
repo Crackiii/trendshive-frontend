@@ -14,11 +14,11 @@ export default function Custom404() {
         <meta name='description' content='Search and find top trending stories in any category (business, sports, entertainment, health, sci/tech, law, fintech) at your finger tip.' />
         <meta name="robots" content="index, follow" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <Script id="CookieDeclaration" src="https://consent.cookiebot.com/c0c45e6c-e75e-499a-b086-0913896343f3/cd.js" type="text/javascript" async></Script>
       </Head>
       <PageContextProvider>
         <Page left={
           <div className="w-full flex flex-col justify-center items-center" style={{height: 'calc(100vh - 150px)'}}>
+            <Script id="CookieDeclaration" src="https://consent.cookiebot.com/c0c45e6c-e75e-499a-b086-0913896343f3/cd.js" type="text/javascript" async></Script>
             <h1 className="block text-6xl font-extrabold">404</h1>
             <div className="text-slate-400 mt-3">Page Not Found</div>
             <Link href="/">

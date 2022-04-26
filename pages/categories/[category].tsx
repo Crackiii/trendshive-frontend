@@ -57,12 +57,12 @@ function Category({params, data}: {params: any, data: any}) {
         
         <meta name="robots" content="index, follow" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <Script id="CookieDeclaration" src="https://consent.cookiebot.com/c0c45e6c-e75e-499a-b086-0913896343f3/cd.js" type="text/javascript" async></Script>
       </Head>
       <PageContextProvider>
         <Page 
           left={
             <div className=''>
+              <Script id="CookieDeclaration" src="https://consent.cookiebot.com/c0c45e6c-e75e-499a-b086-0913896343f3/cd.js" type="text/javascript" async></Script>
               <div className='w-full bg-white h-96 rounded-xl overflow-hidden relative'>
                 <img src={`/images/${params.category}.jpeg`} className='object-cover min-h-full min-w-full' alt={params.category} />
                 <div className={'absolute w-full h-full left-0 top-0 z-10 gradient-bg'}>

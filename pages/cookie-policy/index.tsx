@@ -38,12 +38,13 @@ function index() {
         
         <meta name="robots" content="index, follow" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <Script id="CookieDeclaration" src="https://consent.cookiebot.com/c0c45e6c-e75e-499a-b086-0913896343f3/cd.js" type="text/javascript" async></Script>
+        
       </Head>
       <PageContextProvider>
         <Page 
           left={
             <div className="overflow-hidden">
+              <Script id="CookieDeclaration" src="https://consent.cookiebot.com/c0c45e6c-e75e-499a-b086-0913896343f3/cd.js" type="text/javascript" async></Script>
               <h1 className=" text-2xl font-extrabold my-4">Cookie Policy for Trends Scads</h1>
               <p>This is the Cookie Policy for Trends Scads, accessible from https://www.trendscads.com/</p>
               <p className="pt-5"><strong>What Are Cookies</strong></p>
