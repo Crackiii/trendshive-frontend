@@ -76,13 +76,13 @@ async function generate() {
     {
       path: '/privacy-policy',
       priority: 0.5,
-      changefreq: 'daily',
+      changefreq: 'yearly',
       lastmod: dates.subMonths(Date.now(), Math.random() * 4 + 1).toISOString()
     },
     {
       path: '/cookie-policy',
       priority: 0.5,
-      changefreq: 'daily',
+      changefreq: 'yearly',
       lastmod: dates.subMonths(Date.now(), Math.random() * 4 + 1).toISOString()
     }
   ]
