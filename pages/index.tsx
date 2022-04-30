@@ -3,7 +3,6 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head'
 import Script from 'next/script';
 import { useEffect } from 'react';
-import CookiePopup from '../components/CookiePopup';
 import Category from '../components/NewDesignHome/body/category/Category';
 import Grid from '../components/NewDesignHome/body/grids/Grid';
 import Page from '../components/NewDesignHome/Page';
