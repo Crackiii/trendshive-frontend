@@ -80,7 +80,7 @@ const Home = ({contents, ctx}: {contents: any, ctx: any}) => {
         } right={
           <div>
             <h4 className='mb-4'>Related Searches</h4>
-            <Tags tags={[...contents?.queries || []]} />
+            <Tags tags={[...contents?.queries.slice(0, 50) || []]} />
           </div>
         } />
       </PageContextProvider>
