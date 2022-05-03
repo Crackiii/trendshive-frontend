@@ -169,7 +169,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   try {
     const country = await getUserCountry(ctx.req);
-    const basePath = 'https://api.trendscads.com'
+    const basePath = 'http://apis.eu-central-1.elasticbeanstalk.com'
     const home = await axios.get(`${basePath}/categories/${params.category}?country=${country}`)
     const { data } = home
 

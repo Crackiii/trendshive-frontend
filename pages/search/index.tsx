@@ -142,7 +142,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const query = context.query?.q
 
   try {
-    const basePath = 'https://api.trendscads.com'
+    const basePath = 'http://apis.eu-central-1.elasticbeanstalk.com'
     const search = await axios.get(`${basePath}/search?q=${query || ''}`)
     const { data } = search
 

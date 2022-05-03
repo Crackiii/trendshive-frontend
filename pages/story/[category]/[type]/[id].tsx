@@ -179,7 +179,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
   
   try {
-    const basePath = 'https://api.trendscads.com'
+    const basePath = 'http://apis.eu-central-1.elasticbeanstalk.com'
     const home = await axios.get(`${basePath}/story?id=${id}&type=${type}`)
     const { data } = home
 
